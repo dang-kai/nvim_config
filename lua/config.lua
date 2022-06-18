@@ -18,7 +18,7 @@ opt.smartindent = true
 -- -- Display
 opt.number         = true           -- add line numbers
 opt.relativenumber = true           -- show relative line numbers
-opt.wildmode       = longest,list   -- get bash-like tab completions
+opt.wildmode       = 'list:longest' -- get bash-like tab completions
 opt.ttyfast        = true           -- speed up scrolling in Vim
 opt.mouse          = a              -- enable mouse click
 opt.scrolloff      = 3              -- keep a few lines below or above the cursor.
@@ -32,13 +32,17 @@ opt.splitright     = true
 
 -- -- Miscellaneous
 opt.clipboard   = unnamedplus   -- using system clipboard
-opt.timeoutlen = 500           -- shortcut key combination timeout in milliseconds
+opt.timeoutlen  = 500           -- shortcut key combination timeout in milliseconds
 --opt.swapfile  = false         -- disable creating swap file
 --opt.hidden    = true            -- allow hidden buffer (for multiple buffers?)
 
 -- -- Keybindings (including plugin keybindings)
 local map = vim.api.nvim_set_keymap
 local m = { noremap = true, silent = true }
+map('n', 'f', '', m)  -- cancel the original function (find char *) of key f, make it available for further configurations.
+-- -- -- navigation
+map('n', '<C-U>', '4k', m)
+map('n', '<C-D>', '4j', m)
 -- -- -- window split
 map('n', '<C-H>', '<C-W>h', m)
 map('n', '<C-J>', '<C-W>j', m)
@@ -56,9 +60,10 @@ map('n', '<C-Down>',  ':resize +2<CR>', m)
 map('n', '<C-Up>',    ':resize -2<CR>', m)
 -- -- -- terminal
 map('n', 't', '', m)  -- cancel the original function (go until char *) of key t and use it for terminal control.
-map('n', 'ts',  ':sp | terminal<CR>',  m)
+map('n', 'tt',  ':terminal<CR>',  m)
+map('n', 'ts',  ':20sp | terminal<CR>',  m)
 map('n', 'tv',  ':vsp | terminal<CR>', m)
-map('t', '<Esc>', '<C-\\><C-n>', opt)
+map('t', '<Esc>', '<C-\\><C-n>', m)
 -- -- -- block operation in visual mode
 map('v', '<', '<gv', m)  -- block modify indentation
 map('v', '>', '>gv', m)

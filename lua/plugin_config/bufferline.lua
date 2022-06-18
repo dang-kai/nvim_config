@@ -1,29 +1,62 @@
--- packer.nvim configuration
-local conf = { 
-    profile = {
-        enable = true, threshold = 0, -- the amount in ms that a plugins load time must be over for it to be included in the profile
-    },
+-- Install packer.nvim if packer is not found
+-- -- Install folder: ~/.local/share/nvim/site/pack/packer/
+local fn = vim.fn
+local install_path = fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
+local packer_bootstrap
+if fn.empty(fn.glob(install_path)) > 0 then
+    vim.notify('Packer not found. Installing pakcer.nvim...')
+    paccker_bootstrap = fn.system({
+        "git",
+        "clone",
+        "--depth",
+        "1",
+        "https://github.com/wbthomason/packer.nvim",
+        -- or "https://gitcode.net/mirrors/wbthomason/packer.nvim",
+        install_path,
+    })
+
+    -- https://github.com/wbthomason/packer.nvim/issues/750
+    local rtp_addition = vim.fn.stdpath("data") .. "/site/pack/*/start/*"
+    if not string.find(vim.o.runtimepath, rtp_addition) then
+        vim.o.runtimepath = rtp_addition .. "," .. vim.o.runtimepath
+    end
+    vim.notify("packer.nvim installed.")
+end
+
+-- -- Use a protected call so we don't error out on first use
+local status_ok, packer = pcall(require, "packer")
+if not status_ok then
+    vim.notify("Cannot find packer.nvim.")
+    return
+end
+
+-- Manage plugins with packer
+local packer = require('packer')
+conf = {
     display = {
         open_fn = function()
-            return require('packer.util').float { border = 'rounded' }
-        end
+            return require("packer.util").float({ border = "single" })
+        end,
     },
 }
-
-local packer = require('packer')
 packer.init(conf)
 packer.startup(function()
-    -- Packer itself is managed by pacman
-    -- use 'wbthomason/packer.nvim'
+    -- packer itself
+    use { 'wbthomason/packer.nvim' }
 
     -- nvim-tree
     use { 'kyazdani42/nvim-tree.lua', requires = 'kyazdani42/nvim-web-devicons' }
-
-    -- nightfox colorscheme
-    use { 'EdenEast/nightfox.nvim' }
     
     -- tab view (keep tabbed windows on the right while nvim-tree on the left)
     use { 'romgrk/barbar.nvim', requires = 'kyazdani42/nvim-web-devicons' }
+
+    -- colorschemes
+    use { 'folke/tokyonight.nvim' }
+    use { "mhartington/oceanic-next" }
+    use { "ellisonleao/gruvbox.nvim", requires = { "rktjmp/lush.nvim" } }
+    use { "shaunsingh/nord.nvim" }
+    use { "ful1e5/onedark.nvim" }
+    use { "EdenEast/nightfox.nvim" }
 
     -- gitsigns
     --use { 'lewis6991/gitsigns.nvim' }
@@ -32,13 +65,14 @@ end)
 -- Plugin configurations
 
 -- nvim-tree
+local tree_width = 26
 local nvim_tree = require('nvim-tree')
 nvim_tree.setup {
     disable_netrw = true,
     hijack_netrw = true,
     view = {
         adaptive_size = false,
-        width = 32,
+        width = tree_width,
         side = 'left',
         number = true,
         relativenumber = true,
@@ -84,8 +118,8 @@ local palettes = {
 
     -- comment is the definition of the comment color.
     --comment = "#60728a",
-    bg0 = '#222222',
-    bg1 = '#222222',
+    bg0 = 'NONE',
+    bg1 = 'NONE',
 
     red     = '#CC0000',
     green   = '#4E9A06',
@@ -188,7 +222,7 @@ local nvim_tree_events = require('nvim-tree.events')
 local bufferline_state = require('bufferline.state')
 
 nvim_tree_events.on_tree_open(function ()
-  bufferline_state.set_offset(32, "File Tree")
+  bufferline_state.set_offset(tree_width + 1, "File Tree")
 end)
 
 nvim_tree_events.on_tree_close(function ()
@@ -277,33 +311,5 @@ end)
 --}
 
 -- Key bindings
-local map = vim.api.nvim_set_keymap
-local opt = {noremap = true, silent = true}
--- navigations
-map('n', '<C-H>', '<C-W>h', opt)
-map('n', '<C-J>', '<C-W>j', opt)
-map('n', '<C-K>', '<C-W>k', opt)
-map('n', '<C-L>', '<C-W>l', opt)
--- file operations
-map('n', '<F4>', ':q<CR>', opt)
-map('n', '<C-S>', ':w<CR>', opt)
--- nvim tree
-map('n', '<F2>', ':NvimTreeToggle<CR>', opt)
-map('n', '<F3>', ':NvimTreeRefresh<CR>', opt)
-map('n', '<F4>', ':q<CR>', opt)
--- barbar
-map('n', '<C-Q>', ':BufferPrevious<CR>', opt)
-map('n', '<C-W>', ':BufferClose<CR>', opt)
-map('n', '<C-E>', ':BufferNext<CR>', opt)
-
 -- Initialization commands
-vim.cmd('colorscheme nordfox')
---sleep(1)
---nvim_tree.toggle(false, false)
---vim.cmd('vsplt') -- Move cursor to main window.
---vim.cmd('wincmd p') -- Move cursor to main window.
---vim.cmd('autocmd VimEnter * NvimTreeToggle')
---vim.cmd('autocmd VimEnter * wincmd p | echomsg \"wincmd\"')
---vim.cmd('autocmd VimEnter * BufferNext')
-
 return packer
