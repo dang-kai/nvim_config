@@ -25,10 +25,11 @@ opt.scrolloff      = 3              -- keep a few lines below or above the curso
 --opt.cc             = 100            -- set an 100 column border for good coding style
 opt.cursorline     = false          -- highlight current cursorline
 opt.ruler          = false
---opt.showmode       = false          -- vim mode prompt
---opt.showtabline    = 2              -- always show tabline
+opt.showmode       = true           -- vim mode prompt
+--opt.showtabline    = 0            -- (Tab is replaced by bufferline) always show tabline 
 opt.splitbelow     = true
 opt.splitright     = true
+opt.laststatus     = 0
 
 -- -- Miscellaneous
 opt.clipboard   = unnamedplus   -- using system clipboard
@@ -75,9 +76,25 @@ map('n', '<C-S>', ':w<CR>', m)
 -- -- -- nvim tree
 map('n', '<F2>', ':NvimTreeToggle<CR>',  m)
 map('n', '<F3>', ':NvimTreeRefresh<CR>', m)
--- -- -- barbar                
-map('n', '<C-Q>', ':BufferPrevious<CR>', m)
-map('n', '<C-W>', ':BufferClose<CR>',    m)
-map('n', '<C-E>', ':BufferNext<CR>',     m)
-
+-- -- -- bufferline 
+map('n', '<C-A>', ':BufferLineCyclePrev<CR>', m)
+map('n', '<C-W>', ':Bdelete!<CR>', m)
+map('n', '<C-D>', ':BufferLineCycleNext<CR>', m)
+-- -- -- telescope
+map("n", "<C-p>", ":Telescope find_files<CR>", m)
+map("n", "<C-f>", ":Telescope live_grep<CR>", m)
+telescope_list_keys = {
+  i = {
+    ["<C-j>"] = "move_selection_next",
+    ["<C-k>"] = "move_selection_previous",
+    ["<C-n>"] = "move_selection_next",
+    ["<C-p>"] = "move_selection_previous",
+    ["<Down>"] = "cycle_history_next",
+    ["<Up>"]   = "cycle_history_prev",
+    ["<ESC>"] = "close",
+    ["<C-c>"] = "close",
+    ["<C-u>"] = "preview_scrolling_up",
+    ["<C-d>"] = "preview_scrolling_down",
+  },
+}
 
