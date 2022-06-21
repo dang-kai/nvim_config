@@ -18,7 +18,7 @@ inst.setup {
   open_on_setup_file = false,
   open_on_tab = false,
   sort_by = "name",
-  update_cwd = false,
+  update_cwd = true, -- Enabled for project.nvim compatibility.
   reload_on_bufenter = false,
   respect_buf_cwd = false,
   view = {
@@ -35,7 +35,9 @@ inst.setup {
     mappings = {
       custom_only = false,
       list = {
-        -- user mappings go here
+        -- user key mappings go here
+        { key = {"["}, action = "dir_up" },
+        { key = {"]"}, action = "cd" },
       },
     },
   },
@@ -97,8 +99,8 @@ inst.setup {
     auto_open = true,
   },
   update_focused_file = {
-    enable = false,
-    update_cwd = false,
+    enable = true, -- Enabled for project.nvim compatibility.
+    update_cwd = true, -- Enabled for project.nvim compatibility.
     ignore_list = {},
   },
   ignore_ft_on_setup = {},

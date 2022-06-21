@@ -5,7 +5,7 @@ local install_path = fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
 local packer_bootstrap
 if fn.empty(fn.glob(install_path)) > 0 then
     vim.notify('Packer not found. Installing pakcer.nvim...')
-    paccker_bootstrap = fn.system({
+    packer_bootstrap = fn.system({
         "git",
         "clone",
         "--depth",
@@ -31,8 +31,7 @@ if not status_ok then
 end
 
 -- Manage plugins with packer
-local packer = require('packer')
-conf = {
+local conf = {
     display = {
         open_fn = function()
             return require("packer.util").float({ border = "single" })
@@ -46,7 +45,7 @@ packer.startup(function()
 
     -- nvim-tree
     use { 'kyazdani42/nvim-tree.lua', requires = 'kyazdani42/nvim-web-devicons' }
-    
+
     -- tab view (keep tabbed windows on the right while nvim-tree on the left)
     use { "akinsho/bufferline.nvim", requires = { "kyazdani42/nvim-web-devicons", "moll/vim-bbye" } }
     --use { 'romgrk/barbar.nvim', requires = 'kyazdani42/nvim-web-devicons' }
@@ -57,22 +56,39 @@ packer.startup(function()
 
     -- telescope
     use { "nvim-telescope/telescope.nvim", requires = { "nvim-lua/plenary.nvim" } }
-    
+
+    -- dashboard
+    use {"glepnir/dashboard-nvim"}
+
+    -- project management
+    use { 'ahmedkhalf/project.nvim' }
+
+    -- treesitter
+    use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
+
+    -- LSP
+    use { "neovim/nvim-lspconfig" }
+
     -- colorschemes
-    use { 'folke/tokyonight.nvim' }
+    use { "folke/tokyonight.nvim" }
     use { "mhartington/oceanic-next" }
-    use { "ellisonleao/gruvbox.nvim", requires = { "rktjmp/lush.nvim" } }
-    use { "shaunsingh/nord.nvim" }
     use { "ful1e5/onedark.nvim" }
     use { "EdenEast/nightfox.nvim" }
+    --use { "ellisonleao/gruvbox.nvim", requires = { "rktjmp/lush.nvim" } }
+    --use { "shaunsingh/nord.nvim" }
 
     -- gitsigns
     --use { 'lewis6991/gitsigns.nvim' }
 end)
 
 -- Plugin configurations
-require('plugin_config/nvimtree')
-require('plugin_config/bufferline')
-require('plugin_config/nightfox')
+require('plugin_config.nvimtree')
+require('plugin_config.bufferline')
 --require('plugin_config/lualine')
+require('plugin_config.telescope')
+require('plugin_config.treesitter')
+require('plugin_config.lspconfig')
+require('plugin_config.dashboard')
+require('plugin_config.project')
+require('plugin_config.nightfox')
 --return packer
