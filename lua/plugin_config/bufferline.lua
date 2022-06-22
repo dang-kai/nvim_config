@@ -1,5 +1,5 @@
 local plugin_name = 'bufferline'
-local ret_ok, inst = pcall(require, plugin_name) 
+local ret_ok, inst = pcall(require, plugin_name)
 if not ret_ok then
     vim.notify(plugin_name .. ' not found.')
     return
@@ -8,24 +8,24 @@ end
 inst.setup {
     highlights = {
         --fill = {
-        --    guibg = '#222222',
-        --    guifg = '#222222',
+        --    guibg = '#262626',
+        --    guifg = '#262626',
         --},
         --background = {
-        --    guibg = '#222222',
-        --    guifg = '#222222',
+        --    guibg = '#262626',
+        --    guifg = '#262626',
         --},
         separator = {
-            guibg = '#222222',
-            guifg = '#222222',
+            guibg = '#262626',
+            guifg = '#262626',
         },
         separator_visible = {
-            guibg = '#222222',
-            guifg = '#222222',
+            guibg = '#262626',
+            guifg = '#262626',
         },
         separator_selected = {
-            guibg = '#222222',
-            guifg = '#222222',
+            guibg = '#262626',
+            guifg = '#262626',
         },
     },
   options = {

@@ -31,7 +31,19 @@ opt.splitright     = true
 opt.laststatus     = 0
 
 -- -- Miscellaneous
-opt.clipboard   = unnamedplus   -- using system clipboard
+opt.clipboard   = 'unnamedplus'   -- using system clipboard
 opt.timeoutlen  = 500           -- shortcut key combination timeout in milliseconds
 --opt.swapfile  = false         -- disable creating swap file
 --opt.hidden    = true            -- allow hidden buffer (for multiple buffers?)
+
+-- -- Diagnostic
+vim.diagnostic.config({
+    virtual_text = true,
+    signs = false,
+    update_in_insert = true,
+})
+local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
+for type, icon in pairs(signs) do
+    local hl = "DiagnosticSign" .. type
+    vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
+end

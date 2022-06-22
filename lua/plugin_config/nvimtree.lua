@@ -6,7 +6,7 @@ if not ret_ok then
 end
 
 local tree_width = 26
-inst.setup { 
+inst.setup {
   auto_reload_on_write = true,
   create_in_closed_folder = false,
   disable_netrw = true,
@@ -180,3 +180,4 @@ inst.setup {
     },
   },
 }
+
