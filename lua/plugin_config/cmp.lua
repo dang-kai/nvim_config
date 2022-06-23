@@ -41,20 +41,20 @@ inst.setup({
     formatting = require('plugin_config.lspkind').formatting,
 })
 
--- Use buffer source in search('\') mode.
-inst.setup.cmdline('/', {
-    mapping = inst.mapping.preset.cmdline(),
-    sources = {
-        { name = 'buffer' },
-    },
-})
-
--- Use path and cmdline sources in command mode.
-inst.setup.cmdline(':', {
-    mapping = inst.mapping.preset.cmdline(),
-    sources = inst.config.sources({
-        { name = 'path' },
-    }, {
-        { name = 'cmdline' },
-    }),
-})
+---- Use buffer source in search('\') mode.
+--inst.setup.cmdline('/', {
+--    mapping = inst.mapping.preset.cmdline(),
+--    sources = {
+--        { name = 'buffer' },
+--    },
+--})
+--
+---- Use path and cmdline sources in command mode.
+--inst.setup.cmdline(':', {
+--    mapping = inst.mapping.preset.cmdline(),
+--    sources = inst.config.sources({
+--        { name = 'path' },
+--    }, {
+--        { name = 'cmdline' },
+--    }),
+--})

@@ -41,8 +41,9 @@ local palettes = {
         --comment = "#60728a",
         bg0 = '#262626',
         bg1 = '#262626',
-        comment = '#B0B0B0',
+        comment = '#909090',
 
+        white = { base = '#E0E0E0', bright = '#F0F0F0' },
         black = { base = '#262626', bright = '#484848' },
         red = { base = '#CC0000', bright = '#EF2929' },
         green = { base = '#7EC838', bright = '#C7E7A9' }, -- green = { base = '#4E9A06', bright = '#8AE234' },

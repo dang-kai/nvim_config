@@ -39,13 +39,13 @@ local conf = {
 }
 packer.init(conf)
 packer.startup(function()
-    -- packer itself
+    -- Packer itself
     use({ 'wbthomason/packer.nvim' })
 
-    -- nvim-tree
+    -- Nvim-tree
     use({ 'kyazdani42/nvim-tree.lua', requires = 'kyazdani42/nvim-web-devicons' })
 
-    -- tab view (keep tabbed windows on the right while nvim-tree on the left)
+    -- Tab view (keep tabbed windows on the right while nvim-tree on the left)
     use({ 'akinsho/bufferline.nvim', requires = { 'kyazdani42/nvim-web-devicons', 'moll/vim-bbye' } })
     --use { 'romgrk/barbar.nvim', requires = 'kyazdani42/nvim-web-devicons' }
 
@@ -53,26 +53,27 @@ packer.startup(function()
     --use { "nvim-lualine/lualine.nvim", requires = { "kyazdani42/nvim-web-devicons" } }
     --use { "arkav/lualine-lsp-progress" }
 
-    -- telescope
+    -- Telescope
     use({ 'nvim-telescope/telescope.nvim', requires = { 'nvim-lua/plenary.nvim' } })
 
-    -- dashboard
+    -- Dashboard
     use({ 'glepnir/dashboard-nvim' })
 
-    -- project management
+    -- Project management
     use({ 'ahmedkhalf/project.nvim' })
 
-    -- treesitter
+    -- Treesitter
     use({ 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' })
 
     -- LSP
     use({ 'neovim/nvim-lspconfig' })
+    -- -- Replace text kind description with icons
     use({ 'onsails/lspkind-nvim' })
 
     -- colorschemes
-    use({ 'folke/tokyonight.nvim' })
-    use({ 'mhartington/oceanic-next' })
-    use({ 'ful1e5/onedark.nvim' })
+    --use({ 'folke/tokyonight.nvim' })
+    --use({ 'mhartington/oceanic-next' })
+    --use({ 'ful1e5/onedark.nvim' })
     use({ 'EdenEast/nightfox.nvim' })
     --use { "ellisonleao/gruvbox.nvim", requires = { "rktjmp/lush.nvim" } }
     --use { "shaunsingh/nord.nvim" }
@@ -87,9 +88,9 @@ packer.startup(function()
     -- -- Sources
     use({ 'hrsh7th/cmp-vsnip' })
     use({ 'hrsh7th/cmp-nvim-lsp' }) -- { name = nvim_lsp }
-    use({ 'hrsh7th/cmp-buffer' }) -- { name = 'buffer' },
-    use({ 'hrsh7th/cmp-path' }) -- { name = 'path' }
-    use({ 'hrsh7th/cmp-cmdline' }) -- { name = 'cmdline' }
+    --use({ 'hrsh7th/cmp-buffer' }) -- { name = 'buffer' },
+    --use({ 'hrsh7th/cmp-path' }) -- { name = 'path' }
+    --use({ 'hrsh7th/cmp-cmdline' }) -- { name = 'cmdline' }
     -- -- Common Snipplets
     use({ 'rafamadriz/friendly-snippets' })
 
