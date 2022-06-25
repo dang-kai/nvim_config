@@ -31,7 +31,7 @@ map('n', 't', '', m) -- cancel the original function (go until char *) of key t 
 map('n', 'tt', ':wincmd l | terminal<CR>', m) -- Move to the right window first in case cursor is in the nvim-tree.
 map('n', 'ts', ':wincmd l | 20sp | terminal<CR>', m)
 map('n', 'tv', ':wincmd l | vsp | terminal<CR>', m)
---map('t', '<Esc>', '<C-\\><C-n>', m)
+--map('t', '<Esc>', '<C-\\><C-n>', m)  --To avoid conflict with LazyGit, do not use <ESC>.
 map('t', '<C-Q>', '<C-\\><C-n>', m)
 -- block operation in visual mode
 map('v', '<', '<gv', m) -- block modify indentation
