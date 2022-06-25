@@ -31,7 +31,8 @@ map('n', 't', '', m) -- cancel the original function (go until char *) of key t 
 map('n', 'tt', ':wincmd l | terminal<CR>', m) -- Move to the right window first in case cursor is in the nvim-tree.
 map('n', 'ts', ':wincmd l | 20sp | terminal<CR>', m)
 map('n', 'tv', ':wincmd l | vsp | terminal<CR>', m)
-map('t', '<Esc>', '<C-\\><C-n>', m)
+--map('t', '<Esc>', '<C-\\><C-n>', m)
+map('t', '<C-Q>', '<C-\\><C-n>', m)
 -- block operation in visual mode
 map('v', '<', '<gv', m) -- block modify indentation
 map('v', '>', '>gv', m)
@@ -48,6 +49,13 @@ map('n', '<F3>', ':NvimTreeRefresh<CR>', m)
 map('n', '<C-A>', ':BufferLineCyclePrev<CR>', m)
 map('n', '<C-W>', ':Bdelete!<CR>', m)
 map('n', '<C-D>', ':BufferLineCycleNext<CR>', m)
+-- git
+map('n', 'gt', ':LazyGit<CR>', m)
+map('n', 'gs', ':Gitsigns toggle_signs<CR>', m)
+map('n', 'gl', ':Gitsigns toggle_linehl<CR>', m)
+map('n', 'gn', ':Gitsigns toggle_numhl<CR>', m)
+map('n', 'gc', ':Gitsigns toggle_current_line_blame<CR>', m)
+map('n', 'gw', ':Gitsigns toggle_word_diff<CR>', m)
 -- telescope
 map('n', '<C-F>', ':Telescope find_files<CR>', m)
 map('n', '<C-G>', ':Telescope live_grep<CR>', m)
@@ -86,7 +94,7 @@ plugin_keys.lsp = function(mapbuf)
     mapbuf('n', 'gp', '<cmd>lua vim.diagnostic.open_float()<CR>', m)
     mapbuf('n', 'gk', '<cmd>lua vim.diagnostic.goto_prev()<CR>', m)
     mapbuf('n', 'gj', '<cmd>lua vim.diagnostic.goto_next()<CR>', m)
-    mapbuf('n', '<leader>f', '<cmd>lua vim.lsp.buf.formatting()<CR>', m)
+    -- mapbuf('n', '<leader>f', '<cmd>lua vim.lsp.buf.formatting()<CR>', m)
     -- mapbuf('n', '<leader>q', '<cmd>lua vim.diagnostic.setloclist()<CR>', m)
     -- mapbuf("n", "<C-k>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", m)
     -- mapbuf('n', '<space>wa', '<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>', m)

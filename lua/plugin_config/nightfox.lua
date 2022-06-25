@@ -45,7 +45,7 @@ local palettes = {
 
         white = { base = '#E0E0E0', bright = '#F0F0F0' },
         black = { base = '#262626', bright = '#484848' },
-        red = { base = '#CC0000', bright = '#EF2929' },
+        red = { base = '#EE3344', bright = '#EF6677' },
         green = { base = '#7EC838', bright = '#C7E7A9' }, -- green = { base = '#4E9A06', bright = '#8AE234' },
         yellow = { base = '#C4A000', bright = '#FCE94F' },
         blue = { base = '#60A2F8', bright = '#91B5FE' }, -- blue = { base = '#598DF5', bright = '#91B5FE' },
@@ -59,9 +59,9 @@ local palettes = {
 
 local options = {
     inverse = {
-        match_paren = true,
+        match_paren = false,
         visual = false,
-        search = true,
+        search = false,
     },
 }
 

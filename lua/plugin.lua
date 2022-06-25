@@ -70,7 +70,7 @@ packer.startup(function()
     -- -- Replace text kind description with icons
     use({ 'onsails/lspkind-nvim' })
 
-    -- colorschemes
+    -- Colorschemes
     --use({ 'folke/tokyonight.nvim' })
     --use({ 'mhartington/oceanic-next' })
     --use({ 'ful1e5/onedark.nvim' })
@@ -78,10 +78,11 @@ packer.startup(function()
     --use { "ellisonleao/gruvbox.nvim", requires = { "rktjmp/lush.nvim" } }
     --use { "shaunsingh/nord.nvim" }
 
-    -- gitsigns
-    --use { 'lewis6991/gitsigns.nvim' }
+    -- Git
+    use({ 'lewis6991/gitsigns.nvim' })
+    use({ 'kdheepak/lazygit.nvim' })
 
-    -- auto completion
+    -- Auto completion
     use({ 'hrsh7th/nvim-cmp' })
     -- -- Snippet engine
     use({ 'hrsh7th/vim-vsnip' })
@@ -111,4 +112,5 @@ require('plugin_config.formatter')
 require('plugin_config.dashboard')
 require('plugin_config.project')
 require('plugin_config.nightfox')
+require('plugin_config.gitsigns')
 --return packer
