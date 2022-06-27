@@ -70,6 +70,9 @@ packer.startup(function()
     -- -- Replace text kind description with icons
     use({ 'onsails/lspkind-nvim' })
 
+    -- Debug
+    use({ 'mfussenegger/nvim-dap' })
+
     -- CMake support
     use({ 'Shatur/neovim-cmake', requires = { 'nvim-lua/plenary.nvim', 'mfussenegger/nvim-dap'} })
 
@@ -117,4 +120,5 @@ require('plugin_config.project')
 require('plugin_config.nightfox')
 require('plugin_config.gitsigns')
 require('plugin_config.cmake')
+require('plugin_config.dap')
 --return packer
