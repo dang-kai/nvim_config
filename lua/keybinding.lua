@@ -78,12 +78,13 @@ plugin_keys.telescope = {
 --map('n', 'g', '', m)  -- g is used to go to different places in original vim. Do not cancel.
 --map('n', 'gb', '<C-O>', m)  -- Conflicts with gb (git blame) from gitsigns, keep using original <C-O>.
 --map('n', 'gf', '<C-I>', m)
+map('n', '<F4>', ':ClangdSwitchSourceHeader', m)
 -- mapbuf is the set keymap function pointer
 plugin_keys.lsp = function(mapbuf)
     -- rename
-    mapbuf('n', '<leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', m)
+    --mapbuf('n', '<leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', m)
     -- code action
-    mapbuf('n', '<leader>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', m)
+    --mapbuf('n', '<leader>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', m)
     -- go xx
     mapbuf('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', m)
     mapbuf('n', 'gh', '<cmd>lua vim.lsp.buf.hover()<CR>', m)
