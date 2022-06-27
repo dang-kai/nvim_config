@@ -74,11 +74,25 @@ plugin_keys.telescope = {
     },
 }
 
+-- CMake
+map('n', 'c', '', m)
+map('n', 'cf', ':CMake configure<CR>', m)
+map('n', 'cs', ':CMake select_target<CR>', m)
+map('n', 'ct', ':CMake select_build_type<CR>', m)
+map('n', 'cb', ':CMake build<CR>', m)
+map('n', '<F5>', ':CMake build<CR>', m)
+map('n', 'cr', ':CMake build_and_run<CR>', m)
+map('n', '<F8>', ':CMake run<CR>', m)
+map('n', 'cc', ':only<CR>', m)
+map('n', 'cl', ':CMake clean<CR>', m)
+--map('n', 'cr', ":execute 'CMake clean' | execute 'CMake build'<CR>", m) --Cannot use '|' directly because it will be treated as a parameter of CMake command. See :help :bar. TODO: fix 'Another job is currently running' error.
+map('n', 'cx', ':CMake cancel<CR>', m)
+
 -- LSP
 --map('n', 'g', '', m)  -- g is used to go to different places in original vim. Do not cancel.
 --map('n', 'gb', '<C-O>', m)  -- Conflicts with gb (git blame) from gitsigns, keep using original <C-O>.
 --map('n', 'gf', '<C-I>', m)
-map('n', '<F4>', ':ClangdSwitchSourceHeader', m)
+map('n', 'th', ':ClangdSwitchSourceHeader', m) -- Toggle header.
 -- mapbuf is the set keymap function pointer
 plugin_keys.lsp = function(mapbuf)
     -- rename
