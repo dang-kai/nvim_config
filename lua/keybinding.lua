@@ -74,15 +74,18 @@ plugin_keys.telescope = {
     },
 }
 
+-- latex makefile
+map('n', '<F5>', ':make<CR>', m)
+map('n', '<F6>', ':make clean<CR>', m)
+map('n', '<F8>', ':make view<CR>', m)
+
 -- CMake
 map('n', 'c', '', m)
 map('n', 'cf', ':CMake configure<CR>', m)
 map('n', 'cs', ':CMake select_target<CR>', m)
 map('n', 'ct', ':CMake select_build_type<CR>', m)
 map('n', 'cb', ':CMake build<CR>', m)
-map('n', '<F5>', ':CMake build<CR>', m)
 map('n', 'cr', ':CMake build_and_run<CR>', m)
-map('n', '<F8>', ':CMake run<CR>', m)
 map('n', 'cc', ':only<CR>', m)
 map('n', 'cl', ':CMake clean<CR>', m)
 --map('n', 'cr', ":execute 'CMake clean' | execute 'CMake build'<CR>", m) --Cannot use '|' directly because it will be treated as a parameter of CMake command. See :help :bar. TODO: fix 'Another job is currently running' error.
