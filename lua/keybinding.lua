@@ -54,7 +54,7 @@ map('n', 'gt', ':LazyGit<CR>', m)
 map('n', 'gs', ':Gitsigns toggle_signs<CR>', m)
 map('n', 'gl', ':Gitsigns toggle_linehl<CR>', m)
 map('n', 'gn', ':Gitsigns toggle_numhl<CR>', m)
-map('n', 'gc', ':Gitsigns toggle_current_line_blame<CR>', m)
+map('n', 'gb', ':Gitsigns toggle_current_line_blame<CR>', m)
 map('n', 'gw', ':Gitsigns toggle_word_diff<CR>', m)
 -- telescope
 map('n', '<C-F>', ':Telescope find_files<CR>', m)
@@ -76,8 +76,8 @@ plugin_keys.telescope = {
 
 -- LSP
 --map('n', 'g', '', m)  -- g is used to go to different places in original vim. Do not cancel.
-map('n', 'gb', '<C-O>', m)
-map('n', 'gf', '<C-I>', m)
+--map('n', 'gb', '<C-O>', m)  -- Conflicts with gb (git blame) from gitsigns, keep using original <C-O>.
+--map('n', 'gf', '<C-I>', m)
 -- mapbuf is the set keymap function pointer
 plugin_keys.lsp = function(mapbuf)
     -- rename
