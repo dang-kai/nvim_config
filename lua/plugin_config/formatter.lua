@@ -35,6 +35,19 @@ local filetype = {
             }
         end,
     },
+    python = {
+        function()
+            return {
+                exe = 'autopep8',
+                args = {
+                    '--aggressive',
+                    '--max-line-length 160',
+                    '-',
+                },
+                stdin = 1,
+            }
+        end,
+    },
 }
 
 filetype.cpp = filetype.c

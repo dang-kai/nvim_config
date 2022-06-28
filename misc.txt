@@ -3,5 +3,7 @@ External packages required:
     fd      : Telescope find file. 
     cmake   : CMake plugin.
     clang   : C/C++ debug (vimspector).
-    lua-language-server : Lua LSP support.
+    pyright : Python LSP server.
     stylua  : Lua code format (formatter).
+    lazygit : Git support.
+    lua-language-server : Lua LSP support.

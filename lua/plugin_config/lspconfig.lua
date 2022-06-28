@@ -69,7 +69,13 @@ inst.clangd.setup({
 })
 
 -- Python
-inst.pylsp.setup({})
+inst.pyright.setup({
+    on_attach = on_attach,
+    flags = flags,
+})
 
 -- Latex
-inst.texlab.setup({})
+inst.texlab.setup({
+    on_attach = on_attach,
+    flags = flags,
+})

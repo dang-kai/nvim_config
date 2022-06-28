@@ -158,16 +158,17 @@ map('n', 'cx', ':CMake cancel<CR>', m)
 
 -- Debug
 -- -- vimspector
-map('n', '<F5>', ":call vimspector#Continue()<CR>", m)
-map('n', '<F6>', ":call vimspector#RunToCursor()<CR>", m)
-map('n', '<F7>', ":call vimspector#Stop()<CR>", m)
-map('n', '<F10>', ":call vimspector#StepOver()<CR>", m)
-map('n', '<F11>', ":call vimspector#StepInto()<CR>", m)
-map('n', '<F12>', ":call vimspector#StepOut()<CR>", m)
-map('n', 'tb', ":call vimspector#ToggleBreakpoint()<CR>", m)
-map('n', 'tbl', ":call vimspector#ListBreakpoints()<CR>", m)
-map('n', 'tr', ":call vimspector#Launch()<CR>", m) -- r for run
-map('n', 'tx', ":call vimspector#Reset()<CR>", m)  -- x for stop
+map('n', '<F5>', ':call vimspector#Continue()<CR>', m)
+map('n', '<F6>', ':call vimspector#RunToCursor()<CR>', m)
+map('n', '<F7>', ':call vimspector#Pause()<CR>', m)
+map('n', '<F8>', ':call vimspector#Stop()<CR>', m)
+map('n', '<F10>', ':call vimspector#StepOver()<CR>', m)
+map('n', '<F11>', ':call vimspector#StepInto()<CR>', m)
+map('n', '<F12>', ':call vimspector#StepOut()<CR>', m)
+map('n', 'tb', ':call vimspector#ToggleBreakpoint()<CR>', m)
+map('n', 'tbl', ':call vimspector#ListBreakpoints()<CR>', m)
+map('n', 'tr', ':call vimspector#Launch()<CR>', m) -- r for run
+map('n', 'tx', ':call vimspector#Reset()<CR>', m) -- x for stop
 -- -- nvim-dap
 --map('n', 'tb', "<cmd>lua require('dap').toggle_breakpoint()<CR>", m)
 --map('n', 'tx', "<cmd>lua require('dap').terminate()<CR>", m)
