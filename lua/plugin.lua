@@ -71,10 +71,14 @@ packer.startup(function()
     use({ 'onsails/lspkind-nvim' })
 
     -- Debug
-    use({ 'mfussenegger/nvim-dap' })
+    --use({ 'mfussenegger/nvim-dap' })
+    use({ 'puremourning/vimspector' })
+
+    -- Code outline
+    use({ 'stevearc/aerial.nvim' })
 
     -- CMake support
-    use({ 'Shatur/neovim-cmake', requires = { 'nvim-lua/plenary.nvim', 'mfussenegger/nvim-dap'} })
+    use({ 'Shatur/neovim-cmake', requires = { 'nvim-lua/plenary.nvim', 'mfussenegger/nvim-dap' } })
 
     -- Colorschemes
     --use({ 'folke/tokyonight.nvim' })
@@ -120,5 +124,6 @@ require('plugin_config.project')
 require('plugin_config.nightfox')
 require('plugin_config.gitsigns')
 require('plugin_config.cmake')
-require('plugin_config.dap')
---return packer
+require('plugin_config.aerial')
+--require('plugin_config.dap')
+return packer

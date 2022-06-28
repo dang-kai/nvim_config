@@ -1,0 +1,7 @@
+External packages required:
+    ripgrep : Telescope folder grep.
+    fd      : Telescope find file. 
+    cmake   : CMake plugin.
+    clang   : C/C++ debug (vimspector).
+    lua-language-server : Lua LSP support.
+    stylua  : Lua code format (formatter).

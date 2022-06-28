@@ -5,6 +5,12 @@ if not ret_ok then
     return
 end
 
+inst.adapters.lldb = {
+    type = 'executable',
+    command = '/usr/bin/lldb-vscode',
+    name = 'lldb',
+}
+
 inst.configurations.c = {
     {
         name = 'Launch',
@@ -29,6 +35,14 @@ inst.configurations.c = {
         -- But you should be aware of the implications:
         -- https://www.kernel.org/doc/html/latest/admin-guide/LSM/Yama.html
         -- runInTerminal = false,
+
+        env = function()
+            local variables = {}
+            for k, v in pairs(vim.fn.environ()) do
+                table.insert(variables, string.format('%s=%s', k, v))
+            end
+            return variables
+        end,
     },
 }
 

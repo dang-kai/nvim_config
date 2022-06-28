@@ -19,7 +19,7 @@ inst.setup {
   open_on_tab = false,
   sort_by = "name",
   update_cwd = true, -- Enabled for project.nvim compatibility.
-  reload_on_bufenter = false,
+  reload_on_bufenter = true,
   respect_buf_cwd = false,
   view = {
     adaptive_size = false,

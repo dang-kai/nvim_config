@@ -75,27 +75,15 @@ plugin_keys.telescope = {
 }
 
 -- latex makefile
-map('n', '<F5>', ':make<CR>', m)
-map('n', '<F6>', ':make clean<CR>', m)
-map('n', '<F8>', ':make view<CR>', m)
-
--- CMake
-map('n', 'c', '', m)
-map('n', 'cf', ':CMake configure<CR>', m)
-map('n', 'cs', ':CMake select_target<CR>', m)
-map('n', 'ct', ':CMake select_build_type<CR>', m)
-map('n', 'cb', ':CMake build<CR>', m)
-map('n', 'cr', ':CMake build_and_run<CR>', m)
-map('n', 'cc', ':only<CR>', m)
-map('n', 'cl', ':CMake clean<CR>', m)
---map('n', 'cr', ":execute 'CMake clean' | execute 'CMake build'<CR>", m) --Cannot use '|' directly because it will be treated as a parameter of CMake command. See :help :bar. TODO: fix 'Another job is currently running' error.
-map('n', 'cx', ':CMake cancel<CR>', m)
+map('n', 'fm', ':make<CR>', m)
+map('n', 'fc', ':make clean<CR>', m)
+map('n', 'fv', ':make view<CR>', m)
 
 -- LSP
 --map('n', 'g', '', m)  -- g is used to go to different places in original vim. Do not cancel.
 --map('n', 'gb', '<C-O>', m)  -- Conflicts with gb (git blame) from gitsigns, keep using original <C-O>.
 --map('n', 'gf', '<C-I>', m)
-map('n', 'th', ':ClangdSwitchSourceHeader', m) -- Toggle header.
+map('n', 'th', ':ClangdSwitchSourceHeader<CR>', m) -- Toggle header.
 -- mapbuf is the set keymap function pointer
 plugin_keys.lsp = function(mapbuf)
     -- rename
@@ -121,6 +109,18 @@ plugin_keys.lsp = function(mapbuf)
     -- mapbuf('n', '<space>D', '<cmd>lua vim.lsp.buf.type_definition()<CR>', m)
 end
 
+-- Code outline Arial
+plugin_keys.aerial = function(bufnr)
+    -- Toggle the aerial window with <leader>a
+    vim.api.nvim_buf_set_keymap(bufnr, 'n', 'ta', '<cmd>AerialToggle!<CR>', {})
+    -- Jump forwards/backwards with '{' and '}'
+    vim.api.nvim_buf_set_keymap(bufnr, 'n', '{', '<cmd>AerialPrev<CR>', {})
+    vim.api.nvim_buf_set_keymap(bufnr, 'n', '}', '<cmd>AerialNext<CR>', {})
+    -- Jump up the tree with '[[' or ']]'
+    vim.api.nvim_buf_set_keymap(bufnr, 'n', '[[', '<cmd>AerialPrevUp<CR>', {})
+    vim.api.nvim_buf_set_keymap(bufnr, 'n', ']]', '<cmd>AerialNextUp<CR>', {})
+end
+
 -- CMP
 plugin_keys.cmp = function(inst_cmp)
     return {
@@ -143,5 +143,40 @@ plugin_keys.cmp = function(inst_cmp)
         ['<C-D>'] = inst_cmp.mapping(inst_cmp.mapping.scroll_docs(3), { 'i', 'c' }),
     }
 end
+
+-- CMake
+map('n', 'c', '', m)
+map('n', 'cf', ':CMake configure<CR>', m)
+map('n', 'cs', ':CMake select_target<CR>', m)
+map('n', 'ct', ':CMake select_build_type<CR>', m)
+map('n', 'cb', ':CMake build<CR>', m)
+map('n', 'cr', ':CMake build_and_run<CR>', m)
+map('n', 'cc', ':only<CR>', m) -- Close build window.
+map('n', 'cl', ':CMake clean<CR>', m)
+--map('n', 'cr', ":execute 'CMake clean' | execute 'CMake build'<CR>", m) --Cannot use '|' directly because it will be treated as a parameter of CMake command. See :help :bar. TODO: fix 'Another job is currently running' error.
+map('n', 'cx', ':CMake cancel<CR>', m)
+
+-- Debug
+-- -- vimspector
+map('n', '<F5>', ":call vimspector#Continue()<CR>", m)
+map('n', '<F6>', ":call vimspector#RunToCursor()<CR>", m)
+map('n', '<F7>', ":call vimspector#Stop()<CR>", m)
+map('n', '<F10>', ":call vimspector#StepOver()<CR>", m)
+map('n', '<F11>', ":call vimspector#StepInto()<CR>", m)
+map('n', '<F12>', ":call vimspector#StepOut()<CR>", m)
+map('n', 'tb', ":call vimspector#ToggleBreakpoint()<CR>", m)
+map('n', 'tbl', ":call vimspector#ListBreakpoints()<CR>", m)
+map('n', 'tr', ":call vimspector#Launch()<CR>", m) -- r for run
+map('n', 'tx', ":call vimspector#Reset()<CR>", m)  -- x for stop
+-- -- nvim-dap
+--map('n', 'tb', "<cmd>lua require('dap').toggle_breakpoint()<CR>", m)
+--map('n', 'tx', "<cmd>lua require('dap').terminate()<CR>", m)
+--map('n', 'tc', "<cmd>lua require('dap').run_to_cursor()<CR>", m)
+--map('n', 'tr', "<cmd>lua require('dap').repl.toggle()<CR>", m)
+--map('n', '<F9>', ":CMake debug<CR>", m)
+----map('n', '<F9>', "<cmd>lua require('dap').launch()<CR>", m)
+--map('n', '<F10>', "<cmd>lua require('dap').step_over()<CR>", m)
+--map('n', '<F11>', "<cmd>lua require('dap').step_into()<CR>", m)
+--map('n', '<F12>', "<cmd>lua require('dap').step_out()<CR>", m)
 
 return plugin_keys

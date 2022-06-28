@@ -5,21 +5,42 @@ if not ret_ok then
     return
 end
 
-inst.setup({
-    filetype = {
-        lua = {
-            function()
-                return {
-                    exe = 'stylua',
-                    args = {
-                        '--config-path',
-                        '~/.config/nvim/lua/plugin_config/style/lua.toml',
-                        '--',
-                        '-',
-                    },
-                    stdin = true,
-                }
-            end,
-        },
+local util = require('formatter.util')
+
+local filetype = {
+    lua = {
+        function()
+            return {
+                exe = 'stylua',
+                args = {
+                    '--config-path',
+                    '~/.config/nvim/lua/plugin_config/style/lua.toml',
+                    '--',
+                    '-',
+                },
+                stdin = true,
+            }
+        end,
     },
+    c = {
+        function()
+            return {
+                exe = 'clang-format',
+                args = {
+                    "--style='{BasedOnStyle: LLVM, IndentWidth: 4, AlignTrailingComments: true, SpaceBeforeParens: ControlStatements, ColumnLimit: 160, AlignConsecutiveAssignments: true, AlignConsecutiveMacros: true, AlignConsecutiveDeclarations: true, AlignAfterOpenBracket: true, AlignArrayOfStructures: Left, AlignEscapedNewlines: Left, AlignOperands: Align}'",
+                    '--assume-filename=' .. util.escape_path(util.get_current_buffer_file_name()),
+                },
+                stdin = true,
+                try_node_modules = true,
+            }
+        end,
+    },
+}
+
+filetype.cpp = filetype.c
+filetype.h = filetype.c
+filetype.hpp = filetype.c
+
+inst.setup({
+    filetype = filetype,
 })
