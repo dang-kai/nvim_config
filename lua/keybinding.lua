@@ -31,7 +31,7 @@ map('n', 't', '', m) -- cancel the original function (go until char *) of key t 
 map('n', 'tt', ':wincmd l | terminal<CR>', m) -- Move to the right window first in case cursor is in the nvim-tree.
 map('n', 'ts', ':wincmd l | 20sp | terminal<CR>', m)
 map('n', 'tv', ':wincmd l | vsp | terminal<CR>', m)
---map('t', '<Esc>', '<C-\\><C-n>', m)  --To avoid conflict with LazyGit, do not use <ESC>.
+--map("t", "<Esc>", "<C-\\><C-n>", m)  --To avoid conflict with LazyGit, do not use <ESC>.
 map('t', '<C-Q>', '<C-\\><C-n>', m)
 -- block operation in visual mode
 map('v', '<', '<gv', m) -- block modify indentation
@@ -74,22 +74,17 @@ plugin_keys.telescope = {
     },
 }
 
--- latex makefile
-map('n', 'fm', ':make<CR>', m)
-map('n', 'fc', ':make clean<CR>', m)
-map('n', 'fv', ':make view<CR>', m)
-
 -- LSP
---map('n', 'g', '', m)  -- g is used to go to different places in original vim. Do not cancel.
---map('n', 'gb', '<C-O>', m)  -- Conflicts with gb (git blame) from gitsigns, keep using original <C-O>.
---map('n', 'gf', '<C-I>', m)
+--map("n", "g", "", m)  -- g is used to go to different places in original vim. Do not cancel.
+--map("n", "gb", "<C-O>", m)  -- Conflicts with gb (git blame) from gitsigns, keep using original <C-O>.
+--map("n", "gf", "<C-I>", m)
 map('n', 'th', ':ClangdSwitchSourceHeader<CR>', m) -- Toggle header.
 -- mapbuf is the set keymap function pointer
 plugin_keys.lsp = function(mapbuf)
     -- rename
-    --mapbuf('n', '<leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', m)
+    --mapbuf("n", "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<CR>", m)
     -- code action
-    --mapbuf('n', '<leader>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', m)
+    --mapbuf("n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", m)
     -- go xx
     mapbuf('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', m)
     mapbuf('n', 'gh', '<cmd>lua vim.lsp.buf.hover()<CR>', m)
@@ -100,23 +95,22 @@ plugin_keys.lsp = function(mapbuf)
     mapbuf('n', 'gp', '<cmd>lua vim.diagnostic.open_float()<CR>', m)
     mapbuf('n', 'gk', '<cmd>lua vim.diagnostic.goto_prev()<CR>', m)
     mapbuf('n', 'gj', '<cmd>lua vim.diagnostic.goto_next()<CR>', m)
-    -- mapbuf('n', '<leader>f', '<cmd>lua vim.lsp.buf.formatting()<CR>', m)
-    -- mapbuf('n', '<leader>q', '<cmd>lua vim.diagnostic.setloclist()<CR>', m)
+    -- mapbuf("n", "<leader>f", "<cmd>lua vim.lsp.buf.formatting()<CR>", m)
+    -- mapbuf("n", "<leader>q", "<cmd>lua vim.diagnostic.setloclist()<CR>", m)
     -- mapbuf("n", "<C-k>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", m)
-    -- mapbuf('n', '<space>wa', '<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>', m)
-    -- mapbuf('n', '<space>wr', '<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>', m)
-    -- mapbuf('n', '<space>wl', '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>', m)
-    -- mapbuf('n', '<space>D', '<cmd>lua vim.lsp.buf.type_definition()<CR>', m)
+    -- mapbuf("n", "<space>wa", "<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>", m)
+    -- mapbuf("n", "<space>wr", "<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>", m)
+    -- mapbuf("n", "<space>wl", "<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>", m)
+    -- mapbuf("n", "<space>D", "<cmd>lua vim.lsp.buf.type_definition()<CR>", m)
 end
 
 -- Code outline Arial
 plugin_keys.aerial = function(bufnr)
-    -- Toggle the aerial window with <leader>a
-    vim.api.nvim_buf_set_keymap(bufnr, 'n', 'ta', '<cmd>AerialToggle!<CR>', {})
-    -- Jump forwards/backwards with '{' and '}'
+    vim.api.nvim_buf_set_keymap(bufnr, 'n', 'to', '<cmd>AerialToggle!<CR>', {}) -- Toggle outline
+    -- Jump forwards/backwards with "{" and "}"
     vim.api.nvim_buf_set_keymap(bufnr, 'n', '{', '<cmd>AerialPrev<CR>', {})
     vim.api.nvim_buf_set_keymap(bufnr, 'n', '}', '<cmd>AerialNext<CR>', {})
-    -- Jump up the tree with '[[' or ']]'
+    -- Jump up the tree with "[[" or "]]"
     vim.api.nvim_buf_set_keymap(bufnr, 'n', '[[', '<cmd>AerialPrevUp<CR>', {})
     vim.api.nvim_buf_set_keymap(bufnr, 'n', ']]', '<cmd>AerialNextUp<CR>', {})
 end
@@ -144,40 +138,48 @@ plugin_keys.cmp = function(inst_cmp)
     }
 end
 
+-- leader key region
+--vim.opt if for things you would set in vimscript. vim.g is for things you"d let.
+vim.g.mapleader = ' ' -- Usually make, cmake and debug commands should be triggered with the leader key.
+-- makefile
+map('n', '<leader>mk', ':make<CR>', m)
+map('n', '<leader>mc', ':make clean<CR>', m)
+map('n', '<leader>mv', ':make view<CR>', m)
 -- CMake
-map('n', 'c', '', m)
-map('n', 'cf', ':CMake configure<CR>', m)
-map('n', 'cs', ':CMake select_target<CR>', m)
-map('n', 'ct', ':CMake select_build_type<CR>', m)
-map('n', 'cb', ':CMake build<CR>', m)
-map('n', 'cr', ':CMake build_and_run<CR>', m)
-map('n', 'cc', ':only<CR>', m) -- Close build window.
-map('n', 'cl', ':CMake clean<CR>', m)
---map('n', 'cr', ":execute 'CMake clean' | execute 'CMake build'<CR>", m) --Cannot use '|' directly because it will be treated as a parameter of CMake command. See :help :bar. TODO: fix 'Another job is currently running' error.
-map('n', 'cx', ':CMake cancel<CR>', m)
+--map("n", "c", "", m)
+map('n', '<leader>cc', ':CMake configure<CR>', m)
+map('n', '<leader>cst', ':CMake select_target<CR>', m)
+map('n', '<leader>csb', ':CMake select_build_type<CR>', m)
+map('n', '<leader>cb', ':CMake build<CR>', m)
+map('n', '<leader>cr', ':CMake build_and_run<CR>', m)
+--map("n", "<leader>cx", ":only<CR>", m) -- Close build window by closing all other splits except the curretn one.
+map('n', '<leader>cx', ':cclose<CR>', m) -- Close build window by closing quickfix window.
+map('n', '<leader>cl', ':CMake clean<CR>', m)
+--map("n", "cr", ":execute "CMake clean" | execute "CMake build"<CR>", m) --Cannot use "|" directly because it will be treated as a parameter of CMake command. See :help :bar. TODO: fix "Another job is currently running" error.
+map('n', '<leader>cz', ':CMake cancel<CR>', m)
 
 -- Debug
 -- -- vimspector
-map('n', '<F5>', ':call vimspector#Continue()<CR>', m)
-map('n', '<F6>', ':call vimspector#RunToCursor()<CR>', m)
-map('n', '<F7>', ':call vimspector#Pause()<CR>', m)
-map('n', '<F8>', ':call vimspector#Stop()<CR>', m)
-map('n', '<F10>', ':call vimspector#StepOver()<CR>', m)
-map('n', '<F11>', ':call vimspector#StepInto()<CR>', m)
-map('n', '<F12>', ':call vimspector#StepOut()<CR>', m)
-map('n', 'tb', ':call vimspector#ToggleBreakpoint()<CR>', m)
-map('n', 'tbl', ':call vimspector#ListBreakpoints()<CR>', m)
-map('n', 'tr', ':call vimspector#Launch()<CR>', m) -- r for run
-map('n', 'tx', ':call vimspector#Reset()<CR>', m) -- x for stop
+--map("n", "<F5>", ":call vimspector#Continue()<CR>", m)
+--map("n", "<F6>", ":call vimspector#RunToCursor()<CR>", m)
+--map("n", "<F7>", ":call vimspector#Pause()<CR>", m)
+--map("n", "<F8>", ":call vimspector#Stop()<CR>", m)
+--map("n", "<F10>", ":call vimspector#StepOver()<CR>", m)
+--map("n", "<F11>", ":call vimspector#StepInto()<CR>", m)
+--map("n", "<F12>", ":call vimspector#StepOut()<CR>", m)
+--map("n", "tb", ":call vimspector#ToggleBreakpoint()<CR>", m)
+--map("n", "tbl", ":call vimspector#ListBreakpoints()<CR>", m)
+--map("n", "tr", ":call vimspector#Launch()<CR>", m) -- r for run
+--map("n", "tx", ":call vimspector#Reset()<CR>", m) -- x for stop
 -- -- nvim-dap
---map('n', 'tb', "<cmd>lua require('dap').toggle_breakpoint()<CR>", m)
---map('n', 'tx', "<cmd>lua require('dap').terminate()<CR>", m)
---map('n', 'tc', "<cmd>lua require('dap').run_to_cursor()<CR>", m)
---map('n', 'tr', "<cmd>lua require('dap').repl.toggle()<CR>", m)
---map('n', '<F9>', ":CMake debug<CR>", m)
-----map('n', '<F9>', "<cmd>lua require('dap').launch()<CR>", m)
---map('n', '<F10>', "<cmd>lua require('dap').step_over()<CR>", m)
---map('n', '<F11>', "<cmd>lua require('dap').step_into()<CR>", m)
---map('n', '<F12>', "<cmd>lua require('dap').step_out()<CR>", m)
+--map("n", "tb", "<cmd>lua require("dap").toggle_breakpoint()<CR>", m)
+--map("n", "tx", "<cmd>lua require("dap").terminate()<CR>", m)
+--map("n", "tc", "<cmd>lua require("dap").run_to_cursor()<CR>", m)
+--map("n", "tr", "<cmd>lua require("dap").repl.toggle()<CR>", m)
+--map("n", "<F9>", ":CMake debug<CR>", m)
+----map("n", "<F9>", "<cmd>lua require("dap").launch()<CR>", m)
+--map("n", "<F10>", "<cmd>lua require("dap").step_over()<CR>", m)
+--map("n", "<F11>", "<cmd>lua require("dap").step_into()<CR>", m)
+--map("n", "<F12>", "<cmd>lua require("dap").step_out()<CR>", m)
 
 return plugin_keys
