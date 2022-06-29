@@ -11,14 +11,14 @@ To support a new programming language:
     Code format tool
 
 Currently supported programming languages:
-    ---------------------------------------------------------------------
-    |  NAME    |    LSP                    |   Format        |   DAP    |
-    ---------------------------------------------------------------------
-    |  python  |  pyright                  |   autopep8      |          |
-    |  C/C++   |  clang                    |   clang         |   clang  |
-    |  latex   |  texlab                   |   -             |   -      |
-    |  lua     |  lua-language-server      |   stylua        |   -      |
-    ---------------------------------------------------------------------
+    -------------------------------------------------------------------------------------
+    |  NAME    |    LSP                 |   Format            |   DAP                   |
+    -------------------------------------------------------------------------------------
+    |  python  |  pyright               |   autopep8          |   debugpy               |
+    |  C/C++   |  clangd                |   clang-format      |   lldb-vscode(clang)    |
+    |  latex   |  texlab                |   -                 |   -                     |
+    |  lua     |  lua-language-server   |   stylua            |   -                     |
+    -------------------------------------------------------------------------------------
 
 TODO
     Aerial Telescope support.

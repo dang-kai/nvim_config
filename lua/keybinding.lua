@@ -37,7 +37,7 @@ map("n", "<C-Down>", ":resize +2<CR>", m)
 map("n", "<C-Up>", ":resize -2<CR>", m)
 -- terminal
 map("n", "t", "", m) -- cancel the original function (go until char *) of key t and use it for terminal control.
-map("n", "tt", ":wincmd l | terminal<CR>", m) -- Move to the right window first in case cursor is in the nvim-tree.
+map("n", "tt", ":wincmd l | terminal<CR>", m) -- Move to the right window first in case cursor is in the nvim-tree window.
 map("n", "ts", ":wincmd l | 20sp | terminal<CR>", m)
 map("n", "tv", ":wincmd l | vsp | terminal<CR>", m)
 --map("t", "<Esc>", "<C-\\><C-n>", m)  --To avoid conflict with LazyGit, do not use <ESC>.

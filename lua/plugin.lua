@@ -77,7 +77,7 @@ packer.startup(function()
     use({ "theHamsta/nvim-dap-virtual-text" })
     use({ "rcarriga/nvim-dap-ui" })
     use({ "nvim-telescope/telescope-dap.nvim" })
-    use({ "Pocco81/dap-buddy.nvim" })
+    --use({ "Pocco81/dap-buddy.nvim" }) -- Broken? Install DAP for each language manually.
     --use({ "puremourning/vimspector" })
 
     -- Code outline
