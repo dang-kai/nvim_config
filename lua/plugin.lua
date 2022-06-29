@@ -55,12 +55,14 @@ packer.startup(function()
 
     -- Telescope
     use({ "nvim-telescope/telescope.nvim", requires = { "nvim-lua/plenary.nvim" } })
+    use({ "nvim-telescope/telescope-ui-select.nvim" } )
 
     -- Dashboard
     use({ "glepnir/dashboard-nvim" })
 
-    -- Project management
-    use({ "ahmedkhalf/project.nvim" })
+    -- Session management
+    --use({ "ahmedkhalf/project.nvim" })
+    use({ "Shatur/neovim-session-manager", requires = { "nvim-lua/plenary.nvim" } })
 
     -- Treesitter
     use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
@@ -71,8 +73,12 @@ packer.startup(function()
     use({ "onsails/lspkind-nvim" })
 
     -- Debug
-    --use({ "mfussenegger/nvim-dap" })
-    use({ "puremourning/vimspector" })
+    use({ "mfussenegger/nvim-dap" })
+    use({ "theHamsta/nvim-dap-virtual-text" })
+    use({ "rcarriga/nvim-dap-ui" })
+    use({ "nvim-telescope/telescope-dap.nvim" })
+    use({ "Pocco81/dap-buddy.nvim" })
+    --use({ "puremourning/vimspector" })
 
     -- Code outline
     use({ "stevearc/aerial.nvim" })
@@ -123,11 +129,12 @@ require("plugin_config.lspconfig")
 require("plugin_config.cmp")
 require("plugin_config.formatter")
 require("plugin_config.dashboard")
-require("plugin_config.project")
+--require("plugin_config.project")
 require("plugin_config.nightfox")
 require("plugin_config.gitsigns")
 require("plugin_config.cmake")
 require("plugin_config.aerial")
 --require("plugin_config.dap")
 require("plugin_config.autosave")
+require("plugin_config.session")
 return packer

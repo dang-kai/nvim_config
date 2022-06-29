@@ -23,6 +23,6 @@ Currently supported programming languages:
 TODO
     Aerial Telescope support.
     See if stylua config can be moved to command line.
-    Set cmake keybindings in the LSP on_attach function so they only take effect in C/C++ files.
+    Set cmake keybindings in the LSP on_attach function so they only take effect in C/C++ files. -> Replaced by ftplugin (use .vim to config, but can add lua?)
     Unify the method passing keybindings to plugins (LSP, CMP, aerial, debug).
 

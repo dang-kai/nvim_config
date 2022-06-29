@@ -21,7 +21,7 @@ inst.custom_center = {
     {
         icon = '  ',
         desc = 'Projects                            ',
-        action = 'Telescope projects',
+        action = 'SessionManager load_session',
     },
     {
         icon = '  ',
@@ -33,11 +33,11 @@ inst.custom_center = {
         desc = 'Edit Neovim config                  ',
         action = 'edit ~/.config/nvim/lua/config.lua',
     },
-    {
-        icon = '  ',
-        desc = 'Edit Projects                       ',
-        action = 'edit ~/.local/share/nvim/project_nvim/project_history',
-    },
+--    {
+--        icon = '  ',
+--        desc = 'Edit Projects                       ',
+--        action = 'edit ~/.local/share/nvim/project_nvim/project_history',
+--    },
 }
 
 inst.custom_footer = {
