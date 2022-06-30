@@ -18,13 +18,13 @@ inst.setup({
         "gitcommit",
     },
     autosave_only_in_session = false, -- Always autosaves session. If true, only autosaves after a session is active.
-    max_path_length = 80, -- Shorten the display path if length exceeds this threshold. Use 0 if don't want to shorten the path at all.
+    max_path_length = 160, -- Shorten the display path if length exceeds this threshold. Use 0 if don't want to shorten the path at all.
 })
 
 -- Open nvim-tree after loading session.
-vim.cmd([[
-    augroup _open_nvim_tree
-        autocmd! * <buffer>
-        autocmd SessionLoadPost * silent! lua require("nvim-tree").toggle(false, true)
-    augroup end
-]])
+--vim.cmd([[
+--    augroup _open_nvim_tree
+--        autocmd! * <buffer>
+--        autocmd SessionLoadPost * silent! lua require("nvim-tree").toggle(false, true)
+--    augroup end
+--]])

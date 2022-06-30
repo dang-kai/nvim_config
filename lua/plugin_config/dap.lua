@@ -27,15 +27,19 @@ local debug_close = function()
 end
 
 inst.listeners.after.event_initialized["dapui_config"] = function()
+    vim.notify("Debug initialized.")
     debug_open()
 end
 inst.listeners.before.event_terminated["dapui_config"] = function()
+    vim.notify("Debug terminated.")
     debug_close()
 end
 inst.listeners.before.event_exited["dapui_config"] = function()
+    vim.notify("Debug exited.")
     debug_close()
 end
 inst.listeners.before.disconnect["dapui_config"] = function()
+    vim.notify("Debug disconnected.")
     debug_close()
 end
 
@@ -45,74 +49,62 @@ end
 inst.defaults.fallback.terminal_win_cmd = "30vsplit new" -- this will be overrided by dapui
 inst.set_log_level("DEBUG")
 
--- C/C++ config
+-- C/C++ adapter config
 inst.adapters.lldb = {
     type = "executable",
     command = "/usr/bin/lldb-vscode",
-    name = "lldb",
 }
 
-inst.configurations.c = {
-    {
-        name = "Launch",
-        type = "lldb",
-        request = "launch",
-        program = function()
-            return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/", "file")
-        end,
-        cwd = "${workspaceFolder}",
-        stopOnEntry = true,
-        args = {},
-
-        runInTerminal = false,
-        -- if you change `runInTerminal` to true, you might need to change the yama/ptrace_scope setting:
-        --
-        --    echo 0 | sudo tee /proc/sys/kernel/yama/ptrace_scope
-        --
-        -- Otherwise you might get the following error:
-        --
-        --    Error on launch: Failed to attach to the target process
-        --
-        -- But you should be aware of the implications:
-        -- https://www.kernel.org/doc/html/latest/admin-guide/LSM/Yama.html
-
-        env = function()
-            local variables = {}
-            for k, v in pairs(vim.fn.environ()) do
-                table.insert(variables, string.format("%s=%s", k, v))
-            end
-            return variables
-        end,
-    },
-}
-
-inst.configurations.cpp = inst.configurations.c
-inst.configurations.rust = inst.configurations.c
-
--- Python config
-inst.adapters.python = {
+-- Python adapter config
+inst.adapters.debugpy = {
     type = "executable",
-    command = "python",
+    command = "/usr/bin/python",
     args = { "-m", "debugpy.adapter" },
 }
 
-inst.configurations.python = {
-    -- launch exe
-    {
-        type = "python", -- the type here established the link to the adapter definition: `dap.adapters.python`
-        request = "launch",
-        name = "Launch",
-        program = "${file}", -- This configuration will launch the current file if used.
-        args = function()
-            local input = vim.fn.input("Input args: ")
-            return require("user.dap.dap-util").str2argtable(input)
-        end,
-        pythonPath = function()
-            local venv_path = os.getenv("VIRTUAL_ENV")
-            if venv_path then
-                return venv_path .. "/bin/python"
-            end
-            return "/usr/bin/python"
-        end,
-    },
-}
+-- Project specific launch config is loaded from launch.json. Global settings (see bottom of the file) are no longer used
+require("dap.ext.vscode").load_launchjs("launch.json", { debugpy = { "python" }, lldb = { "c", "cpp" } })
+
+-- if you change `runInTerminal` to true, you might need to change the yama/ptrace_scope setting:
+--
+--    echo 0 | sudo tee /proc/sys/kernel/yama/ptrace_scope
+--
+-- Otherwise you might get the following error:
+--
+--    Error on launch: Failed to attach to the target process
+--
+-- But you should be aware of the implications:
+-- https://www.kernel.org/doc/html/latest/admin-guide/LSM/Yama.html
+--
+--inst.configurations.c = {
+--    {
+--        name = "C Debug",
+--        type = "c_lldb",
+--        request = "launch",
+--        cwd = "${workspaceFolder}",
+--        stopOnEntry = true,
+--        runInTerminal = false, -- Set to true requires extra configuration, see bottom of the file.
+--    },
+--}
+--
+--inst.configurations.cpp = {
+--    {
+--        name = "C++ Debug",
+--        type = "c_lldb",
+--        request = "launch",
+--        cwd = "${workspaceFolder}",
+--        stopOnEntry = true,
+--        runInTerminal = false, -- Set to true requires extra configuration, see bottom of the file.
+--    },
+--}
+--inst.configurations.python = {
+--    {
+--        name = "Python debug",
+--        type = "python_debugpy",
+--        request = "launch",
+--        cwd = "${workspaceFolder}",
+--        stopOnEntry = true,
+--        runInTerminal = false, -- Set to true requires extra configuration, see bottom of the file.
+--        --program = "${file}"
+--    },
+--}

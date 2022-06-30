@@ -189,14 +189,14 @@ map("n", "<leader>pj", ":SessionManager load_session<CR>", m)
 --map("n", "tr", ":call vimspector#Launch()<CR>", m) -- r for run
 --map("n", "tx", ":call vimspector#Reset()<CR>", m) -- x for stop
 -- -- nvim-dap
---map("n", "tb", "<cmd>lua require("dap").toggle_breakpoint()<CR>", m)
---map("n", "tx", "<cmd>lua require("dap").terminate()<CR>", m)
---map("n", "tc", "<cmd>lua require("dap").run_to_cursor()<CR>", m)
---map("n", "tr", "<cmd>lua require("dap").repl.toggle()<CR>", m)
---map("n", "<F9>", ":CMake debug<CR>", m)
-----map("n", "<F9>", "<cmd>lua require("dap").launch()<CR>", m)
---map("n", "<F10>", "<cmd>lua require("dap").step_over()<CR>", m)
---map("n", "<F11>", "<cmd>lua require("dap").step_into()<CR>", m)
---map("n", "<F12>", "<cmd>lua require("dap").step_out()<CR>", m)
+map("n", "<leader>db", "<cmd>lua require('dap').toggle_breakpoint()<CR>", m)
+map("n", "<leader>dc", "<cmd>lua require('dap').set_breakpoint(vim.fn.input '[Condition] > ')<CR>", m)
+map("n", "<leader>de", "<cmd>lua require('dapui').eval()<CR>", m)
+map("n", "<F5>", "<cmd>lua require('dap').continue()<CR>", m)
+map("n", "<F8>", "<cmd>lua require('dap').terminate()<CR>", m)
+map("n", "<F9>", "<cmd>lua require('dap').run_to_cursor()<CR>", m)
+map("n", "<F10>", "<cmd>lua require('dap').step_over()<CR>", m)
+map("n", "<F11>", "<cmd>lua require('dap').step_into()<CR>", m)
+map("n", "<F12>", "<cmd>lua require('dap').step_out()<CR>", m)
 
 return plugin_keys
