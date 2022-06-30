@@ -153,9 +153,12 @@ end
 -- bufferline
 map("n", "<leader>h", ":BufferLineCyclePrev<CR>", m)
 map("n", "<leader>j", ":BufferLineCyclePrev<CR>", m)
+map("n", "<F2>", ":BufferLineCyclePrev<CR>", m)
 map("n", "<leader>x", ":Bdelete!<CR>", m)
+map("n", "<F4>", ":Bdelete!<CR>", m)
 map("n", "<leader>l", ":BufferLineCycleNext<CR>", m)
 map("n", "<leader>k", ":BufferLineCycleNext<CR>", m)
+map("n", "<F3>", ":BufferLineCycleNext<CR>", m)
 -- makefile
 map("n", "<leader>mk", ":make<CR>", m)
 map("n", "<leader>mc", ":make clean<CR>", m)
