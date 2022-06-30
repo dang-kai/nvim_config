@@ -165,7 +165,7 @@ map("n", "<leader>mc", ":make clean<CR>", m)
 map("n", "<leader>mv", ":make view<CR>", m)
 -- CMake
 --map("n", "c", "", m)
-map("n", "<leader>cc", ":CMake configure<CR>", m)
+map("n", "<leader>cf", ":CMake configure<CR>", m)
 map("n", "<leader>cst", ":CMake select_target<CR>", m)
 map("n", "<leader>csb", ":CMake select_build_type<CR>", m)
 map("n", "<leader>cb", ":CMake build<CR>", m)
