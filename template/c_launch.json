@@ -1,0 +1,13 @@
+  {
+      "configurations": [
+          {
+              "name": "C debug",
+              "type": "lldb",
+              "request": "launch",
+              "MIMode": "gdb",
+              "stopOnEntry": false,
+              "program": "${workspaceFolder}/build/linux_debug/audio_flow",
+              "cwd": "${workspaceFolder}/build/linux_debug/"
+          }
+      ]
+  }

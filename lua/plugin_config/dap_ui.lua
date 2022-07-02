@@ -6,7 +6,7 @@ if not ret_ok then
 end
 
 inst.setup({
-    icons = { expanded = "▾", collapsed = "▸" },
+    icons = { expanded = "", collapsed = "" },
     mappings = {
         -- Use a table to apply multiple mappings
         expand = { "o", "<2-LeftMouse>", "<CR>" },
@@ -16,24 +16,27 @@ inst.setup({
         repl = "r",
         toggle = "t",
     },
+    -- Expand lines larger than the window
+    -- Requires >= 0.7
+    expand_lines = vim.fn.has("nvim-0.7"),
     layouts = {
         {
             elements = {
-                'scopes',
-                'breakpoints',
-                'stacks',
-                'watches',
+                { id = "scopes", size = 0.5 },
+                { id = "watches", size = 0.2 },
+                { id = "stacks", size = 0.15 },
+                { id = "breakpoints", size = 0.15 },
             },
-            size = 40,
-            position = 'left',
+            size = 0.2,
+            position = "left",
         },
         {
             elements = {
-                'repl',
-                'console',
+                { id = "repl", size = 0.7 },
+                { id = "console", size = 0.3 },
             },
-            size = 10,
-            position = 'bottom',
+            size = 0.2,
+            position = "right",
         },
     },
     floating = {

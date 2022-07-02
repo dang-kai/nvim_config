@@ -172,9 +172,9 @@ map("n", "<leader>cb", ":CMake build<CR>", m)
 map("n", "<leader>cr", ":CMake build_and_run<CR>", m)
 --map("n", "<leader>cx", ":only<CR>", m) -- Close build window by closing all other splits except the curretn one.
 map("n", "<leader>cx", ":cclose<CR>", m) -- Close build window by closing quickfix window.
-map("n", "<leader>cl", ":CMake clean<CR>", m)
+map("n", "<leader>cc", ":CMake clean<CR>", m)
 --map("n", "cr", ":execute "CMake clean" | execute "CMake build"<CR>", m) --Cannot use "|" directly because it will be treated as a parameter of CMake command. See :help :bar. TODO: fix "Another job is currently running" error.
-map("n", "<leader>cz", ":CMake cancel<CR>", m)
+map("n", "<leader>cl", ":CMake cancel<CR>", m)
 -- Projects
 map("n", "<leader>pj", ":SessionManager load_session<CR>", m)
 
