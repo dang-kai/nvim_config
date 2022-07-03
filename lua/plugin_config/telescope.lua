@@ -8,16 +8,21 @@ end
 inst.setup({
     defaults = {
         initial_mode = "insert",
-        mappings = require("keybinding").telescope,
-    },
-    pickers = {
-        find_files = {
-            -- theme = "dropdown" | "cursor" | "ivy",
-        },
-    },
-    extensions = {
-        ["ui-select"] = {
-            require("telescope.themes").get_dropdown({}),
+        mappings = {
+            i = {
+                ["<C-J>"] = "move_selection_next",
+                ["<C-K>"] = "move_selection_previous",
+                ["<C-N>"] = "cycle_history_next",
+                ["<C-P>"] = "cycle_history_prev",
+                --["<Down>"] = "cycle_history_next",
+                --["<Up>"]   = "cycle_history_prev",
+                ["<ESC>"] = "close",
+                ["<C-U>"] = "preview_scrolling_up",
+                ["<C-D>"] = "preview_scrolling_down",
+                --["<C-H>"] = "which_key",
+                ["<C-X>"] = "close",
+                ["<C-S>"] = "select_horizontal",
+            },
         },
     },
 })

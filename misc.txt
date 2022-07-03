@@ -20,6 +20,28 @@ Currently supported programming languages:
     |  lua     |  lua-language-server   |   stylua            |   -                     |
     -------------------------------------------------------------------------------------
 
+Keybinding logic
+    First operator: program/function description.
+        s: split
+    Second operator: action
+        q: quit/escape terminal.
+        x: force kill.
+    Function keys (uaually global):
+        w: spawn new window/terminal/process.
+        <F1>: toggle terminal.
+        <F2>: cycle window/tab forwards.
+        <F3>: cycle window/tab backwards.
+        <F4>: close window/tab.
+    Compatibility with classic application shortcuts:
+        <C-F>: Telescope find.
+        <C-W>: Close tab.
+        <C-S>: NOT COMPATIBLE. 
+    Compatibility with bash terminal shortcuts:
+        <C-A>, <C-E>, <C-U>, <C-K>: Remain the same function as in terminals.
+
+Useful commands
+    :vert help : Open help window in vertical split.
+
 TODO
     Aerial Telescope support.
     Set cmake keybindings in the LSP on_attach function so they only take effect in C/C++ files. -> Replaced by ftplugin (use .vim to config, but can add lua?)

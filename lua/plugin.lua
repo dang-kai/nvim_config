@@ -55,7 +55,7 @@ packer.startup(function()
 
     -- Telescope
     use({ "nvim-telescope/telescope.nvim", requires = { "nvim-lua/plenary.nvim" } })
-    use({ "nvim-telescope/telescope-ui-select.nvim" } )
+    use({ "nvim-telescope/telescope-ui-select.nvim" })
 
     -- Dashboard
     use({ "glepnir/dashboard-nvim" })
@@ -116,6 +116,9 @@ packer.startup(function()
 
     -- auto save
     use({ "Pocco81/AutoSave.nvim" })
+
+    -- floating terminal
+    use({ "voldikss/vim-floaterm" })
 end)
 
 -- Plugin configurations

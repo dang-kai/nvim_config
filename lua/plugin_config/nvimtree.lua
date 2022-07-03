@@ -38,6 +38,9 @@ inst.setup {
         -- user key mappings go here
         { key = {"["}, action = "dir_up" },
         { key = {"]"}, action = "cd" },
+        { key = {"<C-S>"}, action = "split" },
+        { key = {"<C-V>"}, action = "vsplit" },
+        { key = {"<C-X>"}, action = "close" },  -- was set to split by default.
       },
     },
   },
@@ -124,12 +127,13 @@ inst.setup {
     exclude = {},
   },
   filesystem_watchers = {
-    enable = false,
-    interval = 100,
+    enable = true,
+    interval = 150,
+    debounce_delay = 100,
   },
   git = {
     enable = true,
-    ignore = true,
+    ignore = false,
     timeout = 400,
   },
   actions = {

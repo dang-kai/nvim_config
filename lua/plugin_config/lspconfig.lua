@@ -7,7 +7,7 @@ end
 
 -- Common settings
 local flags = {
-    debounce_text_changes = 150,
+    debounce_text_changes = 100,
 }
 
 local on_attach = function(client, bufnr)
@@ -15,10 +15,31 @@ local on_attach = function(client, bufnr)
     --client.resolved_capabilities.document_formatting = false
     --client.resolved_capabilities.document_range_formatting = false
 
-    local function buf_set_keymap(...)
-        vim.api.nvim_buf_set_keymap(bufnr, ...)
-    end
-    require('keybinding').lsp(buf_set_keymap)
+    local map = vim.api.nvim_buf_set_keymap
+    local m = { noremap = true, silent = true }
+
+    -- rename
+    --map(bufnr, "n", "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<CR>", m)
+    -- code action
+    --map(bufnr, "n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", m)
+    -- go xx
+    map(bufnr, "n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", m)
+    map(bufnr, "n", "gh", "<cmd>lua vim.lsp.buf.hover()<CR>", m)
+    map(bufnr, "n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", m)
+    map(bufnr, "n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", m)
+    map(bufnr, "n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", m)
+
+    map(bufnr, "n", "gp", "<cmd>lua vim.diagnostic.open_float()<CR>", m)
+    map(bufnr, "n", "gk", "<cmd>lua vim.diagnostic.goto_prev()<CR>", m)
+    map(bufnr, "n", "gj", "<cmd>lua vim.diagnostic.goto_next()<CR>", m)
+
+    -- map(bufnr, "n", "<leader>f", "<cmd>lua vim.lsp.buf.formatting()<CR>", m)
+    -- map(bufnr, "n", "<leader>q", "<cmd>lua vim.diagnostic.setloclist()<CR>", m)
+    -- map(bufnr, "n", "<C-k>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", m)
+    -- map(bufnr, "n", "<space>wa", "<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>", m)
+    -- map(bufnr, "n", "<space>wr", "<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>", m)
+    -- map(bufnr, "n", "<space>wl", "<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>", m)
+    -- map(bufnr, "n", "<space>D", "<cmd>lua vim.lsp.buf.type_definition()<CR>", m)
 
     -- Auto format when the file is saved.
     --vim.cmd('autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()')
