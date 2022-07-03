@@ -43,5 +43,5 @@ inst.custom_center = {
 inst.custom_footer = {
     '',
     '',
-    'Ver. 0.2.0 by DK',
+    'Ver. 0.3.0 by DK',
 }

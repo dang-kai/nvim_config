@@ -68,7 +68,9 @@ map("n", "gb", ":Gitsigns toggle_current_line_blame<CR>", m)
 map("n", "gw", ":Gitsigns toggle_word_diff<CR>", m)
 -- telescope
 map("n", "<C-F>", ":Telescope find_files<CR>", m)
+map("n", "sf", ":Telescope find_files<CR>", m)
 map("n", "<C-G>", ":Telescope live_grep<CR>", m)
+map("n", "sg", ":Telescope live_grep<CR>", m)
 
 -- LSP
 --map("n", "g", "", m)  -- g is used to go to different places in original vim. Do not cancel.
@@ -89,9 +91,9 @@ map("n", "<leader>l", ":BufferLineCycleNext<CR>", m)
 map("n", "<leader>k", ":BufferLineCycleNext<CR>", m)
 map("n", "<F3>", ":BufferLineCycleNext<CR>", m)
 -- makefile
-map("n", "<leader>mk", ":make<CR>", m)
-map("n", "<leader>mc", ":make clean<CR>", m)
-map("n", "<leader>mv", ":make view<CR>", m)
+map("n", "<leader>mk", ":make<CR><CR>", m)
+map("n", "<leader>mc", ":make clean<CR><CR>", m)
+map("n", "<leader>mv", ":make view<CR><CR>", m)
 -- CMake
 --map("n", "c", "", m)
 map("n", "<leader>cf", ":CMake configure<CR>", m)

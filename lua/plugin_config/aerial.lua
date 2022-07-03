@@ -12,7 +12,7 @@ inst.setup({
         local map = vim.api.nvim_buf_set_keymap
         local m = { noremap = true, silent = true }
 
-        map(bufnr, "n", "at", "<cmd>AerialToggle!<CR>", m) -- Toggle outline
+        map(bufnr, "n", "to", "<cmd>AerialToggle!<CR>", m) -- Toggle outline
         -- Jump forwards/backwards with "{" and "}"
         map(bufnr, "n", "{", "<cmd>AerialPrev<CR>", m)
         map(bufnr, "n", "}", "<cmd>AerialNext<CR>", m)
