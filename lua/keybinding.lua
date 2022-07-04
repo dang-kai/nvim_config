@@ -43,7 +43,7 @@ map("n", "tv", ":wincmd l | vsp | terminal<CR>", m)
 map("n", "tf", ":FloatermToggle<CR>", m)
 map("n", "<F1>", ":FloatermToggle<CR>", m)
 --map("t", "<Esc>", "<C-\\><C-n>", m)  --To avoid conflict with LazyGit, do not use <ESC>.
-map("t", "<F1>", "<C-\\><C-n>", m)
+map("t", "<C-Q>", "<C-\\><C-n>", m)
 -- block operation in visual mode
 map("v", "<", "<gv", m) -- block modify indentation
 map("v", ">", ">gv", m)
@@ -105,9 +105,11 @@ map("n", "<leader>cq", ":cclose<CR>", m) -- Close build window by closing quickf
 map("n", "<leader>cc", ":CMake clean<CR>", m)
 map("n", "<leader>cx", ":CMake cancel<CR>", m)
 --map("n", "cr", ":execute "CMake clean" | execute "CMake build"<CR>", m) --Cannot use "|" directly because it will be treated as a parameter of CMake command. See :help :bar. TODO: fix "Another job is currently running" error.
-map("n", "<leader>cl", ":CMake cancel<CR>", m)
+--map("n", "<leader>cl", ":CMake cancel<CR>", m)
 -- Projects
-map("n", "<leader>pj", ":SessionManager load_session<CR>", m)
+map("n", "<leader>pl", ":SessionManager load_session<CR>", m)
+map("n", "<leader>ps", ":SessionManager save_current_session<CR>", m)
+map("n", "<leader>pd", ":SessionManager delete_session<CR>", m)
 
 -- Debug
 -- -- vimspector
