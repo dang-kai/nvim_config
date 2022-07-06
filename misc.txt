@@ -28,7 +28,6 @@ Keybinding logic
         q: quit/escape terminal.
         x: force kill.
     Function keys (uaually global):
-        w: spawn new window/terminal/process.
         <F1>: toggle terminal.
         <F2>: cycle window/tab forwards.
         <F3>: cycle window/tab backwards.
@@ -39,6 +38,8 @@ Keybinding logic
         <C-S>: NOT COMPATIBLE. 
     Compatibility with bash terminal shortcuts:
         <C-A>, <C-E>, <C-U>, <C-K>: Remain the same function as in terminals.
+    First operator after leader key:
+        i: insert (usually a macro).
 
 Useful commands
     :vert help : Open help window in vertical split.

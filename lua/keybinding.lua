@@ -1,13 +1,9 @@
 -- Separate keybinding.lua from config.lua because other configs need to call it and get its return value.
 --
--- General naming logic:
--- q for quit.
--- x for close/escape.
--- o for open/out.
---
---
 --vim.opt if for things you would set in vimscript. vim.g is for things you"d let.
-vim.g.mapleader = " " -- Usually make, cmake and debug commands should be triggered with the leader key.
+vim.opt.timeoutlen = 1000 -- shortcut key combination timeout in milliseconds
+vim.g.mapleader = ";" -- Usually make, cmake and debug commands should be triggered with the leader key.
+
 -- Keybindings (including plugin keybindings) local map = vim.api.nvim_set_keymap
 local m = { noremap = true, silent = true }
 local plugin_keys = {}
@@ -57,7 +53,7 @@ map("n", "<leader>qq", ":qa!<CR>", m)
 -- nvim tree
 map("n", "tr", ":NvimTreeToggle<CR>", m)
 --map('n', 'trf', ':NvimTreeRefresh<CR>', m) -- Close tree and open again to refresh.
-map("n", "tl", ":NvimTreeFindFile<CR>", m) -- Locate file 
+map("n", "tl", ":NvimTreeFindFile<CR>", m) -- Locate file
 -- -- 's' in nvim will open file/folder in externally.
 -- git
 map("n", "gt", ":LazyGit<CR>", m)
@@ -110,6 +106,8 @@ map("n", "<leader>cx", ":CMake cancel<CR>", m)
 map("n", "<leader>pl", ":SessionManager load_session<CR>", m)
 map("n", "<leader>ps", ":SessionManager save_current_session<CR>", m)
 map("n", "<leader>pd", ":SessionManager delete_session<CR>", m)
+-- Insertion macro
+map("n", "<leader>io", "o<ESC>", m)
 
 -- Debug
 -- -- vimspector
