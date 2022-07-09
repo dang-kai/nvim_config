@@ -17,10 +17,10 @@ map("n", "fw", ":FormatWrite<CR>", m)
 map("n", "<C-U>", "4k", m)
 map("n", "<C-D>", "4j", m)
 -- window split
-map("n", "<C-H>", "<C-W>h", m)
-map("n", "<C-J>", "<C-W>j", m)
-map("n", "<C-K>", "<C-W>k", m)
-map("n", "<C-L>", "<C-W>l", m)
+--map("n", "<C-H>", "<C-W>h", m) -- Should be handled by tmux.nvim automatically.
+--map("n", "<C-J>", "<C-W>j", m) -- Should be handled by tmux.nvim automatically.
+--map("n", "<C-K>", "<C-W>k", m) -- Should be handled by tmux.nvim automatically.
+--map("n", "<C-L>", "<C-W>l", m) -- Should be handled by tmux.nvim automatically.
 map("n", "s", "", m) -- cancel the original function (substitute char) of key s and use it for window split.
 map("n", "sv", ":vsp<CR>", m) -- vertical split
 map("n", "sh", ":sp<CR>", m) -- horizontal split
