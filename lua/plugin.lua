@@ -119,6 +119,9 @@ packer.startup(function()
 
     -- floating terminal
     use({ "voldikss/vim-floaterm" })
+
+    -- tmux integration
+    use({ "aserowy/tmux.nvim" })
 end)
 
 -- Plugin configurations
@@ -142,4 +145,5 @@ require("plugin_config.dap_ui")
 require("plugin_config.dap_virtual_text")
 require("plugin_config.autosave")
 require("plugin_config.session")
+require("plugin_config.tmux")
 return packer
