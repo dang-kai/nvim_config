@@ -122,6 +122,9 @@ packer.startup(function()
 
     -- tmux integration
     use({ "aserowy/tmux.nvim" })
+
+    -- (VIM plugin) python indent
+    use({ "Vimjas/vim-python-pep8-indent" })
 end)
 
 -- Plugin configurations
