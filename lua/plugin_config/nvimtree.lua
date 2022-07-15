@@ -21,7 +21,7 @@ inst.setup({
     reload_on_bufenter = true,
     respect_buf_cwd = false,
     view = {
-        adaptive_size = false,
+        adaptive_size = true,
         centralize_selection = false,
         width = tree_width,
         height = 30,
