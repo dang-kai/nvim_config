@@ -1,5 +1,5 @@
 -- NeoVim basic config
---vim.opt if for things you would set in vimscript. vim.g is for things you"d let.
+--vim.opt if for things you would set in vimscript. vim.g is for things you'd let.
 --
 -- stylua: ignore start
 local opt = vim.opt
