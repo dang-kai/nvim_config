@@ -152,4 +152,9 @@ require("plugin_config.dap_virtual_text")
 require("plugin_config.autosave")
 require("plugin_config.session")
 require("plugin_config.tmux")
+
+--floaterm config
+vim.g.floaterm_width = 0.7
+vim.g.floaterm_height = 0.7
+
 return packer
