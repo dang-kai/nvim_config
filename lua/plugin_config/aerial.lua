@@ -34,7 +34,7 @@ inst.setup({
     close_behavior = "auto",
 
     -- Set to false to remove the default keybindings for the aerial buffer
-    default_bindings = false,
+    default_bindings = true,
 
     -- Enum: prefer_right, prefer_left, right, left, float
     -- Determines the default direction to open the aerial window. The 'prefer'
@@ -147,7 +147,7 @@ inst.setup({
     -- They can be integers or a float between 0 and 1 (e.g. 0.4 for 40%)
     -- min_width and max_width can be a list of mixed types.
     -- max_width = {40, 0.2} means "the lesser of 40 columns or 20% of total"
-    max_width = { 40, 0.2 },
+    max_width = { 50, 0.2 },
     width = nil,
     min_width = 10,
 

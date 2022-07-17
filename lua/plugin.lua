@@ -82,6 +82,8 @@ packer.startup(function()
 
     -- Code outline
     use({ "stevearc/aerial.nvim" })
+    -- To avoid opening file in unwanted windows (for example, quickfix).
+    use({ "stevearc/stickybuf.nvim" })
 
     -- CMake support
     use({ "Shatur/neovim-cmake", requires = { "nvim-lua/plenary.nvim", "mfussenegger/nvim-dap" } })
@@ -143,6 +145,7 @@ require("plugin_config.nightfox")
 require("plugin_config.gitsigns")
 require("plugin_config.cmake")
 require("plugin_config.aerial")
+require("plugin_config.stickybuf")
 require("plugin_config.dap")
 require("plugin_config.dap_ui")
 require("plugin_config.dap_virtual_text")
