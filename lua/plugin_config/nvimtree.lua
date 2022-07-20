@@ -128,7 +128,6 @@ inst.setup({
     },
     filesystem_watchers = {
         enable = true,
-        interval = 150,
         debounce_delay = 100,
     },
     git = {
