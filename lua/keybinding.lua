@@ -95,7 +95,7 @@ map("n", "<leader>mv", ":make view<CR><CR>", m)
 map("n", "<leader>cf", ":CMake configure<CR>", m)
 map("n", "<leader>cst", ":CMake select_target<CR>", m)
 map("n", "<leader>csb", ":CMake select_build_type<CR>", m)
-map("n", "<leader>cb", ":CMake build<CR>", m)
+map("n", "<leader>cb", ":CMake build all<CR>", m)
 map("n", "<leader>cr", ":CMake build_and_run<CR>", m)
 map("n", "<leader>cq", ":cclose<CR>", m) -- Close build window by closing quickfix window.
 map("n", "<leader>cc", ":CMake clean<CR>", m)

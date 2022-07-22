@@ -19,7 +19,7 @@ end
 
 -- Common settings
 local flags = {
-    debounce_text_changes = 500,
+    debounce_text_changes = 150,
 }
 
 local on_attach = function(client, bufnr)
