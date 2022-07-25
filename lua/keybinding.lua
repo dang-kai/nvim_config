@@ -132,5 +132,6 @@ map("n", "<F9>", "<cmd>lua require('dap').run_to_cursor()<CR>", m)
 map("n", "<F10>", "<cmd>lua require('dap').step_over()<CR>", m)
 map("n", "<F11>", "<cmd>lua require('dap').step_into()<CR>", m)
 map("n", "<F12>", "<cmd>lua require('dap').step_out()<CR>", m)
+map("v", "<C-E>", "<cmd>lua require('dapui').eval()<CR>", m)
 
 return plugin_keys

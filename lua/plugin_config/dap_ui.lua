@@ -32,8 +32,9 @@ inst.setup({
         },
         {
             elements = {
-                { id = "repl", size = 0.7 },
-                { id = "console", size = 0.3 },
+                --{ id = "repl", size = 0.5 },
+                { id = "console", size = 0.2},
+                { id = "repl", size = 0.8},
             },
             size = 0.2,
             position = "right",

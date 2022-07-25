@@ -46,7 +46,7 @@ end
 -- Debugger
 -- TODO: wait dap-ui for fixing temrinal layout
 -- the "30" of "30vsplit: doesn't work
-inst.defaults.fallback.terminal_win_cmd = "30vsplit new" -- this will be overrided by dapui
+--inst.defaults.fallback.terminal_win_cmd = "30vsplit new" -- this will be overrided by dapui
 inst.set_log_level("INFO")
 
 -- C/C++ adapter config
