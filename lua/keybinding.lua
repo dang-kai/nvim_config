@@ -72,7 +72,6 @@ map("n", "sg", ":Telescope live_grep<CR>", m)
 --map("n", "g", "", m)  -- g is used to go to different places in original vim. Do not cancel.
 --map("n", "gb", "<C-O>", m)  -- Conflicts with gb (git blame) from gitsigns, keep using original <C-O>.
 --map("n", "gf", "<C-I>", m)
-map("n", "th", ":ClangdSwitchSourceHeader<CR>", m) -- Toggle header.
 
 -- CMP
 -- leader key region

@@ -127,6 +127,13 @@ packer.startup(function()
 
     -- (VIM plugin) python indent
     use({ "Vimjas/vim-python-pep8-indent" })
+
+    use({
+        "https://git.sr.ht/~whynothugo/lsp_lines.nvim",
+        config = function()
+            require("lsp_lines").setup()
+        end,
+    })
 end)
 
 -- Plugin configurations

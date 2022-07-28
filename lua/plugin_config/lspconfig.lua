@@ -8,7 +8,8 @@ end
 -- General vim diagnostic config.
 vim.diagnostic.config({
     virtual_text = true,
-    signs = false,
+    virtual_lines = false, -- Set to true to use lsp_lines
+    signs = true,
     update_in_insert = false,
 })
 local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
@@ -19,7 +20,7 @@ end
 
 -- Common settings
 local flags = {
-    debounce_text_changes = 150,
+    debounce_text_changes = 100,
 }
 
 local on_attach = function(client, bufnr)
@@ -44,6 +45,8 @@ local on_attach = function(client, bufnr)
     map(bufnr, "n", "gp", "<cmd>lua vim.diagnostic.open_float()<CR>", m)
     map(bufnr, "n", "gk", "<cmd>lua vim.diagnostic.goto_prev()<CR>", m)
     map(bufnr, "n", "gj", "<cmd>lua vim.diagnostic.goto_next()<CR>", m)
+    --map(bufnr, "n", "th", ":ClangdSwitchSourceHeader<CR>", m) -- Toggle header.
+    map(bufnr, "n", "th", ":e %:p:s,.h$,.X123X,:s,.c$,.h,:s,.X123X$,.c,<CR>", m) -- Toggle header without clang (only in current folder).
 
     -- map(bufnr, "n", "<leader>f", "<cmd>lua vim.lsp.buf.formatting()<CR>", m)
     -- map(bufnr, "n", "<leader>q", "<cmd>lua vim.diagnostic.setloclist()<CR>", m)
@@ -96,7 +99,7 @@ inst.sumneko_lua.setup({
 })
 
 -- C/C++
-inst.clangd.setup({
+inst.ccls.setup({
     on_attach = on_attach,
     flags = flags,
 })
