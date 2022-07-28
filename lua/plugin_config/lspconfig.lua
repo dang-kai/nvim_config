@@ -9,7 +9,7 @@ end
 vim.diagnostic.config({
     virtual_text = true,
     virtual_lines = false, -- Set to true to use lsp_lines
-    signs = true,
+    signs = false,
     update_in_insert = false,
 })
 local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
