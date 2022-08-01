@@ -117,7 +117,8 @@ packer.startup(function()
     use({ "mhartington/formatter.nvim" })
 
     -- auto save
-    use({ "Pocco81/AutoSave.nvim" })
+    --use({ "Pocco81/AutoSave.nvim" })
+    use({ "jakobkhansen/AutoSave.nvim" })
 
     -- floating terminal
     use({ "voldikss/vim-floaterm" })

@@ -7,7 +7,7 @@ end
 
 inst.setup({
     enabled = true,
-    --execution_message = "AutoSave: saved at " .. vim.fn.strftime("%H:%M:%S"),
+    --execution_message = "File autosaved at " .. vim.fn.strftime("%H:%M:%S"),
     execution_message = "",
     events = { 'InsertLeave', 'TextChanged' },
     conditions = {

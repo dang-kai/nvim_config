@@ -47,4 +47,8 @@ Useful commands
 TODO
     Aerial Telescope support.
     lldb cannot track into dynamic link libraries, but static link libraries are ok.
-
+    auto-save.nvim update breaks compatibility, switched to forks.
+    Plugin checklist:
+        lspsaga
+        trouble.nvim
+        lualine
