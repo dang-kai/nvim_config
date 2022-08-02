@@ -71,6 +71,8 @@ packer.startup(function()
     use({ "neovim/nvim-lspconfig" })
     -- -- Replace text kind description with icons
     use({ "onsails/lspkind-nvim" })
+    -- -- lspsaga
+    use({ "glepnir/lspsaga.nvim", branch = "main" })
 
     -- Debug
     use({ "mfussenegger/nvim-dap" })
@@ -129,12 +131,16 @@ packer.startup(function()
     -- (VIM plugin) python indent
     use({ "Vimjas/vim-python-pep8-indent" })
 
-    use({
-        "https://git.sr.ht/~whynothugo/lsp_lines.nvim",
-        config = function()
-            require("lsp_lines").setup()
-        end,
-    })
+    -- Show lsp hint in separated virtual lines. Extra config in lspconfig.lua is needed to enable.
+    --use({
+    --    "https://git.sr.ht/~whynothugo/lsp_lines.nvim",
+    --    config = function()
+    --        require("lsp_lines").setup()
+    --    end,
+    --})
+
+    -- Better quickfix
+    use({ "kevinhwang91/nvim-bqf", ft = "qf" })
 end)
 
 -- Plugin configurations
@@ -145,6 +151,7 @@ require("plugin_config.telescope")
 require("plugin_config.treesitter")
 require("plugin_config.lspconfig")
 --require("plugin_config.lspkind")
+require("plugin_config.lspsaga")
 require("plugin_config.cmp")
 require("plugin_config.formatter")
 require("plugin_config.dashboard")

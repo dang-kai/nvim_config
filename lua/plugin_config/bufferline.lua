@@ -54,8 +54,8 @@ inst.setup({
         --    return vim.fn.fnamemodify(buf.name, ':t:r')
         --  end
         --end,
-        max_name_length = 20,
-        max_prefix_length = 10, -- prefix used when a buffer is de-duplicated
+        max_name_length = 16,
+        max_prefix_length = 4, -- prefix used when a buffer is de-duplicated
         tab_size = 18,
         diagnostics = false, -- | "nvim_lsp" | "coc",
         diagnostics_update_in_insert = false,

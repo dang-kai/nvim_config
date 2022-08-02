@@ -52,3 +52,4 @@ TODO
         lspsaga
         trouble.nvim
         lualine
+        nvim-hlslens
