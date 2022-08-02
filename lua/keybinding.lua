@@ -31,6 +31,8 @@ map("n", "<C-Left>", ":vertical resize -2<CR>", m)
 map("n", "<C-Right>", ":vertical resize +2<CR>", m)
 map("n", "<C-Down>", ":resize +2<CR>", m)
 map("n", "<C-Up>", ":resize -2<CR>", m)
+map("v", "ss", "y<ESC>/<C-R>\"<CR>", m) -- search selection.
+map("v", "sr", "y<ESC>:%s/<C-R>\"//g<LEFT><LEFT>", m) -- search and replace in current file.
 -- terminal
 map("n", "t", "", m) -- cancel the original function (go until char *) of key t and use it for terminal control.
 map("n", "tt", ":wincmd l | terminal<CR>", m) -- Move to the right window first in case cursor is in the nvim-tree window.

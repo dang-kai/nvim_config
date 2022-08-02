@@ -72,7 +72,7 @@ packer.startup(function()
     -- -- Replace text kind description with icons
     use({ "onsails/lspkind-nvim" })
     -- -- lspsaga
-    use({ "glepnir/lspsaga.nvim", branch = "main" })
+    --use({ "glepnir/lspsaga.nvim", branch = "main" })
 
     -- Debug
     use({ "mfussenegger/nvim-dap" })
@@ -151,7 +151,7 @@ require("plugin_config.telescope")
 require("plugin_config.treesitter")
 require("plugin_config.lspconfig")
 --require("plugin_config.lspkind")
-require("plugin_config.lspsaga")
+--require("plugin_config.lspsaga")
 require("plugin_config.cmp")
 require("plugin_config.formatter")
 require("plugin_config.dashboard")

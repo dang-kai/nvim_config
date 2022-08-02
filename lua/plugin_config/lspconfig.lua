@@ -37,10 +37,15 @@ local on_attach = function(client, bufnr)
     --map(bufnr, "n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", m)
     -- go xx
     map(bufnr, "n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", m)
-    map(bufnr, "n", "gh", "<cmd>lua vim.lsp.buf.hover()<CR>", m)
     map(bufnr, "n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", m)
     map(bufnr, "n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", m)
     map(bufnr, "n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", m)
+    --map(bufnr, "n", "gr", "<cmd>Lspsaga rename<CR>", m)
+
+    map(bufnr, "n", "gh", "<cmd>lua vim.lsp.buf.hover()<CR>", m)
+    --map(bufnr, "n", "gh", "<cmd>Lspsaga preview_definition<CR>", m)
+    --map(bufnr, "n", "gh", "<cmd>Lspsaga hover_doc<CR>", m)
+    --map(bufnr, "n", "gf", "<cmd>Lspsaga lsp_finder<CR>", m)
 
     map(bufnr, "n", "gp", "<cmd>lua vim.diagnostic.open_float()<CR>", m)
     map(bufnr, "n", "gk", "<cmd>lua vim.diagnostic.goto_prev()<CR>", m)
