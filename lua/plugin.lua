@@ -46,8 +46,8 @@ packer.startup(function()
     use({ "kyazdani42/nvim-tree.lua", requires = "kyazdani42/nvim-web-devicons" })
 
     -- Tab view (keep tabbed windows on the right while nvim-tree on the left)
-    use({ "akinsho/bufferline.nvim", requires = { "kyazdani42/nvim-web-devicons", "moll/vim-bbye" } })
-    --use { "romgrk/barbar.nvim", requires = "kyazdani42/nvim-web-devicons" }
+    --use({ "akinsho/bufferline.nvim", requires = { "kyazdani42/nvim-web-devicons", "moll/vim-bbye" } })
+    use { "romgrk/barbar.nvim", requires = "kyazdani42/nvim-web-devicons" }
 
     -- lualine
     --use { "nvim-lualine/lualine.nvim", requires = { "kyazdani42/nvim-web-devicons" } }
@@ -140,12 +140,13 @@ packer.startup(function()
     --})
 
     -- Better quickfix
-    use({ "kevinhwang91/nvim-bqf", ft = "qf" })
+    --use({ "kevinhwang91/nvim-bqf", ft = "qf" })
 end)
 
 -- Plugin configurations
 require("plugin_config.nvimtree")
-require("plugin_config.bufferline")
+--require("plugin_config.bufferline")
+require("plugin_config.barbar")
 --require("plugin_config/lualine")
 require("plugin_config.telescope")
 require("plugin_config.treesitter")

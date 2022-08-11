@@ -48,7 +48,7 @@ map("v", ">", ">gv", m)
 map("v", "J", ":move '>+1<CR>gv-gv", m) -- move code block
 map("v", "K", ":move '<-2<CR>gv-gv", m)
 -- file operation
-map("n", "<leader>q", ":q<CR>", m)
+--map("n", "<leader>q", ":q<CR>", m)
 map("n", "<leader>qq", ":qa!<CR>", m)
 --map("n", "<C-S>", ":w<CR>", m) -- Conflicts with split. Replaced by autosave.
 --map("i", "<C-S>", "<ESC>:w<CR>", m)
@@ -79,14 +79,18 @@ map("n", "sg", ":Telescope live_grep<CR>", m)
 -- leader key region
 -- Add bufferline keys as original <C-A> mapping is hard to press.
 -- bufferline
-map("n", "<leader>h", ":BufferLineCyclePrev<CR>", m)
-map("n", "<leader>j", ":BufferLineCyclePrev<CR>", m)
-map("n", "<F2>", ":BufferLineCyclePrev<CR>", m)
-map("n", "<leader>x", ":Bdelete!<CR>", m)
-map("n", "<F4>", ":Bdelete!<CR>", m)
-map("n", "<leader>l", ":BufferLineCycleNext<CR>", m)
-map("n", "<leader>k", ":BufferLineCycleNext<CR>", m)
-map("n", "<F3>", ":BufferLineCycleNext<CR>", m)
+--map("n", "<leader>h", ":BufferLineCyclePrev<CR>", m)
+--map("n", "<leader>j", ":BufferLineCyclePrev<CR>", m)
+--map("n", "<F2>", ":BufferLineCyclePrev<CR>", m)
+--map("n", "<F3>", ":BufferLineCycleNext<CR>", m)
+--map("n", "<leader>x", ":Bdelete!<CR>", m)
+--map("n", "<F4>", ":Bdelete!<CR>", m)
+map("n", "<F2>", ":BufferPrevious<CR>", m)
+map("n", "<F3>", ":BufferNext<CR>", m)
+map("n", "<leader>x", ":BufferClose<CR>", m)
+map("n", "<F4>", ":BufferClose<CR>", m)
+--map("n", "<leader>l", ":BufferLineCycleNext<CR>", m)
+--map("n", "<leader>k", ":BufferLineCycleNext<CR>", m)
 -- makefile
 map("n", "<leader>mk", ":make<CR><CR>", m)
 map("n", "<leader>mc", ":make clean<CR><CR>", m)
