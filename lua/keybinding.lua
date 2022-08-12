@@ -31,8 +31,8 @@ map("n", "<C-Left>", ":vertical resize -2<CR>", m)
 map("n", "<C-Right>", ":vertical resize +2<CR>", m)
 map("n", "<C-Down>", ":resize +2<CR>", m)
 map("n", "<C-Up>", ":resize -2<CR>", m)
-map("v", "ss", "y<ESC>/<C-R>\"<CR>", m) -- search selection.
-map("v", "sr", "y<ESC>:%s/<C-R>\"//g<LEFT><LEFT>", m) -- search and replace in current file.
+map("v", "ss", 'y<ESC>/<C-R>"<CR>', m) -- search selection.
+map("v", "sr", 'y<ESC>:%s/<C-R>"//g<LEFT><LEFT>', m) -- search and replace in current file.
 -- terminal
 map("n", "t", "", m) -- cancel the original function (go until char *) of key t and use it for terminal control.
 map("n", "tt", ":wincmd l | terminal<CR>", m) -- Move to the right window first in case cursor is in the nvim-tree window.
@@ -91,6 +91,10 @@ map("n", "<F3>", ":BufferNext<CR>", m)
 map("n", "<C-N>", ":BufferMoveNext<CR>", m)
 map("n", "<leader>x", ":BufferClose<CR>", m)
 map("n", "<F4>", ":BufferClose<CR>", m)
+map("n", "<leader>bn", "<Cmd>BufferOrderByBufferNumber<CR>", m)
+map("n", "<leader>bd", "<Cmd>BufferOrderByDirectory<CR>", m)
+map("n", "<leader>bl", "<Cmd>BufferOrderByLanguage<CR>", m)
+map("n", "<leader>bw", "<Cmd>BufferOrderByWindowNumber<CR>", m)
 --map("n", "<leader>l", ":BufferLineCycleNext<CR>", m)
 --map("n", "<leader>k", ":BufferLineCycleNext<CR>", m)
 -- makefile
