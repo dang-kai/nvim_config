@@ -46,9 +46,14 @@ Useful commands
 
 TODO
     Aerial Telescope support.
-    lldb cannot track into dynamic link libraries, but static link libraries are ok.
-    auto-save.nvim update breaks compatibility, switched to forks.
+    LSP:
+        clangd LSP crash.
+        ccls can identify macro controlled regions, but cannot highlight them dynamically.
+        treesitter or LSP?
+    DAP:
+        lldb cannot track into dynamic link libraries, but static link libraries are ok.
     Plugin checklist:
         trouble.nvim
         lualine
         nvim-hlslens
+        20220822: auto-save.nvim is still buggy, use AutoSave.nvim fork instead.
