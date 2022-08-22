@@ -39,18 +39,21 @@ local palettes = {
 
         -- comment is the definition of the comment color.
         --comment = "#60728a",
-        bg0 = '#262626',
+        --bg0 = '#262626',
         bg1 = '#262626',
-        comment = '#909090',
+        comment = '#A0A0A0',
+        --fg1 = '#A0A0A0',
+        --fg2 = '#A0A0A0',
+        fg3 = '#A0A0A0', -- Color of line numbers and folds.
 
         white = { base = '#E0E0E0', bright = '#F0F0F0' },
-        black = { base = '#262626', bright = '#484848' },
+        black = { base = '#262626', bright = '#585858' },
         red = { base = '#EE3344', bright = '#EF6677' },
-        green = { base = '#7EC838', bright = '#C7E7A9' }, -- green = { base = '#4E9A06', bright = '#8AE234' },
+        green = { base = '#50EB58', bright = '#C7E7A9' }, -- green = { base = '#4E9A06', bright = '#8AE234' },
         yellow = { base = '#C4A000', bright = '#EBDC50' },
-        blue = { base = '#60A2F8', bright = '#91B5FE' }, -- blue = { base = '#598DF5', bright = '#91B5FE' },
+        blue = { base = '#60A2F8', bright = '#6B9BED' }, -- blue = { base = '#598DF5', bright = '#91B5FE' },
         purple = { base = '#7A00D3', bright = '#BC5FD3' },-- purple = { base = '#831EF0', bright = '#BC5FD3' },
-        cyan = { base = '#6EC8C8', bright = '#34E2E2' },
+        cyan = { base = '#09CDA6', bright = '#2DDDE9' },
         orange = { base = '#FF6600', bright = '#FF99FF' },
         pink = { base = '#FF2A7F', bright = '#FF80B2' },
         magenta = { base = '#C837AB', bright = '#D35FBC' },
