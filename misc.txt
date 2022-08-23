@@ -44,6 +44,8 @@ Keybinding logic
                 ts, tt, tv, etc.
             file tree
                 tr, etc.
+            toggle header
+                th
         q
             recording (original function)
             quit
