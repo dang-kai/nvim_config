@@ -23,7 +23,39 @@ Currently supported programming languages:
 
 Keybinding logic
     First operator: program/function description.
-        s: split, search.
+        s 
+            split
+                sv, sh, etc.
+            search
+                ss, sr
+        c   
+            cmake
+                cf, cst, csb, cc, cb, cr, cx
+        g
+            goto (original function)
+            lazygit
+                gt
+            gitsigins
+                gss, gsl, gsn, etc.
+            goto (extended by lsp)
+                gd, gD, gh, gp, etc.
+        t
+            terminal
+                ts, tt, tv, etc.
+            file tree
+                tr, etc.
+        q
+            recording (original function)
+            quit
+                ;qq
+        z
+            fold (original function)
+        f
+            find none
+                fn
+            treesitter selection (treesitter supported filetypes only)
+                fi, fn, fm, fo.                
+            
     Second operator: action
         q: quit/escape terminal.
         x: force kill.
@@ -34,7 +66,7 @@ Keybinding logic
         <F4>: close window/tab.
     Compatibility with classic application shortcuts:
         <C-F>: Telescope find.
-        <C-W>: Close tab.
+        <C-W>: NOT COMPATIBLE. 
         <C-S>: NOT COMPATIBLE. 
     Compatibility with bash terminal shortcuts:
         <C-A>, <C-E>, <C-U>, <C-K>: Remain the same function as in terminals.

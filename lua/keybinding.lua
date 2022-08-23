@@ -59,11 +59,11 @@ map("n", "tl", ":NvimTreeFindFile<CR>", m) -- Locate file
 -- -- 's' in nvim will open file/folder in externally.
 -- git
 map("n", "gt", ":LazyGit<CR>", m)
-map("n", "gs", ":Gitsigns toggle_signs<CR>", m)
-map("n", "gl", ":Gitsigns toggle_linehl<CR>", m)
-map("n", "gn", ":Gitsigns toggle_numhl<CR>", m)
-map("n", "gb", ":Gitsigns toggle_current_line_blame<CR>", m)
-map("n", "gw", ":Gitsigns toggle_word_diff<CR>", m)
+map("n", "gss", ":Gitsigns toggle_signs<CR>", m)
+map("n", "gsl", ":Gitsigns toggle_linehl<CR>", m)
+map("n", "gsn", ":Gitsigns toggle_numhl<CR>", m)
+map("n", "gsb", ":Gitsigns toggle_current_line_blame<CR>", m)
+map("n", "gsw", ":Gitsigns toggle_word_diff<CR>", m)
 -- telescope
 map("n", "<C-F>", ":Telescope find_files<CR>", m)
 map("n", "sf", ":Telescope find_files<CR>", m)

@@ -25,11 +25,14 @@ inst.setup({
         enable = true,
         additional_vim_regex_highlighting = false,
     },
-    keymaps = {
-        init_selection = "<CR>",
-        node_incremental = "<CR>",
-        node_decremental = "<BS>",
-        scope_incremental = "<TAB>",
+    incremental_selection = {
+        enable = true,
+        keymaps = {
+            init_selection = "fi",
+            node_incremental = "fn",
+            node_decremental = "fm",
+            scope_incremental = "fo",
+        },
     },
     indent = {
         enable = true,

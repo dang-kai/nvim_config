@@ -39,8 +39,8 @@ local palettes = {
 
         -- comment is the definition of the comment color.
         --comment = "#60728a",
-        --bg0 = '#262626',
-        bg1 = '#262626',
+        bg0 = '#262626', -- File tree background.
+        bg1 = '#262626', -- Main window background.
         comment = '#A0A0A0',
         --fg1 = '#A0A0A0',
         --fg2 = '#A0A0A0',
