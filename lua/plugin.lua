@@ -10,8 +10,8 @@ if fn.empty(fn.glob(install_path)) > 0 then
         "clone",
         "--depth",
         "1",
-        "https://github.com/wbthomason/packer.nvim",
-        -- or "https://gitcode.net/mirrors/wbthomason/packer.nvim", install_path,
+        "https://github.com/wbthomason/packer.nvim", -- or "https://gitcode.net/mirrors/wbthomason/packer.nvim", 
+        install_path,
     })
 
     -- https://github.com/wbthomason/packer.nvim/issues/750
