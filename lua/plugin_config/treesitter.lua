@@ -29,8 +29,8 @@ inst.setup({
         enable = true,
         keymaps = {
             init_selection = "fi",
-            node_incremental = "fn",
-            node_decremental = "fm",
+            node_incremental = "fj",
+            node_decremental = "fk",
             scope_incremental = "fo",
         },
     },

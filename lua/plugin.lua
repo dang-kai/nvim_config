@@ -2,10 +2,9 @@
 -- -- Install folder: ~/.local/share/nvim/site/pack/packer/
 local fn = vim.fn
 local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
-local packer_bootstrap
 if fn.empty(fn.glob(install_path)) > 0 then
     vim.notify("Packer not found. Installing pakcer.nvim...")
-    packer_bootstrap = fn.system({
+    fn.system({
         "git",
         "clone",
         "--depth",
