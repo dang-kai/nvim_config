@@ -83,6 +83,8 @@ packer.startup(function()
 
     -- Code outline
     use({ "stevearc/aerial.nvim" })
+    --use({ "simrat39/symbols-outline.nvim" })
+
     -- To avoid opening file in unwanted windows (for example, quickfix).
     use({ "stevearc/stickybuf.nvim" })
 
