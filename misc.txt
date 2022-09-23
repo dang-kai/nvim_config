@@ -11,15 +11,15 @@ To support a new programming language:
     Code format tool
 
 Currently supported programming languages:
-    -------------------------------------------------------------------------------------------
-    |  NAME      |  Compiler  |    LSP               |   Format        |   DAP                |
-    -------------------------------------------------------------------------------------------
-    |  python    |  python3   |  pyright             |   autopep8      |   debugpy            |
-    |  C/C++     |  gcc/g++   |  ccls/clangd         |   clang-format  |   lldb-vscode(clang) |
-    |  latex     |  xelatex   |  texlab              |   -             |   -                  |
-    |  lua       |  luajit    |  lua-language-server |   stylua        |   -                  |
-    |  markdown  |  pandoc    |  -                   |   -             |   -                  |
-    -------------------------------------------------------------------------------------------
+    ---------------------------------------------------------------------------------------
+    |  NAME      |  Compiler  |    LSP               |   Format        |   DAP            |
+    ---------------------------------------------------------------------------------------
+    |  python    |  python3   |  pyright             |   autopep8      |   debugpy        |
+    |  C/C++     |  gcc/g++   |  ccls/clangd         |   clang-format  |   lldb(-vscode)  |
+    |  latex     |  xelatex   |  texlab              |   -             |   -              |
+    |  lua       |  luajit    |  lua-language-server |   stylua        |   -              |
+    |  markdown  |  pandoc    |  -                   |   -             |   -              |
+    ---------------------------------------------------------------------------------------
 
 Keybinding logic
     First operator: program/function description.
@@ -53,10 +53,13 @@ Keybinding logic
         z
             fold (original function)
         f
+            format file
+                ff
             find none
                 fn
             treesitter selection (treesitter supported filetypes only)
-                fi, fn, fm, fo.                
+                fi, fj, fk, fo.                
+        
             
     Second operator: action
         q: quit/escape terminal.
@@ -91,3 +94,4 @@ TODO
         lualine
         nvim-hlslens
         20220822: auto-save.nvim is still buggy, use AutoSave.nvim fork instead.
+        treesitter fold/unfold shortcuts
