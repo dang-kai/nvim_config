@@ -143,14 +143,17 @@ packer.startup(function()
 
     -- Better quickfix
     --use({ "kevinhwang91/nvim-bqf", ft = "qf" })
+
+    -- Syslog support.
+    use({ "dk@aeserv1:/home/dk/453/workspace/nvim-syslog.git" })
 end)
 
 -- Plugin configurations
 require("plugin_config.nvimtree")
 --require("plugin_config.bufferline")
 --require("plugin_config.barbar")
-require("plugin_config.cokeline")
 --require("plugin_config.lualine")
+require("plugin_config.cokeline")
 require("plugin_config.telescope")
 require("plugin_config.treesitter")
 require("plugin_config.lspconfig")

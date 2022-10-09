@@ -117,7 +117,7 @@ inst.setup({
         -- Filename
         {
             text = function(buffer)
-                return " " .. buffer.filename .. " "
+                return buffer.filename .. " "
             end,
             fg = focused_fg,
             bg = focused_bg,
