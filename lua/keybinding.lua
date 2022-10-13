@@ -152,4 +152,7 @@ map("n", "<F11>", "<cmd>lua require('dap').step_into()<CR>", m)
 map("n", "<F12>", "<cmd>lua require('dap').step_out()<CR>", m)
 map("v", "<C-E>", "<cmd>lua require('dapui').eval()<CR>", m)
 
+-- Syslog
+map("n", "so", ":SyslogToggleOutline<CR>", m)
+map("n", "si", ":SyslogToggleItem<CR>", m)
 return plugin_keys

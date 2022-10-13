@@ -145,7 +145,7 @@ packer.startup(function()
     --use({ "kevinhwang91/nvim-bqf", ft = "qf" })
 
     -- Syslog support.
-    use({ "dk@aeserv1:/home/dk/453/workspace/nvim-syslog.git" })
+    use({ "dk@aeserv1:/home/dk/453/workspace/nvim-syslog" })
 end)
 
 -- Plugin configurations
