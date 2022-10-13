@@ -1,10 +1,9 @@
-local plugin_name = "bufferline"
+local plugin_name = 'bufferline'
 local ret_ok, inst = pcall(require, plugin_name)
 if not ret_ok then
-    vim.notify(plugin_name .. " not found.")
+    vim.notify(plugin_name .. ' not found.')
     return
 end
-
 
 inst.setup({
     -- Enable/disable animations
@@ -25,7 +24,7 @@ inst.setup({
     clickable = true,
 
     -- Excludes buffers from the tabline
-    exclude_ft = { "qf", "dap-repl" },
+    exclude_ft = { 'qf', 'dap-repl' },
     --exclude_name = { "package.json" },
 
     -- Enable/disable icons
@@ -40,11 +39,11 @@ inst.setup({
     icon_custom_colors = false,
 
     -- Configure icons on the bufferline.
-    icon_separator_active = "▎",
-    icon_separator_inactive = "▎",
-    icon_close_tab = "",
-    icon_close_tab_modified = "●",
-    icon_pinned = "車",
+    icon_separator_active = '▎',
+    icon_separator_inactive = '▎',
+    icon_close_tab = '',
+    icon_close_tab_modified = '●',
+    icon_pinned = '車',
 
     -- If true, new buffers will be inserted at the start/end of the list.
     -- Default is to insert after current buffer.
@@ -66,7 +65,7 @@ inst.setup({
     -- New buffer letters are assigned in this order. This order is
     -- optimal for the qwerty keyboard layout but might need adjustement
     -- for other layouts.
-    letters = "asdfjkl;ghnmxcvbziowerutyqpASDFJKLGHNMXCVBZIOWERUTYQP",
+    letters = 'asdfjkl;ghnmxcvbziowerutyqpASDFJKLGHNMXCVBZIOWERUTYQP',
 
     -- Sets the name of unnamed buffers. By default format is "[Buffer X]"
     -- where X is the buffer number. But only a static string is accepted here.

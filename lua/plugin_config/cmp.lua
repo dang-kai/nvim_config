@@ -1,20 +1,20 @@
-local plugin_name = "cmp"
+local plugin_name = 'cmp'
 local ret_ok, inst = pcall(require, plugin_name)
 if not ret_ok then
-    vim.notify(plugin_name .. " not found.")
+    vim.notify(plugin_name .. ' not found.')
     return
 end
 
 local keymap = function(inst_cmp)
     return {
-        ["<A-.>"] = inst_cmp.mapping(inst_cmp.mapping.complete(), { "i", "c" }),
-        ["<A-,>"] = inst_cmp.mapping({
+        ['<A-.>'] = inst_cmp.mapping(inst_cmp.mapping.complete(), { 'i', 'c' }),
+        ['<A-,>'] = inst_cmp.mapping({
             i = inst_cmp.mapping.abort(),
             c = inst_cmp.mapping.close(),
         }),
-        ["<C-K>"] = inst_cmp.mapping.select_prev_item(),
-        ["<C-J>"] = inst_cmp.mapping.select_next_item(),
-        ["<TAB>"] = inst_cmp.mapping.confirm({
+        ['<C-K>'] = inst_cmp.mapping.select_prev_item(),
+        ['<C-J>'] = inst_cmp.mapping.select_next_item(),
+        ['<TAB>'] = inst_cmp.mapping.confirm({
             select = true,
             behavior = inst_cmp.ConfirmBehavior.Replace,
         }),
@@ -22,8 +22,8 @@ local keymap = function(inst_cmp)
         --    select = true,
         --    behavior = inst_cmp.ConfirmBehavior.Replace,
         --}),
-        ["<C-U>"] = inst_cmp.mapping(inst_cmp.mapping.scroll_docs(-3), { "i", "c" }),
-        ["<C-D>"] = inst_cmp.mapping(inst_cmp.mapping.scroll_docs(3), { "i", "c" }),
+        ['<C-U>'] = inst_cmp.mapping(inst_cmp.mapping.scroll_docs(-3), { 'i', 'c' }),
+        ['<C-D>'] = inst_cmp.mapping(inst_cmp.mapping.scroll_docs(3), { 'i', 'c' }),
     }
 end
 
@@ -31,7 +31,7 @@ inst.setup({
     snippet = {
         expand = function(args)
             -- For `vsnip` users.
-            vim.fn["vsnip#anonymous"](args.body)
+            vim.fn['vsnip#anonymous'](args.body)
 
             -- For `luasnip` users.
             -- require('luasnip').lsp_expand(args.body)
@@ -44,9 +44,9 @@ inst.setup({
         end,
     },
     sources = inst.config.sources({
-        { name = "nvim_lsp" },
+        { name = 'nvim_lsp' },
         -- For vsnip users.
-        { name = "vsnip" },
+        { name = 'vsnip' },
 
         -- For luasnip users.
         -- { name = 'luasnip' },
@@ -56,11 +56,11 @@ inst.setup({
 
         -- -- For snippy users.
         -- { name = 'snippy' },
-    }, { { name = "buffer" }, { name = "path" } }),
+    }, { { name = 'buffer' }, { name = 'path' } }),
 
     mapping = keymap(inst),
 
-    formatting = require("plugin_config.lspkind").formatting,
+    formatting = require('plugin_config.lspkind').formatting,
 })
 
 ---- Use buffer source in search('\') mode.

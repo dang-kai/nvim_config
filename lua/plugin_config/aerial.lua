@@ -1,7 +1,7 @@
-local plugin_name = "aerial"
+local plugin_name = 'aerial'
 local ret_ok, inst = pcall(require, plugin_name)
 if not ret_ok then
-    vim.notify(plugin_name .. " not found.")
+    vim.notify(plugin_name .. ' not found.')
     return
 end
 
@@ -12,18 +12,18 @@ inst.setup({
         local map = vim.api.nvim_buf_set_keymap
         local m = { noremap = true, silent = true }
 
-        map(bufnr, "n", "to", "<cmd>AerialToggle!<CR>", m) -- Toggle outline
+        map(bufnr, 'n', 'to', '<cmd>AerialToggle!<CR>', m) -- Toggle outline
         -- Jump forwards/backwards with "{" and "}"
-        map(bufnr, "n", "{", "<cmd>AerialPrev<CR>", m)
-        map(bufnr, "n", "}", "<cmd>AerialNext<CR>", m)
+        map(bufnr, 'n', '{', '<cmd>AerialPrev<CR>', m)
+        map(bufnr, 'n', '}', '<cmd>AerialNext<CR>', m)
         -- Jump up the tree with "[[" or "]]"
-        map(bufnr, "n", "[[", "<cmd>AerialPrevUp<CR>", m)
-        map(bufnr, "n", "]]", "<cmd>AerialNextUp<CR>", m)
+        map(bufnr, 'n', '[[', '<cmd>AerialPrevUp<CR>', m)
+        map(bufnr, 'n', ']]', '<cmd>AerialNextUp<CR>', m)
     end,
 
     -- Priority list of preferred backends for aerial.
     -- This can be a filetype map (see :help aerial-filetype-map)
-    backends = { "lsp", "treesitter", "markdown" },
+    backends = { 'lsp', 'treesitter', 'markdown' },
 
     -- Set to false to remove the default keybindings for the aerial buffer
     default_bindings = true,
@@ -32,7 +32,7 @@ inst.setup({
     -- Determines the default direction to open the aerial window. The 'prefer'
     -- options will open the window in the other direction *if* there is a
     -- different buffer in the way of the preferred direction
-    default_direction = "right",
+    default_direction = 'right',
 
     -- Disable aerial on files with this many lines
     disable_max_lines = 100000,
@@ -65,7 +65,7 @@ inst.setup({
     -- last          Only the most-recently focused window will have its location
     --               marked in the aerial buffer.
     -- none          Do not show the cursor locations in the aerial window.
-    highlight_mode = "split_width",
+    highlight_mode = 'split_width',
 
     -- Highlight the closest symbol if the cursor is not exactly on one.
     highlight_closest = true,
@@ -109,7 +109,7 @@ inst.setup({
         -- function     - A function that returns true if the buffer should be
         --                ignored or false if it should not be ignored.
         --                Takes two arguments, `bufnr` and `buftype`.
-        buftypes = "special",
+        buftypes = 'special',
 
         -- Ignored wintypes.
         -- Can be one of the following:
@@ -120,7 +120,7 @@ inst.setup({
         -- function     - A function that returns true if the window should be
         --                ignored or false if it should not be ignored.
         --                Takes two arguments, `winid` and `wintype`.
-        wintypes = "special",
+        wintypes = 'special',
     },
 
     -- When you fold code with za, zo, or zc, update the aerial tree as well.
@@ -145,7 +145,7 @@ inst.setup({
 
     -- Set default symbol icons to use patched font icons (see https://www.nerdfonts.com/)
     -- "auto" will set it to true if nvim-web-devicons or lspkind-nvim is installed.
-    nerd_font = "auto",
+    nerd_font = 'auto',
 
     -- Call this function when aerial first sets symbols on a buffer.
     -- Takes a single `bufnr` argument.
@@ -160,7 +160,7 @@ inst.setup({
     placement_editor_edge = false,
 
     -- Run this command after jumping to a symbol (false will disable)
-    post_jump_cmd = "normal! zz",
+    post_jump_cmd = 'normal! zz',
 
     -- When true, aerial will automatically close after jumping to a symbol
     close_on_select = false,
@@ -169,30 +169,30 @@ inst.setup({
     show_guides = false,
 
     -- The autocmds that trigger symbols update (not used for LSP backend)
-    update_events = "TextChanged,InsertLeave",
+    update_events = 'TextChanged,InsertLeave',
 
     -- Customize the characters used when show_guides = true
     guides = {
         -- When the child item has a sibling below it
-        mid_item = "├─",
+        mid_item = '├─',
         -- When the child item is the last in the list
-        last_item = "└─",
+        last_item = '└─',
         -- When there are nested child guides to the right
-        nested_top = "│ ",
+        nested_top = '│ ',
         -- Raw indentation
-        whitespace = "  ",
+        whitespace = '  ',
     },
 
     -- Options for opening aerial in a floating win
     float = {
         -- Controls border appearance. Passed to nvim_open_win
-        border = "rounded",
+        border = 'rounded',
 
         -- Enum: cursor, editor, win
         --   cursor - Opens float on top of the cursor
         --   editor - Opens float centered in the editor
         --   win    - Opens float centered in the window
-        relative = "cursor",
+        relative = 'cursor',
 
         -- These control the height of the floating window.
         -- They can be integers or a float between 0 and 1 (e.g. 0.4 for 40%)

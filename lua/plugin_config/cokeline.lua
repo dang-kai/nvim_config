@@ -1,16 +1,16 @@
-local plugin_name = "cokeline"
+local plugin_name = 'cokeline'
 local ret_ok, inst = pcall(require, plugin_name)
 if not ret_ok then
-    vim.notify(plugin_name .. " not found.")
+    vim.notify(plugin_name .. ' not found.')
     return
 end
 
 local function focused_fg(buffer)
-    return buffer.is_modified and "#F2B13F" or nil
+    return buffer.is_modified and '#F2B13F' or nil
 end
 
 local function focused_bg(buffer)
-    return buffer.is_focused and "#505050" or nil
+    return buffer.is_focused and '#505050' or nil
 end
 
 inst.setup({
@@ -24,7 +24,7 @@ inst.setup({
         -- either `true` or `false`.
         -- default: `false`.
         filter_valid = function(buffer)
-            local ft = { "terminal", "qf", "dap-repl" }
+            local ft = { 'terminal', 'qf', 'dap-repl' }
             for _, j in ipairs(ft) do
                 if buffer.type == j then
                     return false
@@ -45,12 +45,12 @@ inst.setup({
         -- buffer to the left of the deleted one while `next` focuses the one the
         -- right. Turned off by default.
         -- default: `false`
-        focus_on_delete = "prev",
+        focus_on_delete = 'prev',
 
         -- If set to `last` new buffers are added to the end of the bufferline,
         -- if `next` they are added next to the current buffer.
         -- default: 'last',
-        new_buffers_position = "next",
+        new_buffers_position = 'next',
     },
 
     mappings = {
@@ -78,12 +78,12 @@ inst.setup({
     default_hl = {
         -- default: `ColorColumn`'s background color for focused buffers,
         -- `Normal`'s foreground color for unfocused ones.
-        fg = "#C8C8C8", --| function(buffer) -> '#rrggbb',
+        fg = '#C8C8C8', --| function(buffer) -> '#rrggbb',
 
         -- default: `Normal`'s foreground color for focused buffers,
         -- `ColorColumn`'s background color for unfocused ones.
         -- default: `Normal`'s foreground color.
-        bg = "#262626", --| function(buffer) -> '#rrggbb',
+        bg = '#262626', --| function(buffer) -> '#rrggbb',
 
         -- default: `'NONE'`.
         --style = 'attr1,attr2,...' | function(buffer) -> 'attr1,attr2,...',
@@ -96,7 +96,7 @@ inst.setup({
         -- Separator
         {
             text = function(buffer)
-                return buffer.index ~= 1 and "▎" or " "
+                return buffer.index ~= 1 and '▎' or ' '
             end,
             fg = focused_fg,
             bg = focused_bg,
@@ -117,12 +117,12 @@ inst.setup({
         -- Filename
         {
             text = function(buffer)
-                return buffer.filename .. " "
+                return buffer.filename .. ' '
             end,
             fg = focused_fg,
             bg = focused_bg,
             style = function(buffer)
-                return buffer.is_focused and "bold" or nil
+                return buffer.is_focused and 'bold' or nil
             end,
         },
     },
@@ -133,10 +133,10 @@ inst.setup({
     -- The last component will be automatically space padded if necessary
     -- to ensure the sidebar and the window below it have the same width.
     sidebar = {
-        filetype = "NvimTree",
+        filetype = 'NvimTree',
         components = { {
-            text = "File Tree",
-            style = "bold",
+            text = 'File Tree',
+            style = 'bold',
         } },
     },
 })

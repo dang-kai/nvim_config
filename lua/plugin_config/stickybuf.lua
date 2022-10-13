@@ -1,7 +1,7 @@
-local plugin_name = "stickybuf"
+local plugin_name = 'stickybuf'
 local ret_ok, inst = pcall(require, plugin_name)
 if not ret_ok then
-    vim.notify(plugin_name .. " not found.")
+    vim.notify(plugin_name .. ' not found.')
     return
 end
 
@@ -10,31 +10,31 @@ inst.setup({
     -- 'buftype' will pin the buffer type (PinBuftype)
     -- 'filetype' will pin the filetype (PinFiletype)
     buftype = {
-        [""] = false,
+        [''] = false,
         acwrite = false,
-        help = "buftype",
+        help = 'buftype',
         nofile = false,
         nowrite = false,
-        quickfix = "buftype",
+        quickfix = 'buftype',
         terminal = false,
-        prompt = "bufnr",
+        prompt = 'bufnr',
     },
     wintype = {
         autocmd = false,
-        popup = "bufnr",
+        popup = 'bufnr',
         preview = false,
         command = false,
-        [""] = false,
+        [''] = false,
         unknown = false,
         floating = false,
     },
     filetype = {
-        aerial = "filetype",
-        nerdtree = "filetype",
-        ["neotest-summary"] = "filetype",
+        aerial = 'filetype',
+        nerdtree = 'filetype',
+        ['neotest-summary'] = 'filetype',
     },
     bufname = {
-        ["Neogit.*Popup"] = "bufnr",
+        ['Neogit.*Popup'] = 'bufnr',
     },
     -- Some autocmds for plugins that need a bit more logic
     -- Set to `false` to disable the autocmd

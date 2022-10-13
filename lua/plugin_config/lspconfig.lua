@@ -1,7 +1,7 @@
-local plugin_name = "lspconfig"
+local plugin_name = 'lspconfig'
 local ret_ok, inst = pcall(require, plugin_name)
 if not ret_ok then
-    vim.notify(plugin_name .. " not found.")
+    vim.notify(plugin_name .. ' not found.')
     return
 end
 
@@ -12,9 +12,9 @@ vim.diagnostic.config({
     signs = false,
     update_in_insert = false,
 })
-local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
+local signs = { Error = ' ', Warn = ' ', Hint = ' ', Info = ' ' }
 for type, icon in pairs(signs) do
-    local hl = "DiagnosticSign" .. type
+    local hl = 'DiagnosticSign' .. type
     vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
 end
 
@@ -36,22 +36,22 @@ local on_attach = function(client, bufnr)
     -- code action
     --map(bufnr, "n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", m)
     -- go xx
-    map(bufnr, "n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", m)
-    map(bufnr, "n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", m)
-    map(bufnr, "n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", m)
-    map(bufnr, "n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", m)
+    map(bufnr, 'n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', m)
+    map(bufnr, 'n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', m)
+    map(bufnr, 'n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', m)
+    map(bufnr, 'n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', m)
     --map(bufnr, "n", "gr", "<cmd>Lspsaga rename<CR>", m)
 
-    map(bufnr, "n", "gh", "<cmd>lua vim.lsp.buf.hover()<CR>", m)
+    map(bufnr, 'n', 'gh', '<cmd>lua vim.lsp.buf.hover()<CR>', m)
     --map(bufnr, "n", "gh", "<cmd>Lspsaga preview_definition<CR>", m)
     --map(bufnr, "n", "gh", "<cmd>Lspsaga hover_doc<CR>", m)
     --map(bufnr, "n", "gf", "<cmd>Lspsaga lsp_finder<CR>", m)
 
-    map(bufnr, "n", "gp", "<cmd>lua vim.diagnostic.open_float()<CR>", m)
-    map(bufnr, "n", "gk", "<cmd>lua vim.diagnostic.goto_prev()<CR>", m)
-    map(bufnr, "n", "gj", "<cmd>lua vim.diagnostic.goto_next()<CR>", m)
+    map(bufnr, 'n', 'gp', '<cmd>lua vim.diagnostic.open_float()<CR>', m)
+    map(bufnr, 'n', 'gk', '<cmd>lua vim.diagnostic.goto_prev()<CR>', m)
+    map(bufnr, 'n', 'gj', '<cmd>lua vim.diagnostic.goto_next()<CR>', m)
     --map(bufnr, "n", "th", ":ClangdSwitchSourceHeader<CR>", m) -- Toggle header.
-    map(bufnr, "n", "th", ":e %:p:s,.h$,.X123X,:s,.c$,.h,:s,.X123X$,.c,<CR>", m) -- Toggle header without clang (only in current folder).
+    map(bufnr, 'n', 'th', ':e %:p:s,.h$,.X123X,:s,.c$,.h,:s,.X123X$,.c,<CR>', m) -- Toggle header without clang (only in current folder).
 
     -- map(bufnr, "n", "<leader>f", "<cmd>lua vim.lsp.buf.formatting()<CR>", m)
     -- map(bufnr, "n", "<leader>q", "<cmd>lua vim.diagnostic.setloclist()<CR>", m)
@@ -65,30 +65,30 @@ local on_attach = function(client, bufnr)
     --vim.cmd('autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()')
 
     -- Code outline with Aerial
-    require("aerial").on_attach(client, bufnr)
+    require('aerial').on_attach(client, bufnr)
 end
 
 local settings = {}
 
 -- Lua
-local runtime_path = vim.split(package.path, ";")
-table.insert(runtime_path, "lua/?.lua")
-table.insert(runtime_path, "lua/?/init.lua")
+local runtime_path = vim.split(package.path, ';')
+table.insert(runtime_path, 'lua/?.lua')
+table.insert(runtime_path, 'lua/?/init.lua')
 
 settings.Lua = {
     runtime = {
         -- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
-        version = "LuaJIT",
+        version = 'LuaJIT',
         -- Setup your lua path
         path = runtime_path,
     },
     diagnostics = {
         -- Get the language server to recognize the `vim` global
-        globals = { "vim", "use" },
+        globals = { 'vim', 'use' },
     },
     workspace = {
         -- Make the server aware of Neovim runtime files
-        library = vim.api.nvim_get_runtime_file("", true),
+        library = vim.api.nvim_get_runtime_file('', true),
         checkThirdParty = false,
     },
     -- Do not send telemetry data containing a randomized but unique identifier
