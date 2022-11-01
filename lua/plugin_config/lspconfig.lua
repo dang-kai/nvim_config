@@ -63,9 +63,6 @@ local on_attach = function(client, bufnr)
 
     -- Auto format when the file is saved.
     --vim.cmd('autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()')
-
-    -- Code outline with Aerial
-    require('aerial').on_attach(client, bufnr)
 end
 
 local settings = {}

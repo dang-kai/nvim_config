@@ -70,6 +70,9 @@ map('n', '<C-F>', ':Telescope find_files<CR>', m)
 map('n', 'sf', ':Telescope find_files<CR>', m)
 map('n', '<C-G>', ':Telescope live_grep<CR>', m)
 map('n', 'sg', ':Telescope live_grep<CR>', m)
+-- outline
+map('n', 'to', ':AerialToggle!<CR>', m)
+--map('n', 'to', ':SymbolsOutline<CR>', m)
 
 -- LSP
 --map("n", "g", "", m)  -- g is used to go to different places in original vim. Do not cancel.
