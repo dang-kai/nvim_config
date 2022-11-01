@@ -13,6 +13,9 @@ local function focused_bg(buffer)
     return buffer.is_focused and '#505050' or nil
 end
 
+local tab_length_min = 6
+local tab_length_max = 26
+
 inst.setup({
     -- Only show the bufferline when there are at least this many visible buffers.
     -- default: `1`.
@@ -66,7 +69,7 @@ inst.setup({
         -- up. The buffer will be truncated if its width is bigger than this
         -- value.
         -- default: `999`.
-        max_buffer_width = 30,
+        max_buffer_width = tab_length_max,
     },
 
     -- The default highlight group values.
@@ -117,7 +120,11 @@ inst.setup({
         -- Filename
         {
             text = function(buffer)
-                return buffer.filename .. ' '
+                local filename = buffer.filename
+                if #filename < tab_length_min - 4 then
+                    filename = filename .. string.rep(' ', tab_length_min - 4 - #filename)
+                end
+                return filename .. ' '
             end,
             fg = focused_fg,
             bg = focused_bg,
