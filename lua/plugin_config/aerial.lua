@@ -109,7 +109,7 @@ inst.setup({
         'Method',
         --'String',
         'Struct',
-        'Variable',
+        --'Variable',
     },
     --filter_kind = false,
 
