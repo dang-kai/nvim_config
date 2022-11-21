@@ -30,6 +30,7 @@ inst.setup({
             local ft = { 'terminal', 'qf', 'dap-repl' }
             for _, j in ipairs(ft) do
                 if buffer.type == j then
+                    vim.notify('buffer ' .. j .. ' ignored.')
                     return false
                 end
             end

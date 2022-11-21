@@ -46,8 +46,8 @@ packer.startup(function()
 
     -- Tab view
     --use({ "akinsho/bufferline.nvim", requires = { "kyazdani42/nvim-web-devicons", "moll/vim-bbye" } })
-    --use { "romgrk/barbar.nvim", tag = "release/1.1.0", requires = "kyazdani42/nvim-web-devicons" }
-    use({ 'noib3/nvim-cokeline', requires = 'kyazdani42/nvim-web-devicons' }) --config = function() require('cokeline').setup() end })
+    use { "romgrk/barbar.nvim", requires = "kyazdani42/nvim-web-devicons" }  --tag = "release/1.1.0", 
+    --use({ 'noib3/nvim-cokeline', requires = 'kyazdani42/nvim-web-devicons' }) --config = function() require('cokeline').setup() end })
 
     -- lualine
     --use { "nvim-lualine/lualine.nvim", requires = { "kyazdani42/nvim-web-devicons" } }
@@ -151,9 +151,9 @@ end)
 -- Plugin configurations
 require('plugin_config.nvimtree')
 --require("plugin_config.bufferline")
---require("plugin_config.barbar")
+require("plugin_config.barbar")
+--require('plugin_config.cokeline')
 --require("plugin_config.lualine")
-require('plugin_config.cokeline')
 require('plugin_config.telescope')
 require('plugin_config.treesitter')
 require('plugin_config.lspconfig')
