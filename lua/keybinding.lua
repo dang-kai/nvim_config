@@ -8,6 +8,8 @@ vim.g.mapleader = ';' -- Usually make, cmake and debug commands should be trigge
 local m = { noremap = true, silent = true }
 local plugin_keys = {}
 local map = vim.api.nvim_set_keymap
+-- remap 'K' to reversed 'J'. Original 'K' causes freeze.
+map('n', 'K', 'jddkkpJ', m)
 -- search (find) and format
 map('n', 'f', '', m) -- cancel the original function (find char *) of key f.
 map('n', 'fn', ':noh<CR>', m)
