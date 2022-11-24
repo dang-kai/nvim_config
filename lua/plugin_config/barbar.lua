@@ -7,14 +7,14 @@ end
 
 inst.setup({
     animation = false, -- Enable/disable animations
-    auto_hide = true,  -- Enable/disable auto-hiding the tab bar when there is a single buffer
-    closable  = false, -- Enable/disable close button
-    clickable = true,  -- Enables/disable clickable tabs - left-click: go to buffer - middle-click: delete buffer
-    icons     = true,  -- Enable/disable icons. Other options: 'numbers', 'both'.
+    auto_hide = true, -- Enable/disable auto-hiding the tab bar when there is a single buffer
+    closable = false, -- Enable/disable close button
+    clickable = true, -- Enables/disable clickable tabs - left-click: go to buffer - middle-click: delete buffer
+    icons = true, -- Enable/disable icons. Other options: 'numbers', 'both'.
     icon_custom_colors = false, -- If set, the icon color will follow its corresponding buffer highlight group.
-    maximum_padding    = 1,     -- Sets the maximum padding width with which to surround each tab
-    maximum_length     = 30,    -- Sets the maximum buffer name length.
-    tabpages  = true,  -- Enable/disable current/total tabpages indicator (top right corner)
+    maximum_padding = 1, -- Sets the maximum padding width with which to surround each tab
+    maximum_length = 30, -- Sets the maximum buffer name length.
+    tabpages = true, -- Enable/disable current/total tabpages indicator (top right corner)
 
     exclude_ft = { 'qf', 'dap-repl' }, -- Excludes buffers from the tabline exclude_name = { "package.json" },
 
@@ -46,7 +46,6 @@ inst.setup({
     --no_name_title = nil,
 })
 
-vim.api.nvim_set_hl(0, 'BufferCurrent', { ctermfg=White, ctermbg=Black })
 
 --local nvim_tree_events = require("nvim-tree.events")
 --local bufferline_api = require("bufferline.api")
