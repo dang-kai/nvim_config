@@ -12,7 +12,7 @@ inst.setup({
     clickable = true, -- Enables/disable clickable tabs - left-click: go to buffer - middle-click: delete buffer
     icons = true, -- Enable/disable icons. Other options: 'numbers', 'both'.
     icon_custom_colors = false, -- If set, the icon color will follow its corresponding buffer highlight group.
-    maximum_padding = 1, -- Sets the maximum padding width with which to surround each tab
+    maximum_padding = 0, -- Sets the maximum padding width with which to surround each tab
     maximum_length = 30, -- Sets the maximum buffer name length.
     tabpages = true, -- Enable/disable current/total tabpages indicator (top right corner)
 

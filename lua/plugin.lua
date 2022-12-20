@@ -46,7 +46,7 @@ packer.startup(function()
 
     -- Tab view
     --use({ "akinsho/bufferline.nvim", requires = { "kyazdani42/nvim-web-devicons", "moll/vim-bbye" } })
-    use { "romgrk/barbar.nvim", requires = "kyazdani42/nvim-web-devicons" }  --tag = "release/1.1.0", 
+    use { "dang-kai/barbar.nvim", requires = "kyazdani42/nvim-web-devicons" }  --tag = "release/1.1.0", 
     --use({ 'noib3/nvim-cokeline', requires = 'kyazdani42/nvim-web-devicons' }) --config = function() require('cokeline').setup() end })
 
     -- lualine
