@@ -115,7 +115,7 @@ packer.startup(function()
     use({ 'hrsh7th/cmp-path' }) -- { name = "path" }
     --use({ "hrsh7th/cmp-cmdline" }) -- { name = "cmdline" }
     -- -- Common Snipplets
-    use({ 'rafamadriz/friendly-snippets' })
+    --use({ 'rafamadriz/friendly-snippets' })
 
     -- code format
     use({ 'mhartington/formatter.nvim' })
