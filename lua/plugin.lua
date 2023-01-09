@@ -42,15 +42,15 @@ packer.startup(function()
     use({ 'wbthomason/packer.nvim' })
 
     -- Nvim-tree
-    use({ 'kyazdani42/nvim-tree.lua', requires = 'kyazdani42/nvim-web-devicons' })
+    use({ 'nvim-tree/nvim-tree.lua', requires = 'nvim-tree/nvim-web-devicons' })
 
     -- Tab view
-    --use({ "akinsho/bufferline.nvim", requires = { "kyazdani42/nvim-web-devicons", "moll/vim-bbye" } })
-    use { "dang-kai/barbar.nvim", requires = "kyazdani42/nvim-web-devicons" }  --tag = "release/1.1.0", 
-    --use({ 'noib3/nvim-cokeline', requires = 'kyazdani42/nvim-web-devicons' }) --config = function() require('cokeline').setup() end })
+    --use({ "akinsho/bufferline.nvim", requires = { "nvim-tree/nvim-web-devicons", "moll/vim-bbye" } })
+    use { "dang-kai/barbar.nvim", requires = "nvim-tree/nvim-web-devicons" }  --tag = "release/1.1.0", 
+    --use({ 'noib3/nvim-cokeline', requires = 'nvim-tree/nvim-web-devicons' }) --config = function() require('cokeline').setup() end })
 
     -- lualine
-    --use { "nvim-lualine/lualine.nvim", requires = { "kyazdani42/nvim-web-devicons" } }
+    --use { "nvim-lualine/lualine.nvim", requires = { "nvim-tree/nvim-web-devicons" } }
     --use { "arkav/lualine-lsp-progress" }
 
     -- Telescope
