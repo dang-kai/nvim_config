@@ -39,15 +39,15 @@ local palettes = {
 
         -- comment is the definition of the comment color.
         --comment = "#60728a",
-        bg0 = '#262626', -- File tree background.
-        bg1 = '#262626', -- Main window background.
+        bg0 = '#222222', -- File tree background.
+        bg1 = '#222222', -- Main window background.
         comment = '#A0A0A0',
         --fg1 = '#A0A0A0',
         --fg2 = '#A0A0A0',
         fg3 = '#A0A0A0', -- Color of line numbers and folds.
 
         white = { base = '#E0E0E0', bright = '#F0F0F0' },
-        black = { base = '#262626', bright = '#585858' },
+        black = { base = '#222222', bright = '#585858' },
         red = { base = '#EE3344', bright = '#EF6677' },
         green = { base = '#50EB58', bright = '#C7E7A9' }, -- green = { base = '#4E9A06', bright = '#8AE234' },
         yellow = { base = '#C4A000', bright = '#EBDC50' },
