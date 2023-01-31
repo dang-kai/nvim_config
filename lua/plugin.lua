@@ -58,7 +58,7 @@ packer.startup(function()
     use({ 'nvim-telescope/telescope-ui-select.nvim' })
 
     -- Dashboard
-    use({ 'glepnir/dashboard-nvim' })
+    use({ 'dang-kai/dashboard-nvim', branch = 'dev' })
 
     -- Session management
     --use({ "ahmedkhalf/project.nvim" })
