@@ -46,7 +46,7 @@ packer.startup(function()
 
     -- Tab view
     --use({ "akinsho/bufferline.nvim", requires = { "nvim-tree/nvim-web-devicons", "moll/vim-bbye" } })
-    use { "dang-kai/barbar.nvim", requires = "nvim-tree/nvim-web-devicons" }  --tag = "release/1.1.0", 
+    use({ 'romgrk/barbar.nvim', tag = 'release/1.4.1', requires = 'nvim-tree/nvim-web-devicons' })
     --use({ 'noib3/nvim-cokeline', requires = 'nvim-tree/nvim-web-devicons' }) --config = function() require('cokeline').setup() end })
 
     -- lualine
@@ -58,7 +58,7 @@ packer.startup(function()
     use({ 'nvim-telescope/telescope-ui-select.nvim' })
 
     -- Dashboard
-    use({ 'dang-kai/dashboard-nvim', branch = 'dev' })
+    use({ 'dang-kai/dashboard-nvim', tag = 'v1.0.0' })
 
     -- Session management
     --use({ "ahmedkhalf/project.nvim" })
@@ -77,7 +77,7 @@ packer.startup(function()
     -- Debug
     use({ 'mfussenegger/nvim-dap' })
     use({ 'theHamsta/nvim-dap-virtual-text' })
-    use({ 'rcarriga/nvim-dap-ui' })
+    use({ 'rcarriga/nvim-dap-ui', tag = 'v2.6.0' })
     use({ 'nvim-telescope/telescope-dap.nvim' })
     --use({ "Pocco81/dap-buddy.nvim" }) -- Broken? Install DAP for each language manually.
     --use({ "puremourning/vimspector" })
@@ -151,7 +151,7 @@ end)
 -- Plugin configurations
 require('plugin_config.nvimtree')
 --require("plugin_config.bufferline")
-require("plugin_config.barbar")
+require('plugin_config.barbar')
 --require('plugin_config.cokeline')
 --require("plugin_config.lualine")
 require('plugin_config.telescope')

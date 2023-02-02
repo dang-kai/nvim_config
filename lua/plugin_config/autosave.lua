@@ -19,5 +19,5 @@ inst.setup({
     write_all_buffers = false,
     on_off_commands = false,
     clean_command_line_interval = 0,
-    debounce_delay = 2000,
+    debounce_delay = 500,
 })
