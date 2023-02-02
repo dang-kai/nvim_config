@@ -7,6 +7,7 @@ end
 
 inst.setup({
     defaults = {
+        file_ignore_patterns = { 'wav', 'pdf' },
         initial_mode = 'insert',
         mappings = {
             i = {
