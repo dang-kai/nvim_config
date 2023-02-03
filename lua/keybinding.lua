@@ -14,7 +14,7 @@ map('n', 'K', 'jddkkpJ', m)
 map('n', 'f', '', m) -- cancel the original function (find char *) of key f.
 map('n', 'fn', ':noh<CR>', m)
 map('n', 'ff', ':Format<CR>', m)
-map('n', 'fw', ':FormatWrite<CR>', m)
+--map('n', 'fw', ':FormatWrite<CR>', m)
 -- navigation
 map('n', '<C-U>', '4k', m)
 map('n', '<C-D>', '4j', m)

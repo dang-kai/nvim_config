@@ -7,16 +7,16 @@ end
 
 inst.setup({
     ensure_installed = {
-        'c',
-        'cpp',
+        --'c',
+        --'cpp',
         'bash',
         'cmake',
         'make',
         'bibtex',
         'latex',
-        'python',
+        --'python',
         'vim',
-        'lua',
+        --'lua',
         'markdown',
         'json',
         'html',
