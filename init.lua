@@ -1,6 +1,6 @@
 require('plugin')
 require('config')
-require('colorscheme')
+--require('colorscheme')
 require('keybinding')
 
 

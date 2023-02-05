@@ -22,27 +22,39 @@ if not status_ok then
     return
 end
 
--- Manage plugins with packer
-local options = {}
-
+-- Manage plugins with lazy.nvim
 local plugins = {
     ----------GENERAL-------------------------------------------
     -- Colorscheme
     {
         'EdenEast/nightfox.nvim',
+        --'folke/tokyonight.nvim',
+        enabled = true,
         lazy = false,
         priority = 1000,
         config = function()
             require('plugin_config.nightfox')
+            vim.cmd('colorscheme nordfox')
+            --vim.cmd('colorscheme tokyonight')
+            vim.api.nvim_set_hl(0, 'BufferCurrent', { fg = '#dfdfdf', bg = '#606060' })
+            vim.api.nvim_set_hl(0, 'BufferCurrentMod', { fg = '#f4d000', bg = '#606060' })
+            vim.api.nvim_set_hl(0, 'BufferInactiveMod', { fg = '#c4a000', bg = '#262626' })
+            vim.api.nvim_set_hl(0, 'BufferCurrentSign', { fg = '#60a2f8', bg = '#606060' })
+            vim.api.nvim_set_hl(0, 'BufferInactiveSign', { fg = '#808080', bg = '#262626' })
         end,
     },
 
     -- Plugin manager itself
-    { 'folke/lazy.nvim', lazy = true },
+    {
+        'folke/lazy.nvim',
+        enabled = true,
+        lazy = false,
+    },
 
     -- File tree
     {
         'nvim-tree/nvim-tree.lua',
+        enabled = true,
         lazy = true,
         cmd = { 'NvimTreeToggle', 'NvimTreeFindFile' },
         dependencies = { 'nvim-tree/nvim-web-devicons' },
@@ -54,6 +66,7 @@ local plugins = {
     -- Tab view (options: barbar, cokeline, bufferline)
     {
         'romgrk/barbar.nvim',
+        enabled = true,
         lazy = true,
         event = 'BufAdd',
         tag = 'release/1.4.1',
@@ -66,7 +79,9 @@ local plugins = {
     -- Search file in workspace
     {
         'nvim-telescope/telescope.nvim',
-        lazy = false,
+        enabled = true,
+        lazy = true,
+        cmd = { 'Telescope' },
         dependencies = { 'nvim-lua/plenary.nvim', 'nvim-telescope/telescope-ui-select.nvim' },
         config = function()
             require('plugin_config.telescope')
@@ -76,6 +91,7 @@ local plugins = {
     -- Syslog outline
     {
         url = 'dk@aeserv1:/home/dk/453/workspace/nvim-syslog.git',
+        enabled = true,
         lazy = true,
         cmd = { 'SyslogToggleOutline', 'SyslogToggleItem' },
     },
@@ -93,6 +109,7 @@ local plugins = {
     -- Session management
     {
         'Shatur/neovim-session-manager',
+        enabled = true,
         dependencies = { 'nvim-lua/plenary.nvim' },
         config = function()
             require('plugin_config.session')
@@ -102,12 +119,14 @@ local plugins = {
     -- Git support
     {
         'lewis6991/gitsigns.nvim',
+        enabled = true,
         config = function()
             require('plugin_config.gitsigns')
         end,
     },
     {
         'kdheepak/lazygit.nvim',
+        enabled = true,
         lazy = true,
         cmd = { 'LazyGit' },
     },
@@ -121,6 +140,7 @@ local plugins = {
     -- Auto save
     {
         'jakobkhansen/AutoSave.nvim',
+        enabled = true,
         config = function()
             require('plugin_config.autosave')
         end,
@@ -129,6 +149,7 @@ local plugins = {
     -- Floating terminal
     {
         'voldikss/vim-floaterm',
+        enabled = true,
         config = function()
             vim.g.floaterm_width = 0.7
             vim.g.floaterm_height = 0.7
@@ -138,6 +159,7 @@ local plugins = {
     -- Tmux integration
     {
         'aserowy/tmux.nvim',
+        enabled = true,
         config = function()
             require('plugin_config.tmux')
         end,
@@ -147,6 +169,7 @@ local plugins = {
     -- Code format
     {
         'mhartington/formatter.nvim',
+        enabled = true,
         lazy = true,
         cmd = { 'Format' },
         config = function()
@@ -155,60 +178,100 @@ local plugins = {
     },
 
     -- CMake support
-    { 'Shatur/neovim-cmake', enabled = true, dependencies = { 'nvim-lua/plenary.nvim', 'mfussenegger/nvim-dap' } },
+    {
+        'Shatur/neovim-cmake',
+        enabled = true,
+        lazy = true,
+        dependencies = { 'nvim-lua/plenary.nvim', 'mfussenegger/nvim-dap' },
+        cmd = { 'CMake' },
+        config = function()
+            require('plugin_config.cmake')
+        end,
+    },
 
     -- (VIM plugin) python indent
-    { 'Vimjas/vim-python-pep8-indent', enabled = false },
+    {
+        'Vimjas/vim-python-pep8-indent',
+        enabled = true,
+    },
 
     -- Treesitter
-    { 'nvim-treesitter/nvim-treesitter', enabled = false, build = ':TSUpdate' },
+    {
+        'nvim-treesitter/nvim-treesitter',
+        enabled = true,
+        build = ':TSUpdate',
+        config = function()
+            require('plugin_config.treesitter')
+        end,
+    },
 
     -- LSP (Language Server Protocol) (additional: lspsaga)
-    { 'neovim/nvim-lspconfig', enabled = false },
-    { 'onsails/lspkind-nvim', enabled = false, dependencies = 'neovim/nvim-lspconfig' }, -- Replace text kind description with icons
+    {
+        'neovim/nvim-lspconfig',
+        enabled = true,
+        dependencies = 'onsails/lspkind-nvim',
+        config = function()
+            require('plugin_config.lspconfig')
+        end,
+    },
 
     -- Code outline (options: aerial, symbols-outline)
-    { 'stevearc/aerial.nvim', enabled = false },
+    {
+        'stevearc/aerial.nvim',
+        enabled = true,
+        lazy = true,
+        cmd = { 'AerialToggle' },
+        config = function()
+            require('plugin_config.aerial')
+        end,
+    },
 
     -- Debug
-    { 'mfussenegger/nvim-dap', enabled = false },
-    { 'theHamsta/nvim-dap-virtual-text', enabled = false, dependencies = 'mfussenegger/nvim-dap' },
-    { 'rcarriga/nvim-dap-ui', enabled = false, dependencies = 'mfussenegger/nvim-dap', tag = 'v2.6.0' },
-    { 'nvim-telescope/telescope-dap.nvim', enabled = false, dependencies = 'mfussenegger/nvim-dap' },
+    {
+        'mfussenegger/nvim-dap',
+        enabled = true,
+        dependencies = {
+            {
+                'theHamsta/nvim-dap-virtual-text',
+                config = function()
+                    require('plugin_config.dap_virtual_text')
+                end,
+            },
+            {
+                'rcarriga/nvim-dap-ui',
+                tag = 'v2.6.0',
+                config = function()
+                    require('plugin_config.dap')
+                end,
+            },
+            'nvim-telescope/telescope-dap.nvim',
+        },
+        config = function()
+            require('plugin_config.dap')
+        end,
+    },
 
     -- Auto completion
-    { 'hrsh7th/nvim-cmp', enabled = false, event = 'InsertEnter', dependencies = { 'hrsh7th/cmp-path', 'hrsh7th/cmp-nvim-lsp' } },
-    { 'hrsh7th/vim-vsnip', enabled = false }, -- Snippet engine
-    { 'hrsh7th/cmp-vsnip', enabled = false }, -- Sninppet source: vnsnip
-    --{ 'hrsh7th/cmp-nvim-lsp' }, -- Snippet source: lsp
-    --{ 'hrsh7th/cmp-path' },  -- Snippet source: path
-    --{ "hrsh7th/cmp-buffer" }, -- Snippet source: buffer
-    --{ "hrsh7th/cmp-cmdline" }, -- Snippet source: command line
-    --{ 'rafamadriz/friendly-snippets' } -- Other common snippets sources
+    {
+        'hrsh7th/nvim-cmp',
+        enabled = true,
+        lazy = true,
+        event = 'InsertEnter',
+        dependencies = {
+            'hrsh7th/cmp-vsnip',
+            'hrsh7th/cmp-path',
+            'hrsh7th/cmp-nvim-lsp',
+            'hrsh7th/vim-vsnip',
+            --'rafamadriz/friendly-snippets'
+        },
+        config = function()
+            require('plugin_config.cmp')
+        end,
+    },
+}
+
+local options = {
+    ui = { border = 'rounded' },
 }
 
 lazy.setup(plugins, options)
-
--- Plugin configurations
-----------GENERAL-------------------------------------------
-----require("plugin_config.bufferline")
---require('plugin_config.cokeline')
---require("plugin_config.lualine")
-----------PROGRAMMING---------------------------------------
---require('plugin_config.treesitter')
---require('plugin_config.lspconfig')
-----require("plugin_config.lspkind")
-----require("plugin_config.lspsaga")
---require('plugin_config.cmp')
---require('plugin_config.formatter')
-----require('plugin_config.dashboard')
-----require("plugin_config.project")
---require('plugin_config.cmake')
---require('plugin_config.aerial')
-----require('plugin_config.symbols_outline')
-----require('plugin_config.stickybuf')
---require('plugin_config.dap')
---require('plugin_config.dap_ui')
---require('plugin_config.dap_virtual_text')
-
---floaterm config
