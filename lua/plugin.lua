@@ -141,6 +141,8 @@ local plugins = {
     {
         'jakobkhansen/AutoSave.nvim',
         enabled = true,
+        lazy = true,
+        event = 'VeryLazy',
         config = function()
             require('plugin_config.autosave')
         end,
@@ -150,6 +152,8 @@ local plugins = {
     {
         'voldikss/vim-floaterm',
         enabled = true,
+        lazy = true,
+        event = 'VeryLazy',
         config = function()
             vim.g.floaterm_width = 0.8
             vim.g.floaterm_height = 0.8
@@ -160,6 +164,8 @@ local plugins = {
     {
         'aserowy/tmux.nvim',
         enabled = true,
+        lazy = true,
+        event = 'VeryLazy',
         config = function()
             require('plugin_config.tmux')
         end,
@@ -182,8 +188,8 @@ local plugins = {
         'Shatur/neovim-cmake',
         enabled = true,
         lazy = true,
-        dependencies = { 'nvim-lua/plenary.nvim', 'mfussenegger/nvim-dap' },
         cmd = { 'CMake' },
+        dependencies = { 'nvim-lua/plenary.nvim', 'mfussenegger/nvim-dap' },
         config = function()
             require('plugin_config.cmake')
         end,
