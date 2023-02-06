@@ -1,6 +1,6 @@
 -- Separate keybinding.lua from config.lua because other configs need to call it and get its return value.
 --
---vim.opt if for things you would set in vimscript. vim.g is for things you"d let.
+--vim.opt if for things you would set in vimscript. vim.g is for things you would let.
 vim.opt.timeoutlen = 1000 -- shortcut key combination timeout in milliseconds
 vim.g.mapleader = ';' -- Usually make, cmake and debug commands should be triggered with the leader key.
 
@@ -19,10 +19,6 @@ map('n', 'ff', ':Format<CR>', m)
 map('n', '<C-U>', '4k', m)
 map('n', '<C-D>', '4j', m)
 -- window split
---map("n", "<C-H>", "<C-W>h", m) -- Should be handled by tmux.nvim automatically.
---map("n", "<C-J>", "<C-W>j", m) -- Should be handled by tmux.nvim automatically.
---map("n", "<C-K>", "<C-W>k", m) -- Should be handled by tmux.nvim automatically.
---map("n", "<C-L>", "<C-W>l", m) -- Should be handled by tmux.nvim automatically.
 map('n', 's', '', m) -- cancel the original function (substitute char) of key s and use it for window split.
 map('n', 'sv', ':vsp<CR>', m) -- vertical split
 map('n', 'sh', ':sp<CR>', m) -- horizontal split
@@ -81,16 +77,6 @@ map('n', 'to', ':AerialToggle<CR>', m)
 --map("n", "gb", "<C-O>", m)  -- Conflicts with gb (git blame) from gitsigns, keep using original <C-O>.
 --map("n", "gf", "<C-I>", m)
 
--- CMP
--- leader key region
--- Add bufferline keys as original <C-A> mapping is hard to press.
--- bufferline
---map("n", "<leader>h", ":BufferLineCyclePrev<CR>", m)
---map("n", "<leader>j", ":BufferLineCyclePrev<CR>", m)
---map("n", "<F2>", ":BufferLineCyclePrev<CR>", m)
---map("n", "<F3>", ":BufferLineCycleNext<CR>", m)
---map("n", "<leader>x", ":Bdelete!<CR>", m)
---map("n", "<F4>", ":Bdelete!<CR>", m)
 -- barbar
 map('n', '<F2>', ':BufferPrevious<CR>', m)
 map('i', '<F2>', '<ESC>:BufferPrevious<CR>', m)
@@ -104,12 +90,6 @@ map('n', '<leader>bn', '<Cmd>BufferOrderByBufferNumber<CR>', m)
 map('n', '<leader>bd', '<Cmd>BufferOrderByDirectory<CR>', m)
 map('n', '<leader>bl', '<Cmd>BufferOrderByLanguage<CR>', m)
 map('n', '<leader>bw', '<Cmd>BufferOrderByWindowNumber<CR>', m)
--- cokeline
---map('n', '<F2>', '<Plug>(cokeline-focus-prev)', m)
---map('n', '<C-B>', '<Plug>(cokeline-switch-prev)', m)
---map('n', '<F3>', '<Plug>(cokeline-focus-next)', m)
---map('n', '<C-N>', '<Plug>(cokeline-switch-next)', m)
---map('n', '<F4>', ':bdelete<CR>', m)
 
 -- makefile
 map('n', '<leader>mk', ':make<CR><CR>', m)
@@ -135,41 +115,17 @@ map('n', '<leader>pd', ':SessionManager delete_session<CR>', m)
 map('n', '<leader>io', 'o<ESC>', m)
 
 -- Debug
--- -- vimspector
---map("n", "<F5>", ":call vimspector#Continue()<CR>", m)
---map("n", "<F6>", ":call vimspector#RunToCursor()<CR>", m)
---map("n", "<F7>", ":call vimspector#Pause()<CR>", m)
---map("n", "<F8>", ":call vimspector#Stop()<CR>", m)
---map("n", "<F10>", ":call vimspector#StepOver()<CR>", m)
---map("n", "<F11>", ":call vimspector#StepInto()<CR>", m)
---map("n", "<F12>", ":call vimspector#StepOut()<CR>", m)
---map("n", "tb", ":call vimspector#ToggleBreakpoint()<CR>", m)
---map("n", "tbl", ":call vimspector#ListBreakpoints()<CR>", m)
---map("n", "tr", ":call vimspector#Launch()<CR>", m) -- r for run
---map("n", "tx", ":call vimspector#Reset()<CR>", m) -- x for stop
 -- -- nvim-dap
-vim.api.nvim_create_user_command('DAPStepOut', function() require('dap').step_out() end, {})
-map('n', '<leader>db', ":DAPToggleBreakPoint<CR>", m)
-map('n', '<leader>dc', ":DAPSetConditionalBreakPoint<CR>", m)
-map('n', '<leader>de', ":DAPEval<CR>", m)
-map('n', '<F5>', ":DAPContinue<CR>", m)
-map('n', '<F8>', ":DAPTerminate<CR>", m)
-map('n', '<F9>', ":DAPRunToCursor<CR>", m)
-map('n', '<F10>', ":DAPStepOver<CR>", m)
-map('n', '<F11>', ":DAPStepInto<CR>", m)
-map('n', '<F12>', ":DAPStepOut<CR>", m)
-map('v', '<C-E>', ":DAPEval<CR>", m)
--- -- Old nvim-dap key mapping format.
---map('n', '<leader>db', "<cmd>lua require('dap').toggle_breakpoint()<CR>", m)
---map('n', '<leader>dc', "<cmd>lua require('dap').set_breakpoint(vim.fn.input '[Condition] > ')<CR>", m)
---map('n', '<leader>de', "<cmd>lua require('dapui').eval()<CR>", m)
---map('n', '<F5>', "<cmd>lua require('dap').continue()<CR>", m)
---map('n', '<F8>', "<cmd>lua require('dap').terminate()<CR>", m)
---map('n', '<F9>', "<cmd>lua require('dap').run_to_cursor()<CR>", m)
---map('n', '<F10>', "<cmd>lua require('dap').step_over()<CR>", m)
---map('n', '<F11>', "<cmd>lua require('dap').step_into()<CR>", m)
---map('n', '<F12>', "<cmd>lua require('dap').step_out()<CR>", m)
---map('v', '<C-E>', "<cmd>lua require('dapui').eval()<CR>", m)
+map('n', '<leader>db', ':DAPToggleBreakPoint<CR>', m)
+map('n', '<leader>dc', ':DAPSetConditionalBreakPoint<CR>', m)
+map('n', '<leader>de', ':DAPEval<CR>', m)
+map('n', '<F5>', ':DAPContinue<CR>', m)
+map('n', '<F8>', ':DAPTerminate<CR>', m)
+map('n', '<F9>', ':DAPRunToCursor<CR>', m)
+map('n', '<F10>', ':DAPStepOver<CR>', m)
+map('n', '<F11>', ':DAPStepInto<CR>', m)
+map('n', '<F12>', ':DAPStepOut<CR>', m)
+map('v', '<C-E>', ':DAPEval<CR>', m)
 
 -- Syslog
 map('n', 'so', ':SyslogToggleOutline<CR>', m)

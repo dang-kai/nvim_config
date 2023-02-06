@@ -239,7 +239,6 @@ local plugins = {
         enabled = true,
         lazy = true,
         --event = 'VeryLazy',
-        --keys = { '<leader>db', '<leader>dc', '<leader>de', '<F5>', '<F8>', '<F9>', '<F10>', '<F11>', '<F12>', { '<C-E>', mode = 'v' } },
         cmd = {
             'DAPToggleBreakPoint',
             'DAPSetConditionalBreakPoint',

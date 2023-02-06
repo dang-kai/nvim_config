@@ -30,6 +30,9 @@ end, {})
 vim.api.nvim_create_user_command('DAPStepInto', function()
     require('dap').step_into()
 end, {})
+vim.api.nvim_create_user_command('DAPStepOut', function()
+    require('dap').step_out()
+end, {})
 
 -- Config dap icons
 vim.fn.sign_define('DapBreakpoint', { text = '', texthl = '', linehl = '', numhl = '' })

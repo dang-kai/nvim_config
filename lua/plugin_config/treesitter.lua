@@ -17,6 +17,7 @@ inst.setup({
         'python',
         'vim',
         'lua',
+        'diff',
         'markdown',
         'json',
         'html',
