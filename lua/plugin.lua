@@ -28,14 +28,12 @@ local plugins = {
     -- Colorscheme
     {
         'EdenEast/nightfox.nvim',
-        --'folke/tokyonight.nvim',
         enabled = true,
         lazy = false,
         priority = 1000,
         config = function()
             require('plugin_config.nightfox')
             vim.cmd('colorscheme nordfox')
-            --vim.cmd('colorscheme tokyonight')
             vim.api.nvim_set_hl(0, 'BufferCurrent', { fg = '#dfdfdf', bg = '#606060' })
             vim.api.nvim_set_hl(0, 'BufferCurrentMod', { fg = '#f4d000', bg = '#606060' })
             vim.api.nvim_set_hl(0, 'BufferInactiveMod', { fg = '#c4a000', bg = '#262626' })
@@ -68,7 +66,7 @@ local plugins = {
         'romgrk/barbar.nvim',
         enabled = true,
         lazy = true,
-        event = 'BufAdd',
+        event = 'VeryLazy',
         tag = 'release/1.4.1',
         dependencies = { 'nvim-tree/nvim-web-devicons' },
         config = function()
@@ -86,7 +84,7 @@ local plugins = {
         config = function()
             require('plugin_config.telescope')
         end,
-    }, -- TODO: lazy load on command causes error.
+    },
 
     -- Syslog outline
     {
@@ -120,6 +118,8 @@ local plugins = {
     {
         'lewis6991/gitsigns.nvim',
         enabled = true,
+        lazy = true,
+        event = 'VeryLazy',
         config = function()
             require('plugin_config.gitsigns')
         end,
@@ -151,8 +151,8 @@ local plugins = {
         'voldikss/vim-floaterm',
         enabled = true,
         config = function()
-            vim.g.floaterm_width = 0.7
-            vim.g.floaterm_height = 0.7
+            vim.g.floaterm_width = 0.8
+            vim.g.floaterm_height = 0.8
         end,
     },
 
@@ -193,12 +193,17 @@ local plugins = {
     {
         'Vimjas/vim-python-pep8-indent',
         enabled = true,
+        lazy = true,
+        ft = 'python',
+        event = 'VeryLazy',
     },
 
     -- Treesitter
     {
         'nvim-treesitter/nvim-treesitter',
-        enabled = false,
+        enabled = true,
+        lazy = true,
+        event = 'VeryLazy',
         build = ':TSUpdate',
         config = function()
             require('plugin_config.treesitter')
@@ -209,6 +214,8 @@ local plugins = {
     {
         'neovim/nvim-lspconfig',
         enabled = true,
+        lazy = true,
+        event = 'VimEnter',
         dependencies = 'onsails/lspkind-nvim',
         config = function()
             require('plugin_config.lspconfig')
@@ -230,6 +237,15 @@ local plugins = {
     {
         'mfussenegger/nvim-dap',
         enabled = true,
+        lazy = true,
+        --event = 'VeryLazy',
+        --keys = { '<leader>db', '<leader>dc', '<leader>de', '<F5>', '<F8>', '<F9>', '<F10>', '<F11>', '<F12>', { '<C-E>', mode = 'v' } },
+        cmd = {
+            'DAPToggleBreakPoint',
+            'DAPSetConditionalBreakPoint',
+            'DAPEval',
+            'DAPContinue',
+        },
         dependencies = {
             {
                 'theHamsta/nvim-dap-virtual-text',
@@ -241,7 +257,7 @@ local plugins = {
                 'rcarriga/nvim-dap-ui',
                 tag = 'v2.6.0',
                 config = function()
-                    require('plugin_config.dap')
+                    require('plugin_config.dap_ui')
                 end,
             },
             'nvim-telescope/telescope-dap.nvim',

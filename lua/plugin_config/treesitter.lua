@@ -7,16 +7,16 @@ end
 
 inst.setup({
     ensure_installed = {
-        --'c',
-        --'cpp',
+        'c',
+        'cpp',
         'bash',
         'cmake',
         'make',
         'bibtex',
         'latex',
-        --'python',
+        'python',
         'vim',
-        --'lua',
+        'lua',
         'markdown',
         'json',
         'html',
@@ -41,8 +41,8 @@ inst.setup({
 })
 
 -- Enable folding
-vim.opt.foldmethod = 'expr'
-vim.opt.foldexpr = 'nvim_treesitter#foldexpr()'
+--vim.opt.foldmethod = 'expr'
+--vim.opt.foldexpr = 'nvim_treesitter#foldexpr()'
 -- Do not fold by default
 -- https://stackoverflow.com/questions/8316139/how-to-set-the-default-to-unfolded-when-you-open-a-file
-vim.opt.foldlevel = 99
+--vim.opt.foldlevel = 99

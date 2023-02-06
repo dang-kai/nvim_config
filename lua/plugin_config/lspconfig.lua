@@ -9,7 +9,7 @@ end
 vim.diagnostic.config({
     virtual_text = true,
     virtual_lines = false, -- Set to true to use lsp_lines
-    signs = true,
+    signs = false,
     update_in_insert = false,
 })
 local signs = { Error = ' ', Warn = ' ', Hint = ' ', Info = ' ' }
@@ -20,14 +20,10 @@ end
 
 -- Common settings
 local flags = {
-    debounce_text_changes = 100,
+    debounce_text_changes = 200,
 }
 
 local on_attach = function(client, bufnr)
-    -- Disable code formatting
-    --client.resolved_capabilities.document_formatting = false
-    --client.resolved_capabilities.document_range_formatting = false
-
     local map = vim.api.nvim_buf_set_keymap
     local m = { noremap = true, silent = true }
 
@@ -77,7 +73,7 @@ settings.Lua = {
         -- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
         version = 'LuaJIT',
         -- Setup your lua path
-        path = runtime_path,
+        --path = runtime_path,
     },
     diagnostics = {
         -- Get the language server to recognize the `vim` global
