@@ -132,6 +132,6 @@ map('n', 'so', ':SyslogToggleOutline<CR>', m)
 map('n', 'si', ':SyslogToggleItem<CR>', m)
 
 -- Lazy.nvim
-map('n', 'lh', ':Lazy home<CR>', m)
+map('n', '<leader>pp', ':Lazy home<CR>', m)
 
 return plugin_keys

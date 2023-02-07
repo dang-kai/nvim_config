@@ -9,7 +9,7 @@ inst.setup({
     enabled = true,
     --execution_message = "File autosaved at " .. vim.fn.strftime("%H:%M:%S"),
     execution_message = '',
-    events = { 'InsertLeave', 'TextChanged', 'TextChangedI' },
+    events = { 'InsertLeave', 'VimLeavePre', 'TextChanged', 'TextChangedI' },
     conditions = {
         exists = true,
         filename_is_not = {},
@@ -19,5 +19,5 @@ inst.setup({
     write_all_buffers = false,
     on_off_commands = false,
     clean_command_line_interval = 0,
-    debounce_delay = 500,
+    debounce_delay = 200,
 })
