@@ -134,7 +134,9 @@ local plugins = {
     -- To avoid opening file in unwanted windows (for example, quickfix).
     {
         'stevearc/stickybuf.nvim',
-        enabled = false,
+        enabled = true,
+        lazy = true,
+        event = 'VeryLazy',
     },
 
     -- Auto save
