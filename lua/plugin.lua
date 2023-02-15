@@ -255,7 +255,7 @@ local plugins = {
         },
         dependencies = {
             {
-                'theHamsta/nvim-dap-virtual-text',
+                'dang-kai/nvim-dap-virtual-text',
                 config = function()
                     require('plugin_config.dap_virtual_text')
                 end,
