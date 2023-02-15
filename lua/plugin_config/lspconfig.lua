@@ -90,7 +90,7 @@ settings.Lua = {
     },
 }
 
-inst.sumneko_lua.setup({
+inst.lua_ls.setup({
     on_attach = on_attach,
     flags = flags,
     settings = settings,
