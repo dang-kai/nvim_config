@@ -14,7 +14,7 @@
   "neovim-session-manager": { "branch": "master", "commit": "e7a2cbf56b5fd3a223f2774b535499fc62eca6ef" },
   "nightfox.nvim": { "branch": "main", "commit": "14489dfa8c4241a919845ed9101fae074234f35b" },
   "nvim-cmp": { "branch": "main", "commit": "c4128bcd131fb7152bda8f8dd2b5e41d2fefa88c" },
-  "nvim-dap": { "branch": "master", "commit": "0e376f00e7fac143e29e1017d2ac2cc3df13d185" },
+  "nvim-dap": { "branch": "master", "commit": "401f5f22b2d7f9bdbb9294d0235136091458816a" },
   "nvim-dap-ui": { "branch": "master", "commit": "1e21b3b50e67700e32285b5a74e645311fd8bbea" },
   "nvim-dap-virtual-text": { "branch": "master", "commit": "7f7f2af549e72a0b7bddc3b4f827beb027ea8ce3" },
   "nvim-lspconfig": { "branch": "master", "commit": "9b8f5260f3e793e2dcb2899e0a5b944667a95cb2" },
