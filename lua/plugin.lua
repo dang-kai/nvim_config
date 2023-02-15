@@ -66,7 +66,7 @@ local plugins = {
         'romgrk/barbar.nvim',
         enabled = true,
         lazy = true,
-        event = 'VeryLazy',
+        event = 'BufAdd',
         tag = 'release/1.4.1',
         dependencies = { 'nvim-tree/nvim-web-devicons' },
         config = function()
