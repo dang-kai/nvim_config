@@ -262,7 +262,7 @@ local plugins = {
             },
             {
                 'rcarriga/nvim-dap-ui',
-                tag = 'v2.6.0',
+                tag = 'v3.6.3',
                 config = function()
                     require('plugin_config.dap_ui')
                 end,
