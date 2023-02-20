@@ -19,16 +19,10 @@
   "nvim-dap-virtual-text": { "branch": "master", "commit": "1ebea79571597dc0df83f3f5d0ff1cae9bab8ea5" },
   "nvim-lspconfig": { "branch": "master", "commit": "9b8f5260f3e793e2dcb2899e0a5b944667a95cb2" },
   "nvim-syslog": { "branch": "master", "commit": "c1269b3a099e149c64ac4fc3ee9c5ded695dc2af" },
-<<<<<<< Updated upstream
   "nvim-tree.lua": { "branch": "master", "commit": "08a0aa1a3b7411ee0a7887c8818528b1558cef96" },
   "nvim-treesitter": { "branch": "master", "commit": "160091db4cd340d4e195eaa79e8f28db0c12af83" },
   "nvim-web-devicons": { "branch": "master", "commit": "bb6d4fd1e010300510172b173ab5205d37af084f" },
-=======
-  "nvim-tree.lua": { "branch": "master", "commit": "02fdc262eba188198a7deb2117b3b996e6763d65" },
-  "nvim-treesitter": { "branch": "master", "commit": "d3a68725e8349212a359d1914fc6e86ff31e4142" },
-  "nvim-web-devicons": { "branch": "master", "commit": "2b96193abe4372e18e4f4533895a42a466d53c17" },
-  "playground": { "branch": "master", "commit": "c481c660fa903a0e295902b1765ecfbd6e76a556" },
->>>>>>> Stashed changes
+  "playground": { "branch": "master", "commit": "4044b53c4d4fcd7a78eae20b8627f78ce7dc6f56" },
   "plenary.nvim": { "branch": "master", "commit": "9a0d3bf7b832818c042aaf30f692b081ddd58bd9" },
   "stickybuf.nvim": { "branch": "master", "commit": "cde97217a7e81ea4488e0c32b8ae6c9d181156c8" },
   "telescope-dap.nvim": { "branch": "master", "commit": "313d2ea12ae59a1ca51b62bf01fc941a983d9c9c" },
