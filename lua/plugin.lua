@@ -39,6 +39,8 @@ local plugins = {
             vim.api.nvim_set_hl(0, 'BufferInactiveMod', { fg = '#c4a000', bg = '#262626' })
             vim.api.nvim_set_hl(0, 'BufferCurrentSign', { fg = '#60a2f8', bg = '#606060' })
             vim.api.nvim_set_hl(0, 'BufferInactiveSign', { fg = '#808080', bg = '#262626' })
+            vim.api.nvim_set_hl(0, '@parameter', { fg = '#09cda6' })
+            vim.api.nvim_set_hl(0, '@type.builtin', { fg = '#c4a000' })
         end,
     },
 
@@ -213,6 +215,7 @@ local plugins = {
         lazy = true,
         event = 'VeryLazy',
         build = ':TSUpdate',
+        dependencies = { 'nvim-treesitter/playground' },
         config = function()
             require('plugin_config.treesitter')
         end,
