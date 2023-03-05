@@ -69,7 +69,7 @@ local plugins = {
         enabled = true,
         lazy = true,
         event = 'BufAdd',
-        tag = 'release/1.4.1',
+        --tag = 'release/1.4.1',
         dependencies = { 'nvim-tree/nvim-web-devicons' },
         config = function()
             require('plugin_config.barbar')
@@ -100,7 +100,7 @@ local plugins = {
     {
         'dang-kai/dashboard-nvim',
         enabled = false,
-        tag = 'v1.0.0',
+        --tag = 'v1.0.0',
         config = function()
             require('plugin_config.dashboard')
         end,
@@ -265,7 +265,7 @@ local plugins = {
             },
             {
                 'rcarriga/nvim-dap-ui',
-                tag = 'v3.6.3',
+                --tag = 'v3.6.3',
                 config = function()
                     require('plugin_config.dap_ui')
                 end,
