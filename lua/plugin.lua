@@ -143,6 +143,9 @@ local plugins = {
         enabled = true,
         lazy = true,
         event = 'VeryLazy',
+        config = function()
+            require('plugin_config.stickybuf')
+        end,
     },
 
     -- Auto save
