@@ -94,7 +94,7 @@ local plugins = {
 
     -- Syslog outline
     {
-        url = 'dk@aeserv1:/home/dk/453/workspace/nvim-syslog.git',
+        url = 'dk@aeserv1:/home/dk/efs/repo/workspace/nvim-ekslog.git',
         enabled = true,
         lazy = true,
         cmd = { 'SyslogToggleOutline', 'SyslogToggleItem' },
