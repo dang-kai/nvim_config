@@ -38,7 +38,8 @@ map('n', 'ts', ':wincmd l | 20sp | terminal<CR>', m)
 map('n', 'tv', ':wincmd l | vsp | terminal<CR>', m)
 map('n', 'tf', ':FloatermToggle<CR>', m)
 map('n', '<F1>', ':FloatermToggle<CR>', m)
-map('i', '<F1>', '<ESC>:FloatermToggle<CR>', m)
+map('i', '<F1>', '', m) -- cancel the original function of <F1>.
+--map('i', '<F1>', '<ESC>:FloatermToggle<CR>', m) -- Compatibility issue with telescope.
 --map("t", "<Esc>", "<C-\\><C-n>", m)  --To avoid conflict with LazyGit, do not use <ESC>.
 map('t', '<C-Q>', '<C-\\><C-n>', m)
 -- block operation in visual mode
