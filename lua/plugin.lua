@@ -66,7 +66,6 @@ local plugins = {
         config = function()
             require('plugin_config.nvimtree')
         end,
-        --tag = 'stable', -- No stable release/tags yet.
     },
 
     -- Tab view (options: barbar, cokeline, bufferline)
@@ -75,7 +74,7 @@ local plugins = {
         enabled = true,
         lazy = true,
         event = 'BufAdd',
-        tag = 'release/1.4.1',
+        version = '^1.0.0',
         dependencies = { 'nvim-tree/nvim-web-devicons' },
         config = function()
             require('plugin_config.barbar')
