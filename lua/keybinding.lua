@@ -128,9 +128,9 @@ map('n', '<F11>', ':DAPStepInto<CR>', m)
 map('n', '<F12>', ':DAPStepOut<CR>', m)
 map('v', '<C-E>', ':DAPEval<CR>', m)
 
--- Syslog
-map('n', 'so', ':SyslogToggleOutline<CR>', m)
-map('n', 'si', ':SyslogToggleItem<CR>', m)
+-- Ekslog
+map('n', 'so', ':EkslogToggleOutline<CR>', m)
+map('n', 'si', ':EkslogToggleItem<CR>', m)
 
 -- Lazy.nvim
 map('n', '<leader>pp', ':Lazy home<CR>', m)

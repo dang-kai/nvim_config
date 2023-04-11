@@ -53,6 +53,7 @@ local plugins = {
         'folke/lazy.nvim',
         enabled = true,
         lazy = false,
+        tag = 'stable',
     },
 
     -- File tree
@@ -65,6 +66,7 @@ local plugins = {
         config = function()
             require('plugin_config.nvimtree')
         end,
+        --tag = 'stable', -- No stable release/tags yet.
     },
 
     -- Tab view (options: barbar, cokeline, bufferline)
@@ -73,7 +75,7 @@ local plugins = {
         enabled = true,
         lazy = true,
         event = 'BufAdd',
-        --tag = 'release/1.4.1',
+        tag = 'release/1.4.1',
         dependencies = { 'nvim-tree/nvim-web-devicons' },
         config = function()
             require('plugin_config.barbar')
@@ -97,17 +99,7 @@ local plugins = {
         url = 'dk@aeserv1:/home/dk/efs/repo/workspace/nvim-ekslog.git',
         enabled = true,
         lazy = true,
-        cmd = { 'SyslogToggleOutline', 'SyslogToggleItem' },
-    },
-
-    -- Dashboard
-    {
-        'dang-kai/dashboard-nvim',
-        enabled = false,
-        --tag = 'v1.0.0',
-        config = function()
-            require('plugin_config.dashboard')
-        end,
+        cmd = { 'EkslogToggleOutline', 'EkslogToggleItem' },
     },
 
     -- Session management
@@ -265,14 +257,13 @@ local plugins = {
         },
         dependencies = {
             {
-                'dang-kai/nvim-dap-virtual-text',
+                'theHamsta/nvim-dap-virtual-text',
                 config = function()
                     require('plugin_config.dap_virtual_text')
                 end,
             },
             {
                 'rcarriga/nvim-dap-ui',
-                --tag = 'v3.6.3',
                 config = function()
                     require('plugin_config.dap_ui')
                 end,
@@ -304,7 +295,7 @@ local plugins = {
 }
 
 local options = {
-    ui = { border = 'rounded' },
+    ui = { border = 'single' },
 }
 
 lazy.setup(plugins, options)
