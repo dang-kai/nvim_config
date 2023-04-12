@@ -10,10 +10,9 @@ local plugin_keys = {}
 local map = vim.api.nvim_set_keymap
 -- remap 'K' to reversed 'J'. Original 'K' causes freeze.
 map('n', 'K', 'jddkkpJ', m)
--- search (find) and format
-map('n', 'f', '', m) -- cancel the original function (find char *) of key f.
-map('n', 'fn', ':noh<CR>', m)
-map('n', 'ff', ':Format<CR>', m)
+-- search and format
+--map('n', 'f', '', m) -- cancel the original function (find char *) of key f.
+map('n', '<leader>ff', ':Format<CR>', m)
 --map('n', 'fw', ':FormatWrite<CR>', m)
 -- navigation
 map('n', '<C-U>', '4k', m)
@@ -31,6 +30,7 @@ map('n', '<C-Down>', ':resize +2<CR>', m)
 map('n', '<C-Up>', ':resize -2<CR>', m)
 map('v', 'ss', 'y<ESC>/<C-R>"<CR>', m) -- search selection.
 map('v', 'sr', 'y<ESC>:%s/<C-R>"//g<LEFT><LEFT>', m) -- search and replace in current file.
+map('n', 'sn', ':noh<CR>', m)
 -- terminal
 map('n', 't', '', m) -- cancel the original function (go until char *) of key t and use it for terminal control.
 map('n', 'tt', ':wincmd l | terminal<CR>', m) -- Move to the right window first in case cursor is in the nvim-tree window.
@@ -66,9 +66,9 @@ map('n', 'gsb', ':Gitsigns toggle_current_line_blame<CR>', m)
 map('n', 'gsw', ':Gitsigns toggle_word_diff<CR>', m)
 -- telescope
 map('n', '<C-F>', ':Telescope find_files<CR>', m)
-map('n', 'sf', ':Telescope find_files<CR>', m)
+--map('n', 'sf', ':Telescope find_files<CR>', m)
 map('n', '<C-G>', ':Telescope live_grep<CR>', m)
-map('n', 'sg', ':Telescope live_grep<CR>', m)
+--map('n', 'sg', ':Telescope live_grep<CR>', m)
 -- outline
 map('n', 'to', ':AerialToggle<CR>', m)
 --map('n', 'to', ':SymbolsOutline<CR>', m)

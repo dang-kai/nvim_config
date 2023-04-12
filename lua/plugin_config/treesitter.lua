@@ -29,10 +29,10 @@ inst.setup({
     incremental_selection = {
         enable = true,
         keymaps = {
-            init_selection = 'fi',
-            node_incremental = 'fj',
-            node_decremental = 'fk',
-            scope_incremental = 'fo',
+            init_selection = '<leader>fi',
+            node_incremental = '<leader>fj',
+            node_decremental = '<leader>fk',
+            scope_incremental = '<leader>fo',
         },
     },
     indent = {
