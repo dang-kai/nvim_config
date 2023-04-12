@@ -23,7 +23,7 @@ opt.relativenumber = true           -- Show relative line numbers
 opt.wildmode       = 'list:longest' -- Get bash-like tab completions
 opt.ttyfast        = true           -- Speed up scrolling in Vim
 opt.mouse          = 'a'            -- Enable mouse click
-opt.scrolloff      = 3              -- Keep a few lines below or above the cursor.
+opt.scrolloff      = 2              -- Keep a few lines below or above the cursor.
 --opt.cc           = 100            -- Set an 100 column border for good coding style
 opt.cursorline     = false          -- Highlight current cursorline
 opt.ruler          = false
@@ -31,8 +31,9 @@ opt.showmode       = true           -- Vim mode prompt
 --opt.showtabline    = 0            -- (Tab is replaced by bufferline) always show tabline
 opt.splitbelow     = true
 opt.splitright     = true
-opt.laststatus     = 0
-opt.termguicolors  = true           -- Required by cokeline.
+opt.laststatus     = 2
+opt.statusline     = '%-f %y %m %=%n %l:%L-%c'
+--opt.termguicolors  = true           -- Required by cokeline.
 
 -- -- Miscellaneous
 opt.clipboard      = 'unnamedplus' -- Using system clipboard
