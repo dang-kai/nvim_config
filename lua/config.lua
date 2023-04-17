@@ -32,7 +32,7 @@ opt.showmode       = true           -- Vim mode prompt
 opt.splitbelow     = true
 opt.splitright     = true
 opt.laststatus     = 2
-opt.statusline     = '%-f %y %m %=%n %l:%L-%c'
+opt.statusline     = '%-f %y%=%n %l:%L-%c'
 --opt.termguicolors  = true           -- Required by cokeline.
 
 -- -- Miscellaneous
