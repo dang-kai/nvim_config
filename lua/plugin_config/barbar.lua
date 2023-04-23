@@ -19,8 +19,8 @@ inst.setup({
     exclude_ft = { 'qf', 'dap-repl' }, -- Excludes buffers from the tabline exclude_name = { "package.json" },
 
     -- Configure icons on the bufferline.
-    icon_separator_active = '▎',
-    icon_separator_inactive = '▎',
+    icon_separator_active = '',
+    icon_separator_inactive = '',
     icon_close_tab = '',
     icon_close_tab_modified = '●',
     icon_pinned = '車',
