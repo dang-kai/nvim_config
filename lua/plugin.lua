@@ -35,7 +35,7 @@ local plugins = {
             require('plugin_config.nightfox')
             vim.cmd('colorscheme nordfox')
             vim.api.nvim_set_hl(0, 'BufferCurrent', { fg = '#dfdfdf', bg = '#606060' })
-            vim.api.nvim_set_hl(0, 'BufferVisible', { fg = '#00f4d0', bg = '#606060' })
+            vim.api.nvim_set_hl(0, 'BufferVisible', { fg = '#dfdfdf', bg = '#606060' })
             vim.api.nvim_set_hl(0, 'BufferInactive', { fg = '#808080', bg = '#222222' })
             vim.api.nvim_set_hl(0, 'BufferCurrentMod', { fg = '#f4d000', bg = '#606060' })
             vim.api.nvim_set_hl(0, 'BufferVisibleMod', { fg = '#f4d000', bg = '#606060' })
