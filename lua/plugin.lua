@@ -34,15 +34,7 @@ local plugins = {
         config = function()
             require('plugin_config.nightfox')
             vim.cmd('colorscheme nordfox')
-            vim.api.nvim_set_hl(0, 'BufferCurrent', { fg = '#dfdfdf', bg = '#606060' })
-            vim.api.nvim_set_hl(0, 'BufferVisible', { fg = '#dfdfdf', bg = '#606060' })
-            vim.api.nvim_set_hl(0, 'BufferInactive', { fg = '#808080', bg = '#222222' })
-            vim.api.nvim_set_hl(0, 'BufferCurrentMod', { fg = '#f4d000', bg = '#606060' })
-            vim.api.nvim_set_hl(0, 'BufferVisibleMod', { fg = '#f4d000', bg = '#606060' })
-            vim.api.nvim_set_hl(0, 'BufferInactiveMod', { fg = '#c4a000', bg = '#222222' })
-            vim.api.nvim_set_hl(0, 'BufferCurrentSign', { fg = '#60a2f8', bg = '#606060' })
-            vim.api.nvim_set_hl(0, 'BufferVisibleSign', { fg = '#51bb56', bg = '#606060' })
-            vim.api.nvim_set_hl(0, 'BufferInactiveSign', { fg = '#808080', bg = '#222222' })
+            vim.api.nvim_set_hl(0, 'StatusLine', { fg = '#e0e0e0' })
             vim.api.nvim_set_hl(0, '@parameter', { fg = '#09cda6' })
             vim.api.nvim_set_hl(0, '@type.builtin', { fg = '#c4a000' })
         end,
@@ -65,19 +57,6 @@ local plugins = {
         dependencies = { 'nvim-tree/nvim-web-devicons' },
         config = function()
             require('plugin_config.nvimtree')
-        end,
-    },
-
-    -- Tab view (options: barbar, cokeline, bufferline)
-    {
-        'romgrk/barbar.nvim',
-        enabled = true,
-        lazy = true,
-        event = 'BufAdd',
-        version = '^1.0.0',
-        dependencies = { 'nvim-tree/nvim-web-devicons' },
-        config = function()
-            require('plugin_config.barbar')
         end,
     },
 
