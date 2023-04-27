@@ -77,25 +77,6 @@ map('n', 'sg', ':Telescope live_grep<CR>', m)
 map('n', 'to', ':AerialToggle<CR>', m)
 --map('n', 'to', ':SymbolsOutline<CR>', m)
 
--- LSP
---map("n", "g", "", m)  -- g is used to go to different places in original vim. Do not cancel.
---map("n", "gb", "<C-O>", m)  -- Conflicts with gb (git blame) from gitsigns, keep using original <C-O>.
---map("n", "gf", "<C-I>", m)
-
--- barbar
---map('n', '<F2>', ':BufferPrevious<CR>', m)
---map('i', '<F2>', '<ESC>:BufferPrevious<CR>', m)
---map('n', '<C-B>', ':BufferMovePrevious<CR>', m)
---map('n', '<F3>', ':BufferNext<CR>', m)
---map('i', '<F3>', '<ESC>:BufferNext<CR>', m)
---map('n', '<C-N>', ':BufferMoveNext<CR>', m)
---map('n', '<leader>x', ':BufferClose<CR>', m)
---map('n', '<F4>', ':BufferClose<CR>', m)
---map('n', '<leader>bn', '<Cmd>BufferOrderByBufferNumber<CR>', m)
---map('n', '<leader>bd', '<Cmd>BufferOrderByDirectory<CR>', m)
---map('n', '<leader>bl', '<Cmd>BufferOrderByLanguage<CR>', m)
---map('n', '<leader>bw', '<Cmd>BufferOrderByWindowNumber<CR>', m)
-
 -- makefile
 map('n', '<leader>mk', ':make<CR><CR>', m)
 map('n', '<leader>mc', ':make clean<CR><CR>', m)
