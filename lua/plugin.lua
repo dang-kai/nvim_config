@@ -270,6 +270,14 @@ local plugins = {
             require('plugin_config.cmp')
         end,
     },
+
+    -- CSV support 
+    {
+        'chrisbra/csv.vim',
+        enabled = true,
+        lazy = true,
+        ft = 'csv',
+    },
 }
 
 local options = {
