@@ -37,7 +37,7 @@ local filetype = {
             return {
                 exe = 'clang-format',
                 args = {
-                    "--style='{BasedOnStyle: LLVM, IndentWidth: 4, SpaceBeforeParens: ControlStatements, ColumnLimit: 160, AlignTrailingComments: true, AlignConsecutiveAssignments: true, AlignConsecutiveMacros: true, AlignConsecutiveDeclarations: true, AlignAfterOpenBracket: true, AlignArrayOfStructures: Right, AlignEscapedNewlines: Left, AlignOperands: Align, IndentCaseLabels: true}'",
+                      "--style='{BasedOnStyle: LLVM, IndentWidth: 4, SpaceBeforeParens: ControlStatements, ColumnLimit: 160, AlignTrailingComments: true, AlignConsecutiveAssignments: true, AlignConsecutiveMacros: true, AlignConsecutiveDeclarations: true, AlignAfterOpenBracket: true, AlignArrayOfStructures: Right, AlignEscapedNewlines: Left, AlignOperands: Align, IndentCaseLabels: true, AllowShortBlocksOnASingleLine: Always, AllowShortFunctionsOnASingleLine: All, AllowShortCaseLabelsOnASingleLine: true, AllowShortEnumsOnASingleLine: true, AllowShortIfStatementsOnASingleLine: AllIfsAndElse, AllowShortLoopsOnASingleLine: true}'",
                     '--assume-filename=' .. util.escape_path(util.get_current_buffer_file_name()),
                 },
                 stdin = true,
