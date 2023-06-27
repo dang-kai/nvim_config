@@ -21,7 +21,7 @@ inst.setup({
         'markdown',
         'json',
         'html',
-        'matlab',
+        --'matlab',
     },
     highlight = {
         enable = true,
