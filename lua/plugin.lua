@@ -192,7 +192,7 @@ local plugins = {
         lazy = true,
         event = 'VeryLazy',
         build = ':TSUpdate',
-        dependencies = { 'nvim-treesitter/playground' },
+        --dependencies = { 'nvim-treesitter/playground' },
         config = function()
             require('plugin_config.treesitter')
         end,
