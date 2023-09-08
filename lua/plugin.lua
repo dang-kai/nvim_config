@@ -202,8 +202,8 @@ local plugins = {
     {
         'neovim/nvim-lspconfig',
         enabled = true,
-        lazy = true,
-        event = 'VimEnter',
+        lazy = false,
+        event = 'VeryLazy',
         dependencies = 'onsails/lspkind-nvim',
         config = function()
             require('plugin_config.lspconfig')
