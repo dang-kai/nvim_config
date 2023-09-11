@@ -49,7 +49,7 @@ local palettes = {
         white = { base = '#E0E0E0', bright = '#F0F0F0' },
         black = { base = '#222222', bright = '#585858' },
         red = { base = '#EE3344', bright = '#EF6677' },
-        green = { base = '#50EB58', bright = '#C7E7A9' }, -- green = { base = '#4E9A06', bright = '#8AE234' },
+        green = { base = '#70DD4F', bright = '#C7E7A9' }, -- green = { base = '#4E9A06', bright = '#8AE234' },
         yellow = { base = '#C4A000', bright = '#EBDC50' },
         blue = { base = '#60A2F8', bright = '#6B9BED' }, -- blue = { base = '#598DF5', bright = '#91B5FE' },
         purple = { base = '#7A00D3', bright = '#BC5FD3' }, -- purple = { base = '#831EF0', bright = '#BC5FD3' },
