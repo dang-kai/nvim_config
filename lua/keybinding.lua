@@ -24,6 +24,7 @@ map('n', 'sh', ':sp<CR>', m) -- horizontal split
 map('n', 'sq', '<C-w>c', m) -- close current split
 map('n', 'sx', '<C-w>o', m) -- close other splits except the current one
 map('n', 's=', '<C-w>=', m) -- equally resize all splits
+map('n', 'sr', '<C-w>r', m) -- rotate split windows
 map('n', '<C-Left>', ':vertical resize -2<CR>', m)
 map('n', '<C-Right>', ':vertical resize +2<CR>', m)
 map('n', '<C-Down>', ':resize +2<CR>', m)
