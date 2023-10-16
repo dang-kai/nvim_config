@@ -97,7 +97,7 @@ inst.lua_ls.setup({
 })
 
 -- C/C++
-inst.ccls.setup({
+inst.clangd.setup({
     on_attach = on_attach,
     flags = flags,
 })
