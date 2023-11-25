@@ -273,7 +273,7 @@ local plugins = {
         end,
     },
 
-    -- CSV support 
+    -- CSV support
     {
         'chrisbra/csv.vim',
         enabled = true,
