@@ -77,7 +77,9 @@ local plugins = {
         url = 'dk@aeserv1:/home/dk/efs/repo/workspace/nvim-ekslog.git',
         enabled = true,
         lazy = true,
-        cmd = { 'EkslogToggleOutline', 'EkslogToggleItem' },
+        ft = 'log',
+        event = 'VeryLazy',
+        --cmd = { 'EkslogToggleOutline', 'EkslogToggleItem' },
     },
 
     -- Session management

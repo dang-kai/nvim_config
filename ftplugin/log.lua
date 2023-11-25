@@ -1,5 +1,11 @@
 local m = { noremap = true, silent = true }
 local map = vim.api.nvim_buf_set_keymap
 
-map(0, 'n', '<leader>id', ':r!date<CR>kJ$', m)
-map(0, 'n', '<leader>od', ':r!date<CR>o<ESC>o<ESC>k', m)
+-- Ekslog insert date
+map(0, 'n', '<leader>id', ':EkslogInsertTimeStamp<CR>$', m)
+map(0, 'n', '<leader>od', 'o<ESC>o<ESC>k<ESC>:EkslogInsertTimeStamp<CR>j<ESC>', m)
+
+-- Ekslog popup window
+map(0, 'n', 'so', ':EkslogToggleOutline<CR>', m)
+map(0, 'n', 'si', ':EkslogToggleItem<CR>', m)
+
