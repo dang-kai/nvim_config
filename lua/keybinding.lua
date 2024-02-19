@@ -17,6 +17,10 @@ map('n', '<leader>ff', ':Format<CR>', m)
 -- navigation
 map('n', '<C-U>', '4k', m)
 map('n', '<C-D>', '4j', m)
+-- buffer navigation
+map('n', '<F2>', ':bp<CR>', m)
+map('n', '<F3>', ':bn<CR>', m)
+map('n', '<F4>', ':bd<CR>', m)
 -- window split
 map('n', 's', '', m) -- cancel the original function (substitute char) of key s and use it for window split.
 map('n', 'sv', ':vsp<CR>', m) -- vertical split
@@ -71,7 +75,6 @@ map('n', 'sf', ':Telescope find_files<CR>', m) -- search file
 map('n', 'ss', ':Telescope buffers<CR>', m) -- search open
 map('n', 'sp', ':Telescope help_tags<CR>', m)
 map('n', 'sd', ':bd<CR>', m)
-map('n', '<F4>', ':bd<CR>', m)
 --map('n', '<C-G>', ':Telescope live_grep<CR>', m)
 map('n', 'sg', ':Telescope live_grep<CR>', m)
 -- outline
