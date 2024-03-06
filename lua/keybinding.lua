@@ -14,6 +14,9 @@ map('n', 'K', 'jddkkpJ', m)
 --map('n', 'f', '', m) -- cancel the original function (find char *) of key f.
 map('n', '<leader>ff', ':Format<CR>', m)
 --map('n', 'fw', ':FormatWrite<CR>', m)
+map('v', 'ss', 'y<ESC>/<C-R>"<CR>', m) -- search selection.
+map('v', 'sr', 'y<ESC>:%s/<C-R>"//g<LEFT><LEFT>', m) -- search and replace in current file.
+map('n', 'sn', ':noh<CR>', m)
 -- navigation
 map('n', '<C-U>', '4k', m)
 map('n', '<C-D>', '4j', m)
@@ -33,9 +36,6 @@ map('n', '<C-Left>', ':vertical resize -2<CR>', m)
 map('n', '<C-Right>', ':vertical resize +2<CR>', m)
 map('n', '<C-Down>', ':resize +2<CR>', m)
 map('n', '<C-Up>', ':resize -2<CR>', m)
-map('v', 'ss', 'y<ESC>/<C-R>"<CR>', m) -- search selection.
-map('v', 'sr', 'y<ESC>:%s/<C-R>"//g<LEFT><LEFT>', m) -- search and replace in current file.
-map('n', 'sn', ':noh<CR>', m)
 -- terminal
 map('n', 't', '', m) -- cancel the original function (go until char *) of key t and use it for terminal control.
 map('n', 'tt', ':wincmd l | terminal<CR>', m) -- Move to the right window first in case cursor is in the nvim-tree window.
