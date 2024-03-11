@@ -22,23 +22,24 @@ inst.setup({
         centralize_selection = false,
         width = tree_width,
         --height = 30,
-        hide_root_folder = false,
+        --hide_root_folder = false,
         side = "left",
         preserve_window_proportions = false,
         number = false,
         relativenumber = false,
         signcolumn = "yes",
-        mappings = {
-            custom_only = false,
-            list = {
-                -- user key mappings go here
-                { key = { "[" }, action = "dir_up" },
-                { key = { "]" }, action = "cd" },
-                { key = { "<C-S>" }, action = "split" },
-                { key = { "<C-V>" }, action = "vsplit" },
-                { key = { "<C-X>" }, action = "close" }, -- was set to split by default.
-            },
-        },
+        -- help nvim-tree-mappings-default for default key map. To customize, see github.
+        --mappings = {
+        --    custom_only = false,
+        --    list = {
+        --        -- user key mappings go here
+        --        { key = { "[" }, action = "dir_up" },
+        --        { key = { "]" }, action = "cd" },
+        --        { key = { "<C-S>" }, action = "split" },
+        --        { key = { "<C-V>" }, action = "vsplit" },
+        --        { key = { "<C-X>" }, action = "close" }, -- was set to split by default.
+        --    },
+        --},
     },
     renderer = {
         add_trailing = false,
