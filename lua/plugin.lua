@@ -275,10 +275,17 @@ local plugins = {
 
     -- CSV support
     {
-        'chrisbra/csv.vim',
+        'cameron-wags/rainbow_csv.nvim',
         enabled = true,
         lazy = true,
+        config = true,
         ft = 'csv',
+        cmd = {
+            'RainbowDelim',
+            'RainbowDelimSimple',
+            'RainbowDelimQuoted',
+            'RainbowMultiDelim',
+        },
     },
 }
 
