@@ -106,6 +106,7 @@ map('n', '<leader>io', 'o<ESC>', m)
 
 -- CSV 
 map('n', '<leader>ca', ':RainbowAlign<CR>', m)
+map('n', '<leader>cz', ':RainbowShrink<CR>', m)
 
 -- Debug
 -- -- nvim-dap
