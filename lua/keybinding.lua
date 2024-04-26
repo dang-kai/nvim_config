@@ -108,19 +108,6 @@ map('n', '<leader>io', 'o<ESC>', m)
 map('n', '<leader>ca', ':RainbowAlign<CR>', m)
 map('n', '<leader>cz', ':RainbowShrink<CR>', m)
 
--- Debug
--- -- nvim-dap
-map('n', '<leader>db', ':DAPToggleBreakPoint<CR>', m)
-map('n', '<leader>dc', ':DAPSetConditionalBreakPoint<CR>', m)
-map('n', '<leader>de', ':DAPEval<CR>', m)
-map('n', '<F5>', ':DAPContinue<CR>', m)
-map('n', '<F8>', ':DAPTerminate<CR>', m)
-map('n', '<F9>', ':DAPRunToCursor<CR>', m)
-map('n', '<F10>', ':DAPStepOver<CR>', m)
-map('n', '<F11>', ':DAPStepInto<CR>', m)
-map('n', '<F12>', ':DAPStepOut<CR>', m)
-map('v', '<C-E>', ':DAPEval<CR>', m)
-
 -- Lazy.nvim
 map('n', '<leader>pp', ':Lazy home<CR>', m)
 
