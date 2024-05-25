@@ -109,7 +109,7 @@ inst.pylsp.setup({
     settings = { pylsp = { plugins = {
         pyflakes = { enabled = true },
         -- Configuration reference: https://github.com/python-lsp/python-lsp-server/blob/develop/CONFIGURATION.md
-        pycodestyle = { ignore = { 'E501' } },
+        pycodestyle = { ignore = { 'E501', 'E741', 'E266' } },
     } } },
 })
 --inst.pyright.setup({
