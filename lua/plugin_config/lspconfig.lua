@@ -61,8 +61,6 @@ local on_attach = function(client, bufnr)
     --vim.cmd('autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()')
 end
 
-local settings = {}
-
 -- Lua
 local runtime_path = vim.split(package.path, ';')
 table.insert(runtime_path, 'lua/?.lua')
@@ -102,19 +100,21 @@ inst.clangd.setup({
     flags = flags,
 })
 
--- Python
-inst.pylsp.setup({
+-- Python REMEMBER TO INSTALL STUBS IN CASE OF TYPE CHECK ERROR
+inst.pyright.setup({
     on_attach = on_attach,
     flags = flags,
-    settings = { pylsp = { plugins = {
-        pyflakes = { enabled = true },
-        -- Configuration reference: https://github.com/python-lsp/python-lsp-server/blob/develop/CONFIGURATION.md
-        pycodestyle = { ignore = { 'E501', 'E741', 'E266' } },
-    } } },
+    settings = { pyright = {}, python = { analysis = { typeCheckingMode = 'stardard' } } },
+    -- Configuration reference: https://www.reddit.com/r/neovim/comments/y3mkpp/nvim_masonlspconfig_pyright_configuration/
 })
---inst.pyright.setup({
+--inst.pylsp.setup({
 --    on_attach = on_attach,
 --    flags = flags,
+--    settings = { pylsp = { plugins = {
+--        pyflakes = { enabled = true },
+--        -- Configuration reference: https://github.com/python-lsp/python-lsp-server/blob/develop/CONFIGURATION.md
+--        pycodestyle = { ignore = { 'E501', 'E741', 'E266' } },
+--    } } },
 --})
 
 -- Latex
