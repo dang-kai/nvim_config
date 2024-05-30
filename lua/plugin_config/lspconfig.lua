@@ -100,7 +100,8 @@ inst.clangd.setup({
     flags = flags,
 })
 
--- Python REMEMBER TO INSTALL STUBS IN CASE OF TYPE CHECK ERROR
+-- Python 
+-- REMEMBER TO INSTALL STUBS IN CASE OF TYPE CHECK ERROR
 inst.pyright.setup({
     on_attach = on_attach,
     flags = flags,
