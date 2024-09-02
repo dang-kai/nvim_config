@@ -13,7 +13,7 @@ inst.setup({
         'cmake',
         'make',
         'bibtex',
-        'latex',
+        --'latex',
         'python',
         'vim',
         'lua',
