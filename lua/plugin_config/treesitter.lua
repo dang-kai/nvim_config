@@ -13,7 +13,6 @@ inst.setup({
         'cmake',
         'make',
         'bibtex',
-        --'latex',
         'python',
         'vim',
         'lua',
@@ -21,7 +20,8 @@ inst.setup({
         'markdown',
         'json',
         'html',
-        --'matlab',
+        'matlab',
+        'latex',
     },
     highlight = {
         enable = true,
