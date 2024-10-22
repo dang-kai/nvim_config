@@ -72,16 +72,6 @@ local plugins = {
         end,
     },
 
-    -- Syslog outline
-    {
-        url = 'dk@aeserv1:/home/dk/efs/repo/workspace/nvim-ekslog.git',
-        enabled = true,
-        lazy = true,
-        ft = 'log',
-        event = 'VeryLazy',
-        --cmd = { 'EkslogToggleOutline', 'EkslogToggleItem' },
-    },
-
     -- Session management
     {
         'Shatur/neovim-session-manager',
