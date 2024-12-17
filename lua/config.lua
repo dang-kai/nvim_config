@@ -54,3 +54,10 @@ vim.filetype.add({
     --        [".*/etc/foo/.*%.conf"] = "foorc",
     --    },
 })
+
+vim.cmd([[
+    augroup _quickfix
+        autocmd!
+        autocmd Filetype qf set nobuflisted
+    augroup end
+]])
