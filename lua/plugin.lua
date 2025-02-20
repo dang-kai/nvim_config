@@ -235,24 +235,16 @@ local plugins = {
             'DAPEval',
             'DAPContinue',
         },
-        dependencies = {
-            {
-                'theHamsta/nvim-dap-virtual-text',
-                config = function()
-                    require('plugin_config.dap_virtual_text')
-                end,
-            },
-            {
-                'rcarriga/nvim-dap-ui',
-                config = function()
-                    require('plugin_config.dap_ui')
-                end,
-            },
-            'nvim-telescope/telescope-dap.nvim',
-        },
         config = function()
             require('plugin_config.dap')
         end,
+        dependencies = {
+            'mfussenegger/nvim-dap-python', -- Better python support
+            'rcarriga/nvim-dap-ui',
+            'nvim-neotest/nvim-nio', -- Required by nvim-dap-ui
+            'theHamsta/nvim-dap-virtual-text',
+            'nvim-telescope/telescope-dap.nvim',
+        },
     },
 
     -- Auto completion
