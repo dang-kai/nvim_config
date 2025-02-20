@@ -172,7 +172,7 @@ local plugins = {
         enabled = true,
         lazy = true,
         cmd = { 'CMake' },
-        dependencies = { 'nvim-lua/plenary.nvim' },
+        dependencies = { 'nvim-lua/plenary.nvim', 'mfussenegger/nvim-dap' },
         config = function()
             require('plugin_config.cmake')
         end,
@@ -220,6 +220,38 @@ local plugins = {
         cmd = { 'AerialToggle' },
         config = function()
             require('plugin_config.aerial')
+        end,
+    },
+
+    -- Debug
+    {
+        'mfussenegger/nvim-dap',
+        enabled = true,
+        lazy = true,
+        --event = 'VeryLazy',
+        cmd = {
+            'DAPToggleBreakPoint',
+            'DAPSetConditionalBreakPoint',
+            'DAPEval',
+            'DAPContinue',
+        },
+        dependencies = {
+            {
+                'theHamsta/nvim-dap-virtual-text',
+                config = function()
+                    require('plugin_config.dap_virtual_text')
+                end,
+            },
+            {
+                'rcarriga/nvim-dap-ui',
+                config = function()
+                    require('plugin_config.dap_ui')
+                end,
+            },
+            'nvim-telescope/telescope-dap.nvim',
+        },
+        config = function()
+            require('plugin_config.dap')
         end,
     },
 
