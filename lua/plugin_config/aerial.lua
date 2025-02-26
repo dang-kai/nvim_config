@@ -9,7 +9,7 @@ inst.setup({
     -- Call the setup function to change the default behavior
     -- Priority list of preferred backends for aerial.
     -- This can be a filetype map (see :help aerial-filetype-map)
-    backends = { 'lsp', 'treesitter', 'markdown', 'man' },
+    backends = { 'treesitter', 'lsp', 'markdown', 'man' },
 
     layout = {
         -- These control the width of the aerial window.
@@ -198,10 +198,10 @@ inst.setup({
     nerd_font = 'auto',
 
     -- Call this function when aerial attaches to a buffer.
-    on_attach = function(bufnr) end,
+    -- on_attach = function(bufnr) end,
 
     -- Call this function when aerial first sets symbols on a buffer.
-    on_first_symbols = function(bufnr) end,
+    -- on_first_symbols = function(bufnr) end,
 
     -- Automatically open aerial when entering supported buffers.
     -- This can be a function (see :help aerial-open-automatic)
