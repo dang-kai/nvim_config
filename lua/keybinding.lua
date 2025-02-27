@@ -27,7 +27,7 @@ map('n', '<C-D>', '4j', m)
 -- buffer navigation
 map('n', '<F2>', ':bp<CR>', m)
 map('n', '<F3>', ':bn<CR>', m)
-map('n', '<F4>', ':bd<CR>', m)
+map('n', '<F4>', ':bp|bd#<CR>', m)
 
 -- window split
 map('n', 's', '', m) -- cancel the original function (substitute char) of key s and use it for window split.
