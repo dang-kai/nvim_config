@@ -30,10 +30,10 @@ inst.setup({
     incremental_selection = {
         enable = true,
         keymaps = {
-            init_selection = 'mm',
-            node_incremental = 'mj',
-            node_decremental = 'mk',
-            scope_incremental = 'mo',
+            init_selection = '<leader>mm',
+            node_incremental = '<leader>mj',
+            node_decremental = '<leader>mk',
+            scope_incremental = '<leader>mo',
         },
     },
     indent = {
