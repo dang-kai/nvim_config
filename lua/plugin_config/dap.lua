@@ -73,11 +73,13 @@ dap.configurations.c = {
         type = 'gdb',
         request = 'launch',
         program = function()
-            return vim.fn.input('Launch: ', vim.fn.getcwd() .. '/', 'file')
+            local path = vim.fn.input('Launch: ', vim.fn.getcwd() .. '/', 'file')
+            local flag_exe = os.execute('test -x "' .. path .. '"') + os.execute('test -f "' .. path .. '"')
+            return (flag_exe == 0 and path) and path or dap.ABORT
         end,
         cwd = '${workspaceFolder}',
         stopAtBeginningOfMainSubprogram = true,
-        console = 'integratedTerminal', -- Output to Terminal window in dapui. Not working.
+        console = 'integratedTerminal', -- Output to Terminal window in dapui. (TODO) Not working, fix required.
     },
 }
 
