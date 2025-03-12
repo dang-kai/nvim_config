@@ -66,16 +66,28 @@ dap.adapters.gdb = {
     command = 'gdb',
     args = { '--interpreter=dap', '--eval-command', 'set print pretty on' }
 }
+
 -- Launch config
+LAST_PATH = nil
 dap.configurations.c = {
     {
         name = 'Launch executable',
         type = 'gdb',
         request = 'launch',
         program = function()
-            local path = vim.fn.input('Launch: ', vim.fn.getcwd() .. '/', 'file')
+            local path
+            if LAST_PATH == nil then
+                path = vim.fn.input('Launch: ', vim.fn.getcwd() .. '/' , 'file')
+            else
+                path = vim.fn.input('Launch: ', LAST_PATH, 'file')
+            end
             local flag_exe = os.execute('test -x "' .. path .. '"') + os.execute('test -f "' .. path .. '"')
-            return (flag_exe == 0 and path) and path or dap.ABORT
+            if flag_exe == 0 then
+                LAST_PATH = path
+                return path
+            else
+                return dap.ABORT
+            end
         end,
         cwd = '${workspaceFolder}',
         stopAtBeginningOfMainSubprogram = true,
@@ -129,7 +141,7 @@ dapui.setup({
                 { id = 'console', size = 0.2 },
                 { id = 'repl', size = 0.8 },
             },
-            size = 0.2,
+            size = 0.25,
             position = 'right',
         },
     },
