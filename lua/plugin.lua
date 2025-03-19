@@ -74,7 +74,9 @@ local plugins = {
 
     -- Syslog outline
     {
-        url = 'dk@aeserv1:/home/dk/efs/repo/workspace/nvim-ekslog.git',
+        --url = 'dk@aeserv1:/home/dk/efs/repo/workspace/nvim-ekslog.git',
+        'dang-kai/nvim-ekslog',
+        branch = 'master',
         enabled = true,
         lazy = true,
         ft = 'log',
