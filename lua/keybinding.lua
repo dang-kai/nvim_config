@@ -147,4 +147,11 @@ map('n', '<leader>lo', ':LspStop<CR>', m)
 map('n', ',', 'm', m)  -- Use ',' to set marker.
 map('n', 'm', '\'', m) -- Use m to move to marker.
 
+-- Spell check switch
+map('n', '<leader>zc', ':setlocal spell spelllang=en_us<CR>', m)  -- Turn on spell check.
+map('n', '<leader>zx', ':setlocal nospell<CR>', m)  -- Turn off spell check.
+map('n', '<leader>zz', '1z=', m)  -- Take the first suggested word.
+map('n', '<leader>zl', 'z=', m)  -- Open the list of suggested words.
+
+
 return plugin_keys
