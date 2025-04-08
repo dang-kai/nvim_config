@@ -123,3 +123,14 @@ inst.texlab.setup({
     on_attach = on_attach,
     flags = flags,
 })
+
+-- Verilog
+inst.verible.setup({
+    on_attach = on_attach,
+    flags = flags,
+    --cmd = {'verible-verilog-ls', '--rules_config_search'},
+    cmd = {'verible-verilog-ls', '--rules', '-explicit-parameter-storage-type,column_limit'},
+    root_dir = function()
+        return vim.fn.expand('%:p:h')
+    end,
+})

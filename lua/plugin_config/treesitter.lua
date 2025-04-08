@@ -22,6 +22,7 @@ inst.setup({
         'html',
         'matlab',
         'latex',
+        'verilog',
     },
     highlight = {
         enable = true,

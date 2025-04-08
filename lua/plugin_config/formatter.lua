@@ -58,6 +58,19 @@ local filetype = {
             }
         end,
     },
+    verilog = {
+        function()
+            return {
+                exe = 'verible-verilog-format',
+                args = {
+                    '--column_limit 100',
+                    '--indentation_spaces 4',
+                    '-'
+                },
+                stdin = 1,
+            }
+        end,
+    },
 }
 
 filetype.cpp = filetype.c
