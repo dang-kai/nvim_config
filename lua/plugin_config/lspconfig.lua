@@ -129,7 +129,7 @@ inst.verible.setup({
     on_attach = on_attach,
     flags = flags,
     --cmd = {'verible-verilog-ls', '--rules_config_search'},
-    cmd = {'verible-verilog-ls', '--rules', '-explicit-parameter-storage-type,-unpacked-dimensions-range-ordering'},
+    cmd = {'verible-verilog-ls', '--rules', '-explicit-parameter-storage-type,-unpacked-dimensions-range-ordering,-parameter-name-style'},
     root_dir = function()
         return vim.fn.expand('%:p:h')
     end,
