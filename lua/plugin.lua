@@ -292,6 +292,9 @@ local plugins = {
             'MunifTanjim/nui.nvim',
             'rcarriga/nvim-notify',
         },
+        config = function()
+            require('plugin_config.noice')
+        end,
     }
 }
 
