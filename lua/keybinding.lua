@@ -144,7 +144,7 @@ map('n', '<leader>li', ':LspStart<CR>', m)
 map('n', '<leader>lo', ':LspStop<CR>', m)
 
 -- Marker remap
-map('n', ',', 'm', m)  -- Use ',' to set marker.
+map('n', 'M', 'm', m)  -- Use 'M' to set marker.
 map('n', 'm', '\'', m) -- Use m to move to marker.
 
 -- Spell check switch
