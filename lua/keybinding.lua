@@ -153,5 +153,7 @@ map('n', '<leader>zx', ':setlocal nospell<CR>', m)  -- Turn off spell check.
 map('n', '<leader>zz', '1z=', m)  -- Take the first suggested word.
 map('n', '<leader>zl', 'z=', m)  -- Open the list of suggested words.
 
+-- LSP key bingdings
+-- Currently located in the lspconfig.lua file.
 
 return plugin_keys

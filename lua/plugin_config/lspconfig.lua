@@ -66,7 +66,7 @@ local runtime_path = vim.split(package.path, ';')
 table.insert(runtime_path, 'lua/?.lua')
 table.insert(runtime_path, 'lua/?/init.lua')
 
-inst.lua_ls.setup({
+vim.lsp.config('lua_ls', {
     on_attach = on_attach,
     flags = flags,
     settings = {
@@ -95,14 +95,14 @@ inst.lua_ls.setup({
 })
 
 -- C/C++
-inst.clangd.setup({
+vim.lsp.config('clangd', {
     on_attach = on_attach,
     flags = flags,
 })
 
 -- Python 
 -- REMEMBER TO INSTALL STUBS IN CASE OF TYPE CHECK ERROR
-inst.pyright.setup({
+vim.lsp.config('pyright', {
     on_attach = on_attach,
     flags = flags,
     settings = { pyright = {}, python = { analysis = { typeCheckingMode = 'stardard' } } },
@@ -119,13 +119,13 @@ inst.pyright.setup({
 --})
 
 -- Latex
-inst.texlab.setup({
+vim.lsp.config('texlab', {
     on_attach = on_attach,
     flags = flags,
 })
 
 -- Verilog
-inst.verible.setup({
+vim.lsp.config('verible', {
     on_attach = on_attach,
     flags = flags,
     --cmd = {'verible-verilog-ls', '--rules_config_search'},
