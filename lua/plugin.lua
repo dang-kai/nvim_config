@@ -156,6 +156,18 @@ local plugins = {
         end,
     },
 
+    -- Window tab
+    {
+        'akinsho/bufferline.nvim',
+        enabled = false,
+        lazy = false,
+        version = '*',
+        dependencies = 'nvim-tree/nvim-web-devicons',
+        config = function()
+            require('plugin_config.bufferline')
+        end,
+    },
+
     ----------PROGRAMMING---------------------------------------
     -- Code format
     {
