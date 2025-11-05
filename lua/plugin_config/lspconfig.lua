@@ -93,12 +93,14 @@ vim.lsp.config('lua_ls', {
         },
     },
 })
+vim.lsp.enable('lua_ls')
 
 -- C/C++
 vim.lsp.config('clangd', {
     on_attach = on_attach,
     flags = flags,
 })
+vim.lsp.enable('clangd')
 
 -- Python 
 -- REMEMBER TO INSTALL STUBS IN CASE OF TYPE CHECK ERROR
@@ -108,6 +110,7 @@ vim.lsp.config('pyright', {
     settings = { pyright = {}, python = { analysis = { typeCheckingMode = 'stardard' } } },
     -- Configuration reference: https://www.reddit.com/r/neovim/comments/y3mkpp/nvim_masonlspconfig_pyright_configuration/
 })
+vim.lsp.enable('pyright')
 --inst.pylsp.setup({
 --    on_attach = on_attach,
 --    flags = flags,
@@ -123,6 +126,7 @@ vim.lsp.config('texlab', {
     on_attach = on_attach,
     flags = flags,
 })
+vim.lsp.enable('texlab')
 
 -- Verilog
 vim.lsp.config('verible', {
@@ -134,3 +138,4 @@ vim.lsp.config('verible', {
         return vim.fn.expand('%:p:h')
     end,
 })
+vim.lsp.enable('verible')
