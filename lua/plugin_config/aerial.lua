@@ -9,7 +9,7 @@ inst.setup({
     -- Call the setup function to change the default behavior
     -- Priority list of preferred backends for aerial.
     -- This can be a filetype map (see :help aerial-filetype-map)
-    backends = { 'treesitter', 'lsp', 'markdown', 'man' },
+    backends = { 'lsp', 'treesitter', 'markdown', 'man' },
 
     layout = {
         -- These control the width of the aerial window.
