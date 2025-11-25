@@ -93,7 +93,13 @@ inst.setup({
 
     -- When true, don't load aerial until a command or function is called
     -- Defaults to true, unless `on_attach` is provided, then it defaults to false
-    lazy_load = true,
+    lazy_load = false,
+
+    on_attach = function(bufnr)
+        -- Jump forwards/backwards with '{' and '}'
+        vim.keymap.set('n', '{', '<cmd>AerialPrev<CR>', { buffer = bufnr })
+        vim.keymap.set('n', '}', '<cmd>AerialNext<CR>', { buffer = bufnr })
+    end,
 
     -- Disable aerial on files with this many lines
     disable_max_lines = 20000,
@@ -134,7 +140,7 @@ inst.setup({
     highlight_closest = true,
 
     -- Highlight the symbol in the source buffer when cursor is in the aerial win
-    highlight_on_hover = false,
+    highlight_on_hover = true,
 
     -- When jumping to a symbol, highlight the line for this many ms.
     -- Set to false to disable
@@ -189,7 +195,7 @@ inst.setup({
     -- Use symbol tree for folding. Set to true or false to enable/disable
     -- Set to "auto" to manage folds if your previous foldmethod was 'manual'
     -- This can be a filetype map (see :help aerial-filetype-map)
-    manage_folds = false,
+    manage_folds = true,
 
     -- When you fold code with za, zo, or zc, update the aerial tree as well.
     -- Only works when manage_folds = true
@@ -266,7 +272,7 @@ inst.setup({
     lsp = {
         -- Fetch document symbols when LSP diagnostics update.
         -- If false, will update on buffer changes.
-        diagnostics_trigger_update = true,
+        diagnostics_trigger_update = false,
 
         -- Set to false to not update the symbols when there are LSP errors
         update_when_errors = true,

@@ -37,7 +37,7 @@ local filetype = {
             return {
                 exe = 'clang-format',
                 args = {
-                      "--style='{BasedOnStyle: LLVM, IndentWidth: 4, SpaceBeforeParens: ControlStatements, ColumnLimit: 90, AlignTrailingComments: true, AlignConsecutiveAssignments: true, AlignConsecutiveMacros: true, AlignConsecutiveDeclarations: true, AlignAfterOpenBracket: true, AlignArrayOfStructures: Right, AlignEscapedNewlines: Left, AlignOperands: Align, IndentCaseLabels: true, AllowShortBlocksOnASingleLine: Always, AllowShortFunctionsOnASingleLine: All, AllowShortCaseLabelsOnASingleLine: true, AllowShortEnumsOnASingleLine: true, AllowShortIfStatementsOnASingleLine: AllIfsAndElse, AllowShortLoopsOnASingleLine: true}'",
+                    "--style='{BasedOnStyle: LLVM, IndentWidth: 4, SpaceBeforeParens: ControlStatements, ColumnLimit: 90, AlignTrailingComments: true, AlignConsecutiveAssignments: true, AlignConsecutiveMacros: true, AlignConsecutiveDeclarations: true, AlignAfterOpenBracket: true, AlignArrayOfStructures: Right, AlignEscapedNewlines: Left, AlignOperands: Align, IndentCaseLabels: true, AllowShortBlocksOnASingleLine: Always, AllowShortFunctionsOnASingleLine: All, AllowShortCaseLabelsOnASingleLine: true, AllowShortEnumsOnASingleLine: true, AllowShortIfStatementsOnASingleLine: AllIfsAndElse, AllowShortLoopsOnASingleLine: true}'",
                     '--assume-filename=' .. util.escape_path(util.get_current_buffer_file_name()),
                 },
                 stdin = true,
@@ -51,7 +51,7 @@ local filetype = {
                 exe = 'autopep8',
                 args = {
                     '--aggressive',
-                    '--max-line-length 160',
+                    '--max-line-length 120',
                     '-',
                 },
                 stdin = 1,
@@ -65,7 +65,7 @@ local filetype = {
                 args = {
                     '--column_limit 100',
                     '--indentation_spaces 4',
-                    '-'
+                    '-',
                 },
                 stdin = 1,
             }
