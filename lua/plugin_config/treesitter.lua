@@ -44,6 +44,7 @@ inst.setup({
 })
 
 -- Enable folding
+--vim.opt.foldmethod = 'indent'
 --vim.opt.foldmethod = 'expr'
 --vim.opt.foldexpr = 'nvim_treesitter#foldexpr()'
 -- Do not fold by default

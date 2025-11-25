@@ -102,7 +102,7 @@ vim.lsp.config('clangd', {
 })
 vim.lsp.enable('clangd')
 
--- Python 
+-- Python
 -- REMEMBER TO INSTALL STUBS IN CASE OF TYPE CHECK ERROR
 vim.lsp.config('pyright', {
     on_attach = on_attach,
@@ -133,9 +133,11 @@ vim.lsp.config('verible', {
     on_attach = on_attach,
     flags = flags,
     --cmd = {'verible-verilog-ls', '--rules_config_search'},
-    cmd = {'verible-verilog-ls', '--rules', '-explicit-parameter-storage-type,-unpacked-dimensions-range-ordering,-parameter-name-style'},
+    cmd = { 'verible-verilog-ls', '--rules', '-explicit-parameter-storage-type,-unpacked-dimensions-range-ordering,-parameter-name-style' },
     root_dir = function()
         return vim.fn.expand('%:p:h')
     end,
 })
 vim.lsp.enable('verible')
+
+
