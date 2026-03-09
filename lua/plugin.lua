@@ -207,8 +207,8 @@ local plugins = {
         enabled = true,
         lazy = true,
         event = 'VeryLazy',
+        branch = 'master',
         build = ':TSUpdate',
-        --dependencies = { 'nvim-treesitter/playground' },
         config = function()
             require('plugin_config.treesitter')
         end,
