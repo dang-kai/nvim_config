@@ -45,7 +45,7 @@ opt.clipboard      = 'unnamedplus' -- Using system clipboard
 vim.g.do_filetype_lua = 1
 vim.filetype.add({
     extension = {
-        log = 'log',
+        klx = 'klx',
     },
     --    filename = {
     --        [".foorc"] = "foorc",
@@ -55,6 +55,16 @@ vim.filetype.add({
     --    },
 })
 
+-- klx log file highlighting example
+--vim.api.nvim_create_autocmd('FileType', {
+--    pattern = 'klx',
+--    callback = function()
+--        vim.fn.matchadd('klx_timestamp', [[\d\{4}-\d\{2}-\d\{2} \a\{3} \d\{2}:\d\{2}:\d\{2} +\d\{3}]])
+--    end,
+--})
+--
+--vim.api.nvim_set_hl(0, 'klx_timestamp', { fg = '#89b4fa', bold = true }) -- Blue
+
 -- Hide quick fix in the buf list
 vim.cmd([[
     augroup _quickfix
@@ -62,5 +72,3 @@ vim.cmd([[
         autocmd Filetype qf set nobuflisted
     augroup end
 ]])
-
-
