@@ -79,7 +79,7 @@ local plugins = {
         branch = 'master',
         enabled = true,
         lazy = true,
-        ft = 'log',
+        ft = 'klx',
         event = 'VeryLazy',
         --cmd = { 'EkslogToggleOutline', 'EkslogToggleItem' },
     },
