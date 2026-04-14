@@ -38,7 +38,7 @@ inst.setup({
         },
     },
     indent = {
-        enable = true,
+        enable = false,
         disable = { 'python' }, -- Let other plugin handle python indent.
     },
 })
