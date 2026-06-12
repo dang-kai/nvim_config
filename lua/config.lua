@@ -21,6 +21,7 @@ opt.smartindent = true
 opt.number         = true           -- Add line numbers
 opt.relativenumber = true           -- Show relative line numbers
 opt.wildmode       = 'list:longest' -- Get bash-like tab completions
+opt.background     = 'dark'         -- Skip terminal background probing on startup.
 opt.mouse          = 'a'            -- Enable mouse click
 opt.scrolloff      = 2              -- Keep a few lines below or above the cursor.
 --opt.cc           = 100            -- Set an 100 column border for good coding style
@@ -32,7 +33,7 @@ opt.splitbelow     = true
 opt.splitright     = true
 opt.laststatus     = 2
 opt.statusline     = '<%n> %f %y%=%c-%l:%L [%p%%]'
---opt.termguicolors  = true           -- Required by cokeline.
+opt.termguicolors  = true           -- Skip terminal truecolor probing on startup.
 
 -- -- Miscellaneous
 opt.clipboard      = 'unnamedplus' -- Using system clipboard
