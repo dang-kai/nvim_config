@@ -104,10 +104,6 @@ inst.setup({
         update_cwd = false,
         ignore_list = {},
     },
-    system_open = {
-        cmd = "mousepad",
-        args = {},
-    },
     diagnostics = {
         enable = false,
         show_on_dirs = false,
