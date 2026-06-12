@@ -291,6 +291,8 @@ local plugins = {
             'RainbowDelimSimple',
             'RainbowDelimQuoted',
             'RainbowMultiDelim',
+            'RainbowAlign',
+            'RainbowShrink',
         },
     },
 

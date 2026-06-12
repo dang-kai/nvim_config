@@ -8,7 +8,6 @@ end
 local tree_width = 26
 inst.setup({
     auto_reload_on_write = true,
-    create_in_closed_folder = false,
     disable_netrw = true,
     hijack_cursor = false,
     hijack_netrw = true,
@@ -101,8 +100,10 @@ inst.setup({
     sync_root_with_cwd = false,
     update_focused_file = {
         enable = false,
-        update_cwd = false,
-        ignore_list = {},
+        update_root = {
+            enable = false,
+            ignore_list = {},
+        },
     },
     diagnostics = {
         enable = false,

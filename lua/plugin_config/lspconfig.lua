@@ -107,7 +107,7 @@ vim.lsp.enable('clangd')
 vim.lsp.config('pyright', {
     on_attach = on_attach,
     flags = flags,
-    settings = { pyright = {}, python = { analysis = { typeCheckingMode = 'stardard' } } },
+    settings = { pyright = {}, python = { analysis = { typeCheckingMode = 'standard' } } },
     -- Configuration reference: https://www.reddit.com/r/neovim/comments/y3mkpp/nvim_masonlspconfig_pyright_configuration/
 })
 vim.lsp.enable('pyright')
@@ -139,5 +139,4 @@ vim.lsp.config('verible', {
     end,
 })
 vim.lsp.enable('verible')
-
 

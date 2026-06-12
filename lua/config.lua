@@ -21,7 +21,6 @@ opt.smartindent = true
 opt.number         = true           -- Add line numbers
 opt.relativenumber = true           -- Show relative line numbers
 opt.wildmode       = 'list:longest' -- Get bash-like tab completions
-opt.ttyfast        = true           -- Speed up scrolling in Vim
 opt.mouse          = 'a'            -- Enable mouse click
 opt.scrolloff      = 2              -- Keep a few lines below or above the cursor.
 --opt.cc           = 100            -- Set an 100 column border for good coding style
