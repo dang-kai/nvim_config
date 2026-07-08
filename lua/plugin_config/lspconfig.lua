@@ -44,8 +44,8 @@ local on_attach = function(client, bufnr)
     --map(bufnr, "n", "gf", "<cmd>Lspsaga lsp_finder<CR>", m)
 
     map(bufnr, 'n', 'gf', '<cmd>lua vim.diagnostic.open_float()<CR>', m)
-    map(bufnr, 'n', 'gk', '<cmd>lua vim.diagnostic.goto_prev()<CR>', m)
-    map(bufnr, 'n', 'gj', '<cmd>lua vim.diagnostic.goto_next()<CR>', m)
+    map(bufnr, 'n', 'gk', '<cmd>lua vim.diagnostic.jump({count=-1, float=true})<CR>', m)
+    map(bufnr, 'n', 'gj', '<cmd>lua vim.diagnostic.jump({count=1, float=true})<CR>', m)
     --map(bufnr, "n", "th", ":ClangdSwitchSourceHeader<CR>", m) -- Toggle header.
     map(bufnr, 'n', 'th', ':e %:p:s,.h$,.X123X,:s,.c$,.h,:s,.X123X$,.c,<CR>', m) -- Toggle header without clang (only in current folder).
 
