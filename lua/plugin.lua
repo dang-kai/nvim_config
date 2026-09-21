@@ -206,6 +206,7 @@ local plugins = {
         'nvim-treesitter/nvim-treesitter',
         enabled = true,
         lazy = false,
+        branch='main',
         build = ':TSUpdate',
         config = function()
             require('plugin_config.treesitter')
