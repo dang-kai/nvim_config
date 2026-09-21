@@ -60,6 +60,13 @@ map('v', '>', '>gv', m)
 map('v', 'J', ":move '>+1<CR>gv-gv", m) -- move code block
 map('v', 'K', ":move '<-2<CR>gv-gv", m)
 
+-- Native Tree-sitter incremental selection (Neovim 0.12+; no plugin mappings required):
+--   an      select [count]th parent node
+--   in      select [count]th previous or first child node
+--   ]n/[n   select [count]th next/previous node
+--   ]N/[N   extend selection to [count]th next/previous node
+-- Use these in Visual mode after Tree-sitter has been enabled for the buffer.
+
 -- file operation
 --map("n", "<leader>q", ":q<CR>", m)
 map('n', '<leader>qq', ':qa!<CR>', m)

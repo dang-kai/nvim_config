@@ -1,46 +1,49 @@
-local plugin_name = 'nvim-treesitter.configs'
-local ret_ok, inst = pcall(require, plugin_name)
-if not ret_ok then
+local plugin_name = 'nvim-treesitter'
+local ok, treesitter = pcall(require, plugin_name)
+if not ok then
     vim.notify(plugin_name .. ' not found.')
     return
 end
 
-inst.setup({
-    ensure_installed = {
+local languages = {
+    'c',
+    'cpp',
+    'bash',
+    'cmake',
+    'make',
+    'python',
+    'vim',
+    'lua',
+    'diff',
+    'markdown',
+    'json',
+    'latex',
+    'bibtex',
+}
+
+treesitter.setup()
+treesitter.install(languages)
+
+vim.api.nvim_create_autocmd('FileType', {
+    group = vim.api.nvim_create_augroup('treesitter-highlighting', { clear = true }),
+    pattern = {
+        'bib',
         'c',
         'cpp',
-        'bash',
         'cmake',
-        'make',
-        'python',
-        'vim',
-        'lua',
         'diff',
-        'markdown',
         'json',
-        --'html',
-        --'matlab',
-        --'latex',
-        --'bibtex',
-        --'verilog',
+        'lua',
+        'make',
+        'markdown',
+        'python',
+        'sh',
+        'tex',
+        'vim',
     },
-    highlight = {
-        enable = true,
-        additional_vim_regex_highlighting = false,
-    },
-    incremental_selection = {
-        enable = true,
-        keymaps = {
-            init_selection = '<leader>mm',
-            node_incremental = '<leader>mj',
-            node_decremental = '<leader>mk',
-            scope_incremental = '<leader>mo',
-        },
-    },
-    indent = {
-        enable = false,
-        disable = { 'python' }, -- Let other plugin handle python indent.
-    },
+    callback = function()
+        vim.treesitter.start()
+    end,
 })
 
 -- Enable folding
